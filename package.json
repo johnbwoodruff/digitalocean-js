@@ -1,0 +1,25 @@
+{
+  "name": "digitalocean-js",
+  "version": "0.1.0",
+  "description": "JavaScript library for the DigitalOcean API",
+  "main": "src/index.js",
+  "author": {
+    "name": "John Woodruff",
+    "email": "johnwoodruff91@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbw91/digitalocean-js"
+  },
+  "scripts": {
+    "start": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {
+    "axios": "^0.16.2"
+  }
+}

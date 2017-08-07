@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "ES6"
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
