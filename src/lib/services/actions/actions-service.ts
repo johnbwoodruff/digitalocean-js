@@ -1,9 +1,9 @@
 import Axios from 'axios';
 
 // TODO: Remove ApiKey when OAuth is implemented
-import { ApiKey } from '../environment/api-key';
-import { Environment } from '../environment/environment';
-import { Action } from '../models/action';
+import { ApiKey } from '../../conf/api-key';
+import { Environment } from '../../conf/environment';
+import { Action } from '../../models/action';
 
 export class ActionsService {
   private key: string;

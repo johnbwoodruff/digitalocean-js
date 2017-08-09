@@ -1,3 +1,5 @@
+import { Region } from './region';
+
 export interface Action {
   id: number;
   status: string;
@@ -6,6 +8,6 @@ export interface Action {
   completed_at: string;
   resource_id: number;
   resource_type: string;
-  region?: string | null;
+  region?: Region | string | null;
   region_slug?: string | null;
 }

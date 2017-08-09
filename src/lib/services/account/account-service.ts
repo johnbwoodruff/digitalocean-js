@@ -1,9 +1,9 @@
 import Axios from 'axios';
 
 // TODO: Remove ApiKey when OAuth is implemented
-import { ApiKey } from '../environment/api-key';
-import { Environment } from '../environment/environment';
-import { Account } from '../models/account';
+import { ApiKey } from '../../conf/api-key';
+import { Environment } from '../../conf/environment';
+import { Account } from '../../models/account';
 
 export class AccountService {
   private key: string;
@@ -22,7 +22,7 @@ export class AccountService {
    * @returns {Promise<Account>}
    * @memberof AccountService
    */
-  getUserInformation(): Promise<Account> {
+  public getUserInformation(): Promise<Account> {
     return new Promise((resolve, reject) => {
       const url = this.env.baseUrl;
       Axios.get(`${url}/account`).then((response) => {
