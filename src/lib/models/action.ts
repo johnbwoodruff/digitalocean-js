@@ -11,3 +11,13 @@ export interface Action {
   region?: Region | string | null;
   region_slug?: string | null;
 }
+
+export type ActionType = 'attach' | 'detach' | 'resize';
+
+export interface ActionRequest {
+  type: ActionType;
+  region: string;
+  droplet_id?: number;
+  size_gigabytes?: number;
+  volume_name?: string;
+}

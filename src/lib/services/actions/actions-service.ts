@@ -7,10 +7,11 @@ import { Action } from '../../models/action';
 
 export class ActionsService {
   private key: string;
-  private env: Environment;
+  private baseUrl: string;
 
   constructor() {
-    this.env = new Environment();
+    const env = new Environment();
+    this.baseUrl = env.baseUrl;
     this.key = ApiKey;
     Axios.defaults.headers.common['Authorization'] = `Bearer ${this.key}`;
     Axios.defaults.headers.common['Content-Type'] = `application/json`;
@@ -29,7 +30,7 @@ export class ActionsService {
     page = page ? page : 1;
     perPage = perPage ? perPage : 25;
     return new Promise((resolve, reject) => {
-      let url = `${this.env.baseUrl}/actions`;
+      let url = `${this.baseUrl}/actions`;
       url += `?page=${page}`;
       url += `&per_page=${perPage}`;
       Axios.get(url).then((response) => {
@@ -42,7 +43,7 @@ export class ActionsService {
   }
 
   /**
-   * Returns an existing action based on the provided ID
+   * Get an existing account action based on the provided ID
    *
    * @param {number} id
    * @returns {Promise<Action>}
@@ -50,7 +51,7 @@ export class ActionsService {
    */
   public getExistingAction(id: number): Promise<Action> {
     return new Promise((resolve, reject) => {
-      let url = `${this.env.baseUrl}/actions/${id}`;
+      let url = `${this.baseUrl}/actions/${id}`;
       Axios.get(url).then((response) => {
         // Return actual action instead of wrapped action
         resolve(response.data.action);

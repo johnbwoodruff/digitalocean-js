@@ -7,10 +7,11 @@ import { Account } from '../../models/account';
 
 export class AccountService {
   private key: string;
-  private env: Environment;
+  private baseUrl: string;
 
   constructor() {
-    this.env = new Environment();
+    const env = new Environment();
+    this.baseUrl = env.baseUrl;
     this.key = ApiKey;
     Axios.defaults.headers.common['Authorization'] = `Bearer ${this.key}`;
     Axios.defaults.headers.common['Content-Type'] = `application/json`;
@@ -24,7 +25,7 @@ export class AccountService {
    */
   public getUserInformation(): Promise<Account> {
     return new Promise((resolve, reject) => {
-      const url = this.env.baseUrl;
+      const url = this.baseUrl;
       Axios.get(`${url}/account`).then((response) => {
         // Return actual account instead of wrapped account
         resolve(response.data.account);
