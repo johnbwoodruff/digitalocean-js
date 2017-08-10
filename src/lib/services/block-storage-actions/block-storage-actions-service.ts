@@ -5,7 +5,7 @@ import { ApiKey } from '../../conf/api-key';
 import { Environment } from '../../conf/environment';
 import { Action, ActionRequest } from '../../models/action';
 
-export class BlockStorageActionsService {
+export class BlockStorageActionService {
   private key: string;
   private baseUrl: string;
 

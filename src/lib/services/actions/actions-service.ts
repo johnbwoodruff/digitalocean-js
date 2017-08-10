@@ -5,7 +5,7 @@ import { ApiKey } from '../../conf/api-key';
 import { Environment } from '../../conf/environment';
 import { Action } from '../../models/action';
 
-export class ActionsService {
+export class ActionService {
   private key: string;
   private baseUrl: string;
 
