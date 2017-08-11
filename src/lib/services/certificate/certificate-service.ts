@@ -80,7 +80,6 @@ export class CertificateService {
   public deleteCertificate(certificateId: string): Promise<void> {
     return new Promise((resolve, reject) => {
       Axios.delete(`${this.baseUrl}/certificates`).then((response) => {
-        // Return actual certificates instead of wrapped certificates
         resolve();
       }).catch((error) => {
         reject(error);
