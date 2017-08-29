@@ -1,8 +1,9 @@
 {
   "name": "digitalocean-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JavaScript library for the DigitalOcean API",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "author": {
     "name": "John Woodruff",
     "email": "johnwoodruff91@gmail.com"
