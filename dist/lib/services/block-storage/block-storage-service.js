@@ -1,15 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = require("axios");
-const digitalocean_1 = require("../../digitalocean");
-const environment_1 = require("../../conf/environment");
-class BlockStorageService extends digitalocean_1.DigitalOcean {
+import Axios from 'axios';
+import { DigitalOcean } from '../../digitalocean';
+import { Environment } from '../../conf/environment';
+export class BlockStorageService extends DigitalOcean {
     constructor(accessToken) {
         super(accessToken);
-        const env = new environment_1.Environment();
+        const env = new Environment();
         this.baseUrl = env.baseUrl;
-        axios_1.default.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
-        axios_1.default.defaults.headers.common['Content-Type'] = `application/json`;
+        Axios.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
+        Axios.defaults.headers.common['Content-Type'] = `application/json`;
     }
     /**
      * List all of the Block Storage volumes available on your account
@@ -19,7 +17,7 @@ class BlockStorageService extends digitalocean_1.DigitalOcean {
      */
     getAllBlockStorage() {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/volumes`).then((response) => {
+            Axios.get(`${this.baseUrl}/volumes`).then((response) => {
                 // Return actual volumes instead of wrapped volumes
                 resolve(response.data.volumes);
             }).catch((error) => {
@@ -36,7 +34,7 @@ class BlockStorageService extends digitalocean_1.DigitalOcean {
      */
     createBlockStorage(volume) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/volumes`, volume).then((response) => {
+            Axios.post(`${this.baseUrl}/volumes`, volume).then((response) => {
                 // Return actual volume instead of wrapped volume
                 resolve(response.data.volume);
             }).catch((error) => {
@@ -53,7 +51,7 @@ class BlockStorageService extends digitalocean_1.DigitalOcean {
      */
     getBlockStorageById(id) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/volumes/${id}`).then((response) => {
+            Axios.get(`${this.baseUrl}/volumes/${id}`).then((response) => {
                 // Return actual volume instead of wrapped volume
                 resolve(response.data.volume);
             }).catch((error) => {
@@ -71,7 +69,7 @@ class BlockStorageService extends digitalocean_1.DigitalOcean {
      */
     getBlockStorageByName(name, regionSlug) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/volumes?name=${name}&region=${regionSlug}`).then((response) => {
+            Axios.get(`${this.baseUrl}/volumes?name=${name}&region=${regionSlug}`).then((response) => {
                 // Return actual volumes instead of wrapped volumes
                 resolve(response.data.volumes);
             }).catch((error) => {
@@ -88,7 +86,7 @@ class BlockStorageService extends digitalocean_1.DigitalOcean {
      */
     getSnapshotsForVolume(id) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/volumes/${id}/snapshots`).then((response) => {
+            Axios.get(`${this.baseUrl}/volumes/${id}/snapshots`).then((response) => {
                 // Return actual snapshots instead of wrapped snapshots
                 resolve(response.data.snapshots);
             }).catch((error) => {
@@ -106,7 +104,7 @@ class BlockStorageService extends digitalocean_1.DigitalOcean {
      */
     createSnapshotFromVolume(id, name) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/volumes/${id}/snapshots`, { name: name }).then((response) => {
+            Axios.post(`${this.baseUrl}/volumes/${id}/snapshots`, { name: name }).then((response) => {
                 // Return actual snapshot instead of wrapped snapshot
                 resolve(response.data.snapshot);
             }).catch((error) => {
@@ -123,7 +121,7 @@ class BlockStorageService extends digitalocean_1.DigitalOcean {
      */
     deleteBlockStorageById(id) {
         return new Promise((resolve, reject) => {
-            axios_1.default.delete(`${this.baseUrl}/volumes/${id}`).then((response) => {
+            Axios.delete(`${this.baseUrl}/volumes/${id}`).then((response) => {
                 resolve();
             }).catch((error) => {
                 reject(error);
@@ -140,7 +138,7 @@ class BlockStorageService extends digitalocean_1.DigitalOcean {
      */
     deleteBlockStorageByName(name, regionSlug) {
         return new Promise((resolve, reject) => {
-            axios_1.default.delete(`${this.baseUrl}/volumes?name=${name}&region=${regionSlug}`).then((response) => {
+            Axios.delete(`${this.baseUrl}/volumes?name=${name}&region=${regionSlug}`).then((response) => {
                 resolve();
             }).catch((error) => {
                 reject(error);
@@ -148,5 +146,4 @@ class BlockStorageService extends digitalocean_1.DigitalOcean {
         });
     }
 }
-exports.BlockStorageService = BlockStorageService;
 //# sourceMappingURL=block-storage-service.js.map

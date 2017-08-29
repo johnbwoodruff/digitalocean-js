@@ -2,7 +2,8 @@
   "compilerOptions": {
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "commonjs",
+    "module": "es6",
+    "moduleResolution": "node",
     "outDir": "dist",
     "noImplicitAny": true,
     "removeComments": false,

@@ -1,15 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = require("axios");
-const digitalocean_1 = require("../../digitalocean");
-const environment_1 = require("../../conf/environment");
-class DropletService extends digitalocean_1.DigitalOcean {
+import Axios from 'axios';
+import { DigitalOcean } from '../../digitalocean';
+import { Environment } from '../../conf/environment';
+export class DropletService extends DigitalOcean {
     constructor(accessToken) {
         super(accessToken);
-        const env = new environment_1.Environment();
+        const env = new Environment();
         this.baseUrl = env.baseUrl;
-        axios_1.default.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
-        axios_1.default.defaults.headers.common['Content-Type'] = `application/json`;
+        Axios.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
+        Axios.defaults.headers.common['Content-Type'] = `application/json`;
     }
     /**
      * Create a new droplet
@@ -20,7 +18,7 @@ class DropletService extends digitalocean_1.DigitalOcean {
      */
     createNewDroplet(dropletRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/droplets`, dropletRequest).then((response) => {
+            Axios.post(`${this.baseUrl}/droplets`, dropletRequest).then((response) => {
                 // Return actual droplet instead of wrapped droplet
                 resolve(response.data.droplet);
             }).catch((error) => {
@@ -37,7 +35,7 @@ class DropletService extends digitalocean_1.DigitalOcean {
      */
     createMultipleDroplets(dropletsRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/droplets`, dropletsRequest).then((response) => {
+            Axios.post(`${this.baseUrl}/droplets`, dropletsRequest).then((response) => {
                 // Return actual droplets instead of wrapped droplets
                 resolve(response.data.droplets);
             }).catch((error) => {
@@ -54,7 +52,7 @@ class DropletService extends digitalocean_1.DigitalOcean {
      */
     getExistingDroplet(dropletId) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/droplets/${dropletId}`).then((response) => {
+            Axios.get(`${this.baseUrl}/droplets/${dropletId}`).then((response) => {
                 // Return actual droplet instead of wrapped droplet
                 resolve(response.data.droplet);
             }).catch((error) => {
@@ -70,7 +68,7 @@ class DropletService extends digitalocean_1.DigitalOcean {
      */
     getAllDroplets() {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/droplets`).then((response) => {
+            Axios.get(`${this.baseUrl}/droplets`).then((response) => {
                 // Return actual droplets instead of wrapped droplets
                 resolve(response.data.droplets);
             }).catch((error) => {
@@ -87,7 +85,7 @@ class DropletService extends digitalocean_1.DigitalOcean {
      */
     getDropletsByTag(tag) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/droplets?tag_name=${tag}`).then((response) => {
+            Axios.get(`${this.baseUrl}/droplets?tag_name=${tag}`).then((response) => {
                 // Return actual droplets instead of wrapped droplets
                 resolve(response.data.droplets);
             }).catch((error) => {
@@ -104,7 +102,7 @@ class DropletService extends digitalocean_1.DigitalOcean {
      */
     deleteDroplet(dropletId) {
         return new Promise((resolve, reject) => {
-            axios_1.default.delete(`${this.baseUrl}/droplets/${dropletId}`).then((response) => {
+            Axios.delete(`${this.baseUrl}/droplets/${dropletId}`).then((response) => {
                 // Return actual droplets instead of wrapped droplets
                 resolve();
             }).catch((error) => {
@@ -113,5 +111,4 @@ class DropletService extends digitalocean_1.DigitalOcean {
         });
     }
 }
-exports.DropletService = DropletService;
 //# sourceMappingURL=droplet-service.js.map

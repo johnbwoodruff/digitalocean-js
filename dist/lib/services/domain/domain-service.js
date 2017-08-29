@@ -1,15 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = require("axios");
-const digitalocean_1 = require("../../digitalocean");
-const environment_1 = require("../../conf/environment");
-class DomainService extends digitalocean_1.DigitalOcean {
+import Axios from 'axios';
+import { DigitalOcean } from '../../digitalocean';
+import { Environment } from '../../conf/environment';
+export class DomainService extends DigitalOcean {
     constructor(accessToken) {
         super(accessToken);
-        const env = new environment_1.Environment();
+        const env = new Environment();
         this.baseUrl = env.baseUrl;
-        axios_1.default.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
-        axios_1.default.defaults.headers.common['Content-Type'] = `application/json`;
+        Axios.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
+        Axios.defaults.headers.common['Content-Type'] = `application/json`;
     }
     /**
      * Get a list of all the domains on your account
@@ -19,7 +17,7 @@ class DomainService extends digitalocean_1.DigitalOcean {
      */
     getAllDomains() {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/domains`).then((response) => {
+            Axios.get(`${this.baseUrl}/domains`).then((response) => {
                 // Return actual domains instead of wrapped domains
                 resolve(response.data.domains);
             }).catch((error) => {
@@ -36,7 +34,7 @@ class DomainService extends digitalocean_1.DigitalOcean {
      */
     createDomain(domainRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/domains`, domainRequest).then((response) => {
+            Axios.post(`${this.baseUrl}/domains`, domainRequest).then((response) => {
                 // Return actual domain instead of wrapped domain
                 resolve(response.data.domain);
             }).catch((error) => {
@@ -53,7 +51,7 @@ class DomainService extends digitalocean_1.DigitalOcean {
      */
     getExistingDomain(domainName) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/domains/${domainName}`).then((response) => {
+            Axios.get(`${this.baseUrl}/domains/${domainName}`).then((response) => {
                 // Return actual domain instead of wrapped domain
                 resolve(response.data.domain);
             }).catch((error) => {
@@ -70,7 +68,7 @@ class DomainService extends digitalocean_1.DigitalOcean {
      */
     deleteDomain(domainName) {
         return new Promise((resolve, reject) => {
-            axios_1.default.delete(`${this.baseUrl}/domains/${domainName}`).then((response) => {
+            Axios.delete(`${this.baseUrl}/domains/${domainName}`).then((response) => {
                 resolve();
             }).catch((error) => {
                 reject(error);
@@ -78,5 +76,4 @@ class DomainService extends digitalocean_1.DigitalOcean {
         });
     }
 }
-exports.DomainService = DomainService;
 //# sourceMappingURL=domain-service.js.map

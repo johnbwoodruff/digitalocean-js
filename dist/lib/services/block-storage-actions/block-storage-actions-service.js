@@ -1,15 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = require("axios");
-const digitalocean_1 = require("../../digitalocean");
-const environment_1 = require("../../conf/environment");
-class BlockStorageActionService extends digitalocean_1.DigitalOcean {
+import Axios from 'axios';
+import { DigitalOcean } from '../../digitalocean';
+import { Environment } from '../../conf/environment';
+export class BlockStorageActionService extends DigitalOcean {
     constructor(accessToken) {
         super(accessToken);
-        const env = new environment_1.Environment();
+        const env = new Environment();
         this.baseUrl = env.baseUrl;
-        axios_1.default.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
-        axios_1.default.defaults.headers.common['Content-Type'] = `application/json`;
+        Axios.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
+        Axios.defaults.headers.common['Content-Type'] = `application/json`;
     }
     /**
      * Attach a Block Storage volume to a droplet
@@ -21,7 +19,7 @@ class BlockStorageActionService extends digitalocean_1.DigitalOcean {
      */
     attachVolumeToDroplet(volumeId, actionRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/volumes/${volumeId}/actions`, actionRequest).then((response) => {
+            Axios.post(`${this.baseUrl}/volumes/${volumeId}/actions`, actionRequest).then((response) => {
                 // Return actual action instead of wrapped action
                 resolve(response.data.action);
             }).catch((error) => {
@@ -38,7 +36,7 @@ class BlockStorageActionService extends digitalocean_1.DigitalOcean {
      */
     attachVolumeToDropletByName(actionRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/volumes/actions`, actionRequest).then((response) => {
+            Axios.post(`${this.baseUrl}/volumes/actions`, actionRequest).then((response) => {
                 // Return actual action instead of wrapped action
                 resolve(response.data.action);
             }).catch((error) => {
@@ -56,7 +54,7 @@ class BlockStorageActionService extends digitalocean_1.DigitalOcean {
      */
     detachVolumeFromDroplet(volumeId, actionRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/volumes/${volumeId}/actions`, actionRequest).then((response) => {
+            Axios.post(`${this.baseUrl}/volumes/${volumeId}/actions`, actionRequest).then((response) => {
                 // Return actual action instead of wrapped action
                 resolve(response.data.action);
             }).catch((error) => {
@@ -73,7 +71,7 @@ class BlockStorageActionService extends digitalocean_1.DigitalOcean {
      */
     detachVolumeFromDropletByName(actionRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/volumes/actions`, actionRequest).then((response) => {
+            Axios.post(`${this.baseUrl}/volumes/actions`, actionRequest).then((response) => {
                 // Return actual action instead of wrapped action
                 resolve(response.data.action);
             }).catch((error) => {
@@ -91,7 +89,7 @@ class BlockStorageActionService extends digitalocean_1.DigitalOcean {
      */
     resizeVolume(volumeId, actionRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/volumes/${volumeId}/actions`, actionRequest).then((response) => {
+            Axios.post(`${this.baseUrl}/volumes/${volumeId}/actions`, actionRequest).then((response) => {
                 // Return actual action instead of wrapped action
                 resolve(response.data.action);
             }).catch((error) => {
@@ -116,7 +114,7 @@ class BlockStorageActionService extends digitalocean_1.DigitalOcean {
             let url = `${this.baseUrl}/volumes/${volumeId}/actions`;
             url += `?page=${page}`;
             url += `&per_page=${perPage}`;
-            axios_1.default.get(url).then((response) => {
+            Axios.get(url).then((response) => {
                 // Return actual actions instead of wrapped actions
                 resolve(response.data.actions);
             }).catch((error) => {
@@ -134,7 +132,7 @@ class BlockStorageActionService extends digitalocean_1.DigitalOcean {
      */
     getExistingVolumeAction(volumeId, actionId) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/volumes/${volumeId}/actions/${actionId}`).then((response) => {
+            Axios.get(`${this.baseUrl}/volumes/${volumeId}/actions/${actionId}`).then((response) => {
                 // Return actual action instead of wrapped action
                 resolve(response.data.action);
             }).catch((error) => {
@@ -143,5 +141,4 @@ class BlockStorageActionService extends digitalocean_1.DigitalOcean {
         });
     }
 }
-exports.BlockStorageActionService = BlockStorageActionService;
 //# sourceMappingURL=block-storage-actions-service.js.map

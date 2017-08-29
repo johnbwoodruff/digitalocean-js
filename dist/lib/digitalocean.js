@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class DigitalOcean {
+export class DigitalOcean {
     constructor(_accessToken) {
         this._accessToken = _accessToken;
     }
@@ -8,5 +6,4 @@ class DigitalOcean {
         return this._accessToken;
     }
 }
-exports.DigitalOcean = DigitalOcean;
 //# sourceMappingURL=digitalocean.js.map

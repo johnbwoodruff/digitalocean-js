@@ -1,15 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = require("axios");
-const digitalocean_1 = require("../../digitalocean");
-const environment_1 = require("../../conf/environment");
-class DomainRecordService extends digitalocean_1.DigitalOcean {
+import Axios from 'axios';
+import { DigitalOcean } from '../../digitalocean';
+import { Environment } from '../../conf/environment';
+export class DomainRecordService extends DigitalOcean {
     constructor(accessToken) {
         super(accessToken);
-        const env = new environment_1.Environment();
+        const env = new Environment();
         this.baseUrl = env.baseUrl;
-        axios_1.default.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
-        axios_1.default.defaults.headers.common['Content-Type'] = `application/json`;
+        Axios.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
+        Axios.defaults.headers.common['Content-Type'] = `application/json`;
     }
     /**
      * Get all records configured for a domain
@@ -20,7 +18,7 @@ class DomainRecordService extends digitalocean_1.DigitalOcean {
      */
     getAllDomainRecords(domainName) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/domains/${domainName}/records`).then((response) => {
+            Axios.get(`${this.baseUrl}/domains/${domainName}/records`).then((response) => {
                 // Return actual domain_records instead of wrapped domain_records
                 resolve(response.data.domain_records);
             }).catch((error) => {
@@ -38,7 +36,7 @@ class DomainRecordService extends digitalocean_1.DigitalOcean {
      */
     createDomainRecord(domainName, domainRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/domains/${domainName}/records`, domainRequest).then((response) => {
+            Axios.post(`${this.baseUrl}/domains/${domainName}/records`, domainRequest).then((response) => {
                 // Return actual domain_record instead of wrapped domain_record
                 resolve(response.data.domain_record);
             }).catch((error) => {
@@ -56,7 +54,7 @@ class DomainRecordService extends digitalocean_1.DigitalOcean {
      */
     getExistingDomainRecord(domainName, recordId) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/domains/${domainName}/records/${recordId}`).then((response) => {
+            Axios.get(`${this.baseUrl}/domains/${domainName}/records/${recordId}`).then((response) => {
                 // Return actual domain_record instead of wrapped domain_record
                 resolve(response.data.domain_record);
             }).catch((error) => {
@@ -75,7 +73,7 @@ class DomainRecordService extends digitalocean_1.DigitalOcean {
      */
     updateDomainRecord(domainName, recordId, domainRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.put(`${this.baseUrl}/domains/${domainName}/records/${recordId}`, domainRequest).then((response) => {
+            Axios.put(`${this.baseUrl}/domains/${domainName}/records/${recordId}`, domainRequest).then((response) => {
                 // Return actual domain_record instead of wrapped domain_record
                 resolve(response.data.domain_record);
             }).catch((error) => {
@@ -93,7 +91,7 @@ class DomainRecordService extends digitalocean_1.DigitalOcean {
      */
     deleteDomainRecord(domainName, recordId) {
         return new Promise((resolve, reject) => {
-            axios_1.default.delete(`${this.baseUrl}/domains/${domainName}/records/${recordId}`).then((response) => {
+            Axios.delete(`${this.baseUrl}/domains/${domainName}/records/${recordId}`).then((response) => {
                 // Return actual domain_record instead of wrapped domain_record
                 resolve();
             }).catch((error) => {
@@ -102,5 +100,4 @@ class DomainRecordService extends digitalocean_1.DigitalOcean {
         });
     }
 }
-exports.DomainRecordService = DomainRecordService;
 //# sourceMappingURL=domain-record-service.js.map

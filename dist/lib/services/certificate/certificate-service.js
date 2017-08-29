@@ -1,15 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = require("axios");
-const digitalocean_1 = require("../../digitalocean");
-const environment_1 = require("../../conf/environment");
-class CertificateService extends digitalocean_1.DigitalOcean {
+import Axios from 'axios';
+import { DigitalOcean } from '../../digitalocean';
+import { Environment } from '../../conf/environment';
+export class CertificateService extends DigitalOcean {
     constructor(accessToken) {
         super(accessToken);
-        const env = new environment_1.Environment();
+        const env = new Environment();
         this.baseUrl = env.baseUrl;
-        axios_1.default.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
-        axios_1.default.defaults.headers.common['Content-Type'] = `application/json`;
+        Axios.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
+        Axios.defaults.headers.common['Content-Type'] = `application/json`;
     }
     /**
      * Upload a new SSL Certificate
@@ -20,7 +18,7 @@ class CertificateService extends digitalocean_1.DigitalOcean {
      */
     createCertificate(certificateRequest) {
         return new Promise((resolve, reject) => {
-            axios_1.default.post(`${this.baseUrl}/certificates`, certificateRequest).then((response) => {
+            Axios.post(`${this.baseUrl}/certificates`, certificateRequest).then((response) => {
                 // Return actual certificate instead of wrapped certificate
                 resolve(response.data.certificate);
             }).catch((error) => {
@@ -37,7 +35,7 @@ class CertificateService extends digitalocean_1.DigitalOcean {
      */
     getExistingCertificate(certificateId) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/certificates/${certificateId}`).then((response) => {
+            Axios.get(`${this.baseUrl}/certificates/${certificateId}`).then((response) => {
                 // Return actual certificate instead of wrapped certificate
                 resolve(response.data.certificate);
             }).catch((error) => {
@@ -53,7 +51,7 @@ class CertificateService extends digitalocean_1.DigitalOcean {
      */
     getAllCertificates() {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.baseUrl}/certificates`).then((response) => {
+            Axios.get(`${this.baseUrl}/certificates`).then((response) => {
                 // Return actual certificates instead of wrapped certificates
                 resolve(response.data.certificates);
             }).catch((error) => {
@@ -70,7 +68,7 @@ class CertificateService extends digitalocean_1.DigitalOcean {
      */
     deleteCertificate(certificateId) {
         return new Promise((resolve, reject) => {
-            axios_1.default.delete(`${this.baseUrl}/certificates`).then((response) => {
+            Axios.delete(`${this.baseUrl}/certificates`).then((response) => {
                 resolve();
             }).catch((error) => {
                 reject(error);
@@ -78,5 +76,4 @@ class CertificateService extends digitalocean_1.DigitalOcean {
         });
     }
 }
-exports.CertificateService = CertificateService;
 //# sourceMappingURL=certificate-service.js.map

@@ -1,15 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = require("axios");
-const digitalocean_1 = require("../../digitalocean");
-const environment_1 = require("../../conf/environment");
-class ActionService extends digitalocean_1.DigitalOcean {
+import Axios from 'axios';
+import { DigitalOcean } from '../../digitalocean';
+import { Environment } from '../../conf/environment';
+export class ActionService extends DigitalOcean {
     constructor(accessToken) {
         super(accessToken);
-        const env = new environment_1.Environment();
+        const env = new Environment();
         this.baseUrl = env.baseUrl;
-        axios_1.default.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
-        axios_1.default.defaults.headers.common['Content-Type'] = `application/json`;
+        Axios.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
+        Axios.defaults.headers.common['Content-Type'] = `application/json`;
     }
     /**
      * List all of the actions that have been executed on the current account.
@@ -27,7 +25,7 @@ class ActionService extends digitalocean_1.DigitalOcean {
             let url = `${this.baseUrl}/actions`;
             url += `?page=${page}`;
             url += `&per_page=${perPage}`;
-            axios_1.default.get(url).then((response) => {
+            Axios.get(url).then((response) => {
                 // Return actual actions instead of wrapped actions
                 resolve(response.data.actions);
             }).catch((error) => {
@@ -45,7 +43,7 @@ class ActionService extends digitalocean_1.DigitalOcean {
     getExistingAction(id) {
         return new Promise((resolve, reject) => {
             let url = `${this.baseUrl}/actions/${id}`;
-            axios_1.default.get(url).then((response) => {
+            Axios.get(url).then((response) => {
                 // Return actual action instead of wrapped action
                 resolve(response.data.action);
             }).catch((error) => {
@@ -54,5 +52,4 @@ class ActionService extends digitalocean_1.DigitalOcean {
         });
     }
 }
-exports.ActionService = ActionService;
 //# sourceMappingURL=actions-service.js.map
