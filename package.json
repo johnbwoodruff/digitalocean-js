@@ -2,7 +2,7 @@
   "name": "digitalocean-js",
   "version": "0.1.0",
   "description": "JavaScript library for the DigitalOcean API",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "author": {
     "name": "John Woodruff",
     "email": "johnwoodruff91@gmail.com"
@@ -13,10 +13,12 @@
   },
   "scripts": {
     "start": "tsc -w",
-    "build": "tsc"
+    "build": "npm run lint && tsc",
+    "lint": "tslint -p tsconfig.json --type-check -t stylish"
   },
   "license": "MIT",
   "devDependencies": {
+    "tslint": "^5.7.0",
     "typescript": "^2.4.2"
   },
   "dependencies": {

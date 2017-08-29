@@ -1,19 +1,17 @@
 import Axios from 'axios';
 
-// TODO: Remove ApiKey when OAuth is implemented
-import { ApiKey } from '../../conf/api-key';
+import { DigitalOcean } from '../../digitalocean';
 import { Environment } from '../../conf/environment';
 import { DomainRecord, DomainRecordRequest } from '../../models/domain-record';
 
-export class DomainRecordService {
-  private key: string;
+export class DomainRecordService extends DigitalOcean {
   private baseUrl: string;
 
-  constructor() {
+  constructor(accessToken: string) {
+    super(accessToken);
     const env = new Environment();
     this.baseUrl = env.baseUrl;
-    this.key = ApiKey;
-    Axios.defaults.headers.common['Authorization'] = `Bearer ${this.key}`;
+    Axios.defaults.headers.common['Authorization'] = `Bearer ${this.accessToken}`;
     Axios.defaults.headers.common['Content-Type'] = `application/json`;
   }
 
