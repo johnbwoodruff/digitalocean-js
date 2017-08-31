@@ -3,6 +3,10 @@ import Axios from 'axios';
 import { DigitalOcean } from '../../digitalocean';
 import { Environment } from '../../conf/environment';
 import { Droplet, DropletRequest } from '../../models/droplet';
+import { Kernel } from '../../models/kernel';
+import { Snapshot } from '../../models/snapshot';
+import { Backup } from '../../models/backup';
+import { Action } from '../../models/action';
 
 export class DropletService extends DigitalOcean {
   private baseUrl: string;
@@ -105,16 +109,87 @@ export class DropletService extends DigitalOcean {
   }
 
   /**
+   * Retrieve a list of all kernels available to a Droplet
+   *
+   * @param {number} dropletId
+   * @returns {Promise<Kernel[]>}
+   * @memberof DropletService
+   */
+  public getAvailableKernelsForDroplet(dropletId: number): Promise<Kernel[]> {
+    return new Promise((resolve, reject) => {
+      Axios.get(`${this.baseUrl}/droplets/${dropletId}/kernels`).then((response) => {
+        // Return actual kernels instead of wrapped kernels
+        resolve(response.data.kernels);
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  }
+
+  /**
+   * Retrieve the snapshots that have been created from a Droplet
+   *
+   * @param {number} dropletId
+   * @returns {Promise<Snapshot[]>}
+   * @memberof DropletService
+   */
+  public getSnapshotsForDroplet(dropletId: number): Promise<Snapshot[]> {
+    return new Promise((resolve, reject) => {
+      Axios.get(`${this.baseUrl}/droplets/${dropletId}/snapshots`).then((response) => {
+        // Return actual snapshots instead of wrapped snapshots
+        resolve(response.data.snapshots);
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  }
+
+  /**
+   * Retrieve any backups associated with a Droplet
+   *
+   * @param {number} dropletId
+   * @returns {Promise<Backup[]>}
+   * @memberof DropletService
+   */
+  public getBackupsForDroplet(dropletId: number): Promise<Backup[]> {
+    return new Promise((resolve, reject) => {
+      Axios.get(`${this.baseUrl}/droplets/${dropletId}/backups`).then((response) => {
+        // Return actual backups instead of wrapped backups
+        resolve(response.data.backups);
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  }
+
+  /**
+   * Retrieve all actions that have been executed on a Droplet
+   *
+   * @param {number} dropletId
+   * @returns {Promise<Action[]>}
+   * @memberof DropletService
+   */
+  public getDropletActions(dropletId: number): Promise<Action[]> {
+    return new Promise((resolve, reject) => {
+      Axios.get(`${this.baseUrl}/droplets/${dropletId}/actions`).then((response) => {
+        // Return actual actions instead of wrapped actions
+        resolve(response.data.actions);
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  }
+
+  /**
    * Delete a specific droplet by ID
    *
    * @param {string} dropletId
    * @returns {Promise<void>}
    * @memberof DropletService
    */
-  public deleteDroplet(dropletId: string): Promise<void> {
+  public deleteDroplet(dropletId: number): Promise<void> {
     return new Promise((resolve, reject) => {
       Axios.delete(`${this.baseUrl}/droplets/${dropletId}`).then((response) => {
-        // Return actual droplets instead of wrapped droplets
         resolve();
       }).catch((error) => {
         reject(error);
@@ -122,13 +197,55 @@ export class DropletService extends DigitalOcean {
     });
   }
 
-  /* TODO: Implement following methods:
-   * List all kernals for droplet
-   * List snapshots for droplet
-   * List backups for droplet
-   * List actions for droplet
-   * Delete droplets by tag
-   * List neighbors for droplet
-   * List all droplet neighbors
+  /**
+   * Delete Droplets by a tag
+   *
+   * @param {string} tag
+   * @returns {Promise<void>}
+   * @memberof DropletService
    */
+  public deleteDropletsByTag(tag: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      Axios.delete(`${this.baseUrl}/droplets?tag_name=${tag}`).then((response) => {
+        resolve();
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  }
+
+  /**
+   * Retrieve a list of Droplets that are running on the same physical server
+   *
+   * @param {number} dropletId
+   * @returns {Promise<Droplet[]>}
+   * @memberof DropletService
+   */
+  public getNeighborsForDroplet(dropletId: number): Promise<Droplet[]> {
+    return new Promise((resolve, reject) => {
+      Axios.delete(`${this.baseUrl}/droplets/${dropletId}/neighbors`).then((response) => {
+        // Return actual droplets instead of wrapped droplets
+        resolve(response.data.droplets);
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  }
+
+  /**
+   * Retrieve a list of any Droplets that are running on the same physical hardware
+   *
+   * @returns {Promise<Droplet[][]>}
+   * @memberof DropletService
+   */
+  public getDropletNeighbors(): Promise<Droplet[][]> {
+    return new Promise((resolve, reject) => {
+      Axios.delete(`${this.baseUrl}/reports/droplet_neighbors`).then((response) => {
+        // Return actual neighbors instead of wrapped neighbors
+        resolve(response.data.neighbors);
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  }
 }
