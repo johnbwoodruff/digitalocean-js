@@ -17,21 +17,21 @@ export declare class ImageService extends DigitalOcean {
      * @returns {Promise<Image[]>}
      * @memberof DropletService
      */
-    getAllDistributionImages(page?: number, perPage?: number): Promise<Image[]>;
+    getAllDistributionImages(perPage?: number, page?: number): Promise<Image[]>;
     /**
      * Get all application images
      *
      * @returns {Promise<Image[]>}
      * @memberof DropletService
      */
-    getAllApplicationImages(page?: number, perPage?: number): Promise<Image[]>;
+    getAllApplicationImages(perPage?: number, page?: number): Promise<Image[]>;
     /**
      * Get the private images of a user
      *
      * @returns {Promise<Image[]>}
      * @memberof DropletService
      */
-    getUserImages(page?: number, perPage?: number): Promise<Image[]>;
+    getUserImages(perPage?: number, page?: number): Promise<Image[]>;
     /**
      * Get all actions that have been executed on an image
      *

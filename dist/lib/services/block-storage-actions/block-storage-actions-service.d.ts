@@ -56,7 +56,7 @@ export declare class BlockStorageActionService extends DigitalOcean {
      * @returns {Promise<Action[]>}
      * @memberof BlockStorageActionsService
      */
-    getAllVolumeActions(volumeId: string, page?: number, perPage?: number): Promise<Action[]>;
+    getAllVolumeActions(volumeId: string, perPage?: number, page?: number): Promise<Action[]>;
     /**
      * Get an existing volume action based on the provided ID
      *

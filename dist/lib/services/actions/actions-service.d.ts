@@ -12,7 +12,7 @@ export declare class ActionService extends DigitalOcean {
      * @returns {Promise<Action[]>}
      * @memberof ActionsService
      */
-    getAllActions(page?: number, perPage?: number): Promise<Action[]>;
+    getAllActions(perPage?: number, page?: number): Promise<Action[]>;
     /**
      * Get an existing account action based on the provided ID
      *
