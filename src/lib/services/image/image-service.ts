@@ -39,11 +39,11 @@ export class ImageService extends DigitalOcean {
    * @returns {Promise<Image[]>}
    * @memberof DropletService
    */
-  public getAllDistributionImages(page?: number, perPage?: number): Promise<Image[]> {
+  public getAllDistributionImages(perPage?: number, page?: number): Promise<Image[]> {
     return new Promise((resolve, reject) => {
       page = page ? page : 1;
       perPage = perPage ? perPage : 25;
-      Axios.get(`${this.baseUrl}/images?type=distribution&page=${page}&perPage=${perPage}`).then((response) => {
+      Axios.get(`${this.baseUrl}/images?type=distribution&page=${page}&per_page=${perPage}`).then((response) => {
         // Return actual images instead of wrapped images
         resolve(response.data.images);
       }).catch((error) => {
@@ -58,11 +58,11 @@ export class ImageService extends DigitalOcean {
    * @returns {Promise<Image[]>}
    * @memberof DropletService
    */
-  public getAllApplicationImages(page?: number, perPage?: number): Promise<Image[]> {
+  public getAllApplicationImages(perPage?: number, page?: number): Promise<Image[]> {
     return new Promise((resolve, reject) => {
       page = page ? page : 1;
       perPage = perPage ? perPage : 25;
-      Axios.get(`${this.baseUrl}/images?type=application&page=${page}&perPage=${perPage}`).then((response) => {
+      Axios.get(`${this.baseUrl}/images?type=application&page=${page}&per_page=${perPage}`).then((response) => {
         // Return actual images instead of wrapped images
         resolve(response.data.images);
       }).catch((error) => {
@@ -77,11 +77,11 @@ export class ImageService extends DigitalOcean {
    * @returns {Promise<Image[]>}
    * @memberof DropletService
    */
-  public getUserImages(page?: number, perPage?: number): Promise<Image[]> {
+  public getUserImages(perPage?: number, page?: number): Promise<Image[]> {
     return new Promise((resolve, reject) => {
       page = page ? page : 1;
       perPage = perPage ? perPage : 25;
-      Axios.get(`${this.baseUrl}/images?private=true&page=${page}&perPage=${perPage}`).then((response) => {
+      Axios.get(`${this.baseUrl}/images?private=true&page=${page}&per_page=${perPage}`).then((response) => {
         // Return actual images instead of wrapped images
         resolve(response.data.images);
       }).catch((error) => {

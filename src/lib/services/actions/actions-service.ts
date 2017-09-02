@@ -24,7 +24,7 @@ export class ActionService extends DigitalOcean {
    * @returns {Promise<Action[]>}
    * @memberof ActionsService
    */
-  public getAllActions(page?: number, perPage?: number): Promise<Action[]> {
+  public getAllActions(perPage?: number, page?: number): Promise<Action[]> {
     page = page ? page : 1;
     perPage = perPage ? perPage : 25;
     return new Promise((resolve, reject) => {

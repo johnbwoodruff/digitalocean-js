@@ -118,7 +118,7 @@ export class BlockStorageActionService extends DigitalOcean {
    * @returns {Promise<Action[]>}
    * @memberof BlockStorageActionsService
    */
-  public getAllVolumeActions(volumeId: string, page?: number, perPage?: number): Promise<Action[]> {
+  public getAllVolumeActions(volumeId: string, perPage?: number, page?: number): Promise<Action[]> {
     page = page ? page : 1;
     perPage = perPage ? perPage : 25;
     return new Promise((resolve, reject) => {
