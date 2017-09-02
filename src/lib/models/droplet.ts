@@ -42,3 +42,12 @@ export interface DropletRequest {
   volumes: any[];
   tags: string[];
 }
+
+export interface DropletActionRequest {
+  type: string;
+  image?: string | number;
+  disk?: boolean;
+  size?: string;
+  name?: string;
+  kernel?: number;
+}

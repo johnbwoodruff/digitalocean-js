@@ -7,10 +7,15 @@ export * from './lib/services/certificate/certificate-service';
 export * from './lib/services/domain/domain-service';
 export * from './lib/services/domain-records/domain-record-service';
 export * from './lib/services/droplet/droplet-service';
+export * from './lib/services/droplet-actions/droplet-actions-service';
+export * from './lib/services/image/image-service';
+export * from './lib/services/region/region-service';
+export * from './lib/services/size/size-service';
 
 // Models
 export * from './lib/models/account';
 export * from './lib/models/action';
+export * from './lib/models/backup';
 export * from './lib/models/block-storage';
 export * from './lib/models/certificate';
 export * from './lib/models/domain-record';
