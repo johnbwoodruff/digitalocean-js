@@ -39,9 +39,11 @@ export class ImageService extends DigitalOcean {
    * @returns {Promise<Image[]>}
    * @memberof DropletService
    */
-  public getAllDistributionImages(): Promise<Image[]> {
+  public getAllDistributionImages(page?: number, perPage?: number): Promise<Image[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${this.baseUrl}/images?type=distribution`).then((response) => {
+      page = page ? page : 1;
+      perPage = perPage ? perPage : 25;
+      Axios.get(`${this.baseUrl}/images?type=distribution&page=${page}&perPage=${perPage}`).then((response) => {
         // Return actual images instead of wrapped images
         resolve(response.data.images);
       }).catch((error) => {
@@ -56,9 +58,11 @@ export class ImageService extends DigitalOcean {
    * @returns {Promise<Image[]>}
    * @memberof DropletService
    */
-  public getAllApplicationImages(): Promise<Image[]> {
+  public getAllApplicationImages(page?: number, perPage?: number): Promise<Image[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${this.baseUrl}/images?type=application`).then((response) => {
+      page = page ? page : 1;
+      perPage = perPage ? perPage : 25;
+      Axios.get(`${this.baseUrl}/images?type=application&page=${page}&perPage=${perPage}`).then((response) => {
         // Return actual images instead of wrapped images
         resolve(response.data.images);
       }).catch((error) => {
@@ -73,9 +77,11 @@ export class ImageService extends DigitalOcean {
    * @returns {Promise<Image[]>}
    * @memberof DropletService
    */
-  public getUserImages(): Promise<Image[]> {
+  public getUserImages(page?: number, perPage?: number): Promise<Image[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${this.baseUrl}/images?private=true`).then((response) => {
+      page = page ? page : 1;
+      perPage = perPage ? perPage : 25;
+      Axios.get(`${this.baseUrl}/images?private=true&page=${page}&perPage=${perPage}`).then((response) => {
         // Return actual images instead of wrapped images
         resolve(response.data.images);
       }).catch((error) => {
