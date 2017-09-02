@@ -33,14 +33,14 @@ export interface DropletRequest {
   region: string;
   size: string;
   image: number | string;
-  ssh_keys: any[];
-  backups: boolean;
-  ipv6: boolean;
-  private_networking: boolean;
-  user_data: string;
-  monitoring: boolean;
-  volumes: any[];
-  tags: string[];
+  ssh_keys?: any[];
+  backups?: boolean;
+  ipv6?: boolean;
+  private_networking?: boolean;
+  user_data?: string;
+  monitoring?: boolean;
+  volumes?: any[];
+  tags?: string[];
 }
 
 export interface DropletActionRequest {
