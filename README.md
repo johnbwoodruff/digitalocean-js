@@ -11,8 +11,6 @@ This library is still very early and very much under construction. Nothing is gu
 * Floating IPs
 * Floating IP Actions
 * Firewalls
-* Images
-* Image Actions
 * Load Balancers
 * Snapshots
 * SSH Keys
