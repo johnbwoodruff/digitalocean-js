@@ -10,3 +10,8 @@ export interface Image {
   size_gigabytes: number;
   created_at: string;
 }
+
+export interface ImageActionRequest {
+  type: string;
+  region?: string;
+}
