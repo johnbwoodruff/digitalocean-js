@@ -1,5 +1,7 @@
 # DigitalOcean JS
 
+[![Build Status](https://travis-ci.org/jbw91/digitalocean-js.svg?branch=master)](https://travis-ci.org/jbw91/digitalocean-js)
+
 JavaScript library for the DigitalOcean API.
 
 ## UNDER CONSTRUCTION
