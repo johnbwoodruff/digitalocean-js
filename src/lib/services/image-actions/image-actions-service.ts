@@ -3,7 +3,7 @@ import Axios from 'axios';
 import { DigitalOcean } from '../../digitalocean';
 import { Environment } from '../../conf/environment';
 import { Action } from '../../models/action';
-import { Image, ImageActionRequest } from '../../models/image';
+import { ImageActionRequest } from '../../models/image';
 
 export class ImageActionService extends DigitalOcean {
   private baseUrl: string;
