@@ -1,3 +1,6 @@
 {
-  "eslint.enable": false
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": true
+  // "typescript.implementationsCodeLens.enabled": true
+  // "typescript.referencesCodeLens.enabled": true
 }

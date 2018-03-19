@@ -9,7 +9,14 @@ export interface DomainRecord {
   weight: number | null;
 }
 
-export type DomainRecordTypes = 'A' | 'AAAA' | 'CNAME' | 'MX' | 'TXT' | 'NS' | 'SRV';
+export type DomainRecordTypes =
+  | 'A'
+  | 'AAAA'
+  | 'CNAME'
+  | 'MX'
+  | 'TXT'
+  | 'NS'
+  | 'SRV';
 
 export interface DomainRecordRequest {
   id?: number;

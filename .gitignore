@@ -1,2 +1,10 @@
-/node_modules/
-src/lib/conf/api-key.ts
+node_modules
+build
+test
+src/**.js
+
+coverage
+.nyc_output
+*.log
+
+package-lock.json

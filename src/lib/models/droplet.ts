@@ -1,8 +1,8 @@
-import { Region } from './region';
 import { Image } from './image';
-import { Size } from './size';
-import { Networks } from './networks';
 import { Kernel } from './kernel';
+import { Networks } from './networks';
+import { Region } from './region';
+import { Size } from './size';
 
 export interface Droplet {
   id: number;
@@ -22,7 +22,7 @@ export interface Droplet {
   size_slug: string;
   networks: Networks | null;
   kernel: Kernel | null;
-  next_backup_window: Object | null;
+  next_backup_window: any;
   tags: string[];
   volume_ids: string[];
 }
