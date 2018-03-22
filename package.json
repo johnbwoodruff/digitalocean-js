@@ -1,5 +1,5 @@
 {
-  "name": "typescript-starter",
+  "name": "digitalocean-js",
   "version": "0.2.3",
   "description": "JavaScript library for the DigitalOcean API.",
   "main": "build/main/index.js",
