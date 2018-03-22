@@ -70,5 +70,19 @@ export class SshService {
     });
   }
 
-  // TODO: Delete Key
+  /**
+   * Delete ssh key
+   */
+  public deleteKey(idOrFingerprint: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      Axios.delete(`${API_BASE_URL}/account/keys/${idOrFingerprint}`)
+        .then(() => {
+          // Return actual ssh key instead of wrapped ssh key
+          resolve();
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  }
 }

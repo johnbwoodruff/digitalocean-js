@@ -13,7 +13,9 @@ import { ImageActionService } from './services/image-actions-service';
 import { ImageService } from './services/image-service';
 import { RegionService } from './services/region-service';
 import { SizeService } from './services/size-service';
+import { SnapshotService } from './services/snapshot-service';
 import { SshService } from './services/ssh-service';
+import { TagService } from './services/tag-service';
 
 export class DigitalOcean {
   public account: AccountService;
@@ -29,7 +31,9 @@ export class DigitalOcean {
   public imageActions: ImageActionService;
   public regions: RegionService;
   public sizes: SizeService;
+  public snapshots: SnapshotService;
   public ssh: SshService;
+  public tags: TagService;
 
   constructor(private token: string) {
     Axios.defaults.headers.common.Authorization = `Bearer ${this.token}`;
@@ -48,6 +52,8 @@ export class DigitalOcean {
     this.imageActions = new ImageActionService();
     this.regions = new RegionService();
     this.sizes = new SizeService();
+    this.snapshots = new SnapshotService();
     this.ssh = new SshService();
+    this.tags = new TagService();
   }
 }
