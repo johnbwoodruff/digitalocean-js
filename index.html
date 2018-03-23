@@ -66,16 +66,28 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="digitalocean-js">DigitalOcean JS</h1>
 				<p><a href="https://travis-ci.org/jbw91/digitalocean-js"><img src="https://travis-ci.org/jbw91/digitalocean-js.svg?branch=master" alt="Build Status"></a></p>
-				<p>JavaScript library for the DigitalOcean API.</p>
-				<h2 id="under-construction">UNDER CONSTRUCTION</h2>
-				<p>This library is still very early and very much under construction. Nothing is guaranteed to work and no documentation will be provided until the initial release.</p>
+				<p>JavaScript library for the DigitalOcean API. For use in Node or the browser.</p>
+				<h2 id="usage">Usage</h2>
+				<p>To use the library, install from the npm repository.</p>
+				<pre><code class="lang-shell"><span class="hljs-meta">$</span><span class="bash"> npm install --save digitalocean-js</span>
+<span class="hljs-meta">#</span><span class="bash"> Alternatively install with yarn</span>
+<span class="hljs-meta">$</span><span class="bash"> yarn add digitalocean-js</span>
+</code></pre>
+				<p>Simply import the client and initialize it with your API token:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'my-api-token'</span>);
+</code></pre>
+				<p>To see all the services available, check out the <a href="http://johnbwoodruff.com/digitalocean-js/">documentation</a>.</p>
 				<h2 id="un-implemented-services">Un-Implemented Services</h2>
+				<p>There are a few unavailable aspects of the API currently. They are:</p>
 				<ul>
 					<li>Floating IPs</li>
 					<li>Floating IP Actions</li>
 					<li>Firewalls</li>
 					<li>Load Balancers</li>
 				</ul>
+				<p>If a service you need is unavailable, feel free to contribute a pull request!</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
