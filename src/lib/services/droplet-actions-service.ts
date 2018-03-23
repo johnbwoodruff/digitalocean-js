@@ -9,6 +9,14 @@ export class DropletActionService {
 
   /**
    * Enable backups on an existing droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.enableBackupsForDroplet('droplet-id');
+   * ```
    */
   public enableBackupsForDroplet(dropletId: number): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -28,6 +36,14 @@ export class DropletActionService {
 
   /**
    * Disable backups on an existing droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.disableBackupsForDroplet('droplet-id');
+   * ```
    */
   public disableBackupsForDroplet(dropletId: number): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -47,6 +63,14 @@ export class DropletActionService {
 
   /**
    * Reboot a droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.rebootDroplet('droplet-id');
+   * ```
    */
   public rebootDroplet(dropletId: number): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -66,6 +90,14 @@ export class DropletActionService {
 
   /**
    * Power cycle a droplet (power off then on)
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.powerCycleDroplet('droplet-id');
+   * ```
    */
   public powerCycleDroplet(dropletId: number): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -85,6 +117,14 @@ export class DropletActionService {
 
   /**
    * Shutdown a droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.shutdownDroplet('droplet-id');
+   * ```
    */
   public shutdownDroplet(dropletId: number): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -104,6 +144,14 @@ export class DropletActionService {
 
   /**
    * Power off a droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.powerOffDroplet('droplet-id');
+   * ```
    */
   public powerOffDroplet(dropletId: number): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -123,6 +171,14 @@ export class DropletActionService {
 
   /**
    * Power on a droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.powerOnDroplet('droplet-id');
+   * ```
    */
   public powerOnDroplet(dropletId: number): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -142,6 +198,14 @@ export class DropletActionService {
 
   /**
    * Restore a droplet using a backup image
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.restoreDroplet('droplet-id', 12389723);
+   * ```
    */
   public restoreDroplet(
     dropletId: number,
@@ -165,6 +229,14 @@ export class DropletActionService {
 
   /**
    * Reset the password for a droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.passwordResetDroplet('droplet-id');
+   * ```
    */
   public passwordResetDroplet(dropletId: number): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -184,6 +256,15 @@ export class DropletActionService {
 
   /**
    * Resize a droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions
+   *    .resizeDroplet('droplet-id', true, '1gb');
+   * ```
    */
   public resizeDroplet(
     dropletId: number,
@@ -209,6 +290,15 @@ export class DropletActionService {
 
   /**
    * Rebuild a droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions
+   *    .rebuildDroplet('droplet-id', 'ubuntu-16-04-x64');
+   * ```
    */
   public rebuildDroplet(
     dropletId: number,
@@ -232,6 +322,15 @@ export class DropletActionService {
 
   /**
    * Rename a droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions
+   *    .renameDroplet('droplet-id', 'nifty-new-name');
+   * ```
    */
   public renameDroplet(dropletId: number, name: string): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -252,6 +351,15 @@ export class DropletActionService {
 
   /**
    * Change the kernel of a droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions
+   *    .renameDroplet('droplet-id', 991);
+   * ```
    */
   public changeDropletKernel(
     dropletId: number,
@@ -275,6 +383,14 @@ export class DropletActionService {
 
   /**
    * Enable IPv6 networking on an existing droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.enableIPv6('droplet-id');
+   * ```
    */
   public enableIPv6(dropletId: number): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -294,6 +410,14 @@ export class DropletActionService {
 
   /**
    * Enable private networking on an existing droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions.enablePrivateNetworking('droplet-id');
+   * ```
    */
   public enablePrivateNetworking(dropletId: number): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -313,6 +437,15 @@ export class DropletActionService {
 
   /**
    * Take a snapshot of a droplet
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions
+   *    .snapshotDroplet('droplet-id', 'Nifty New Snapshot');
+   * ```
    */
   public snapshotDroplet(dropletId: number, name: string): Promise<Action> {
     return new Promise((resolve, reject) => {
@@ -335,6 +468,15 @@ export class DropletActionService {
 
   /**
    * Get a specific droplet action
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const action = await client.dropletActions
+   *    .getExistingDropletAction('droplet-id', 'action-id');
+   * ```
    */
   public getExistingDropletAction(
     dropletId: number,

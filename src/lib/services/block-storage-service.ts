@@ -9,6 +9,14 @@ export class BlockStorageService {
 
   /**
    * List all of the Block Storage volumes available on your account
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const volumes = await client.blockStorage.getAllBlockStorage();
+   * ```
    */
   public getAllBlockStorage(): Promise<BlockStorage[]> {
     return new Promise((resolve, reject) => {
@@ -25,6 +33,20 @@ export class BlockStorageService {
 
   /**
    * Create a new Block Storage volume
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const request = {
+   *   size_gigabytes: 10,
+   *   name: 'example',
+   *   description: 'Block store for examples',
+   *   region: 'nyc1'
+   * };
+   * const volume = await client.blockStorage.createBlockStorage(request);
+   * ```
    */
   public createBlockStorage(
     volume: BlockStorageRequest
@@ -43,6 +65,14 @@ export class BlockStorageService {
 
   /**
    * Get a single Block Storage volume by ID
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const volume = await client.blockStorage.getBlockStorageById('volume-id');
+   * ```
    */
   public getBlockStorageById(id: string): Promise<BlockStorage> {
     return new Promise((resolve, reject) => {
@@ -59,6 +89,15 @@ export class BlockStorageService {
 
   /**
    * Get Block Storage volumes by name and region
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const volume = await client.blockStorage
+   *    .getBlockStorageByName('volume-name', 'nyc1');
+   * ```
    */
   public getBlockStorageByName(
     name: string,
@@ -78,6 +117,15 @@ export class BlockStorageService {
 
   /**
    * Get snapshots that have been created from a Block Storage volume
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const snapshots = await client.blockStorage
+   *    .getSnapshotsForVolume('volume-id');
+   * ```
    */
   public getSnapshotsForVolume(id: string): Promise<Snapshot[]> {
     return new Promise((resolve, reject) => {
@@ -94,6 +142,15 @@ export class BlockStorageService {
 
   /**
    * Create a snapshot from a Block Storage volume
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const snapshot = await client.blockStorage
+   *    .createSnapshotFromVolume('volume-id', 'my-new-snapshot');
+   * ```
    */
   public createSnapshotFromVolume(id: string, name: string): Promise<Snapshot> {
     return new Promise((resolve, reject) => {
@@ -110,6 +167,14 @@ export class BlockStorageService {
 
   /**
    * Delete a Block Storage volume by ID
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * await client.blockStorage.deleteBlockStorageById('volume-id');
+   * ```
    */
   public deleteBlockStorageById(id: string): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -125,6 +190,14 @@ export class BlockStorageService {
 
   /**
    * Delete a Block Storage volume by name and region
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * await client.blockStorage.deleteBlockStorageByName('volume-name', 'nyc1');
+   * ```
    */
   public deleteBlockStorageByName(
     name: string,

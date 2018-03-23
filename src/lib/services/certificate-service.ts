@@ -8,6 +8,20 @@ export class CertificateService {
 
   /**
    * Upload a new SSL Certificate
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const request = {
+   *   name: 'web-cert-01',
+   *   private_key: '-----BEGIN PRIVATE KEY-----...',
+   *   leaf_certificate: '-----BEGIN CERTIFICATE-----...',
+   *   certificate_chain: '-----BEGIN CERTIFICATE-----...'
+   * };
+   * const cert = await client.certificates.createCertificate(request);
+   * ```
    */
   public createCertificate(
     certificateRequest: CertificateRequest
@@ -26,6 +40,14 @@ export class CertificateService {
 
   /**
    * Get information about an existing SSL Certificate
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const cert = await client.certificates.getExistingCertificate('cert-id');
+   * ```
    */
   public getExistingCertificate(certificateId: string): Promise<Certificate> {
     return new Promise((resolve, reject) => {
@@ -42,6 +64,14 @@ export class CertificateService {
 
   /**
    * Get information about all SSL Certificates on your account
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const certs = await client.certificates.getAllCertificates();
+   * ```
    */
   public getAllCertificates(): Promise<Certificate[]> {
     return new Promise((resolve, reject) => {
@@ -58,6 +88,14 @@ export class CertificateService {
 
   /**
    * Delete a specific SSL Certificate from the provided ID
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * await client.certificates.deleteCertificate('cert-id');
+   * ```
    */
   public deleteCertificate(certificateId: string): Promise<void> {
     return new Promise((resolve, reject) => {

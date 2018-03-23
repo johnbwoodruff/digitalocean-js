@@ -8,6 +8,14 @@ export class RegionService {
 
   /**
    * Get all regions
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const regions = await client.regions.getAllRegions();
+   * ```
    */
   public getAllRegions(): Promise<Region[]> {
     return new Promise((resolve, reject) => {

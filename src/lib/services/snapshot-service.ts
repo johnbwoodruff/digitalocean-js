@@ -11,6 +11,19 @@ export class SnapshotService {
   /**
    * Get all snapshots on the account.
    * Optionally provide a resource type to filter snapshots.
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * // Get all snapshots
+   * const snapshots = await client.snapshots.getSnapshots();
+   * // Get all droplet snapshots
+   * snapshots = await client.snapshots.getSnapshots('droplet');
+   * // Get all volume snapshots
+   * snapshots = await client.snapshots.getSnapshots('volume');
+   * ```
    */
   public getSnapshots(resourceType?: SnapshotType): Promise<Snapshot[]> {
     return new Promise((resolve, reject) => {
@@ -31,6 +44,14 @@ export class SnapshotService {
 
   /**
    * Get a specific existing snapshot by ID
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const snapshot = await client.snapshots.getSnapshotById('snapshot-id');
+   * ```
    */
   public getSnapshotById(snapshotId: string): Promise<Snapshot> {
     return new Promise((resolve, reject) => {
@@ -47,6 +68,14 @@ export class SnapshotService {
 
   /**
    * Delete a specific snapshot by ID
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * await client.snapshots.deleteSnapshot('snapshot-id');
+   * ```
    */
   public deleteSnapshot(snapshotId: string): Promise<void> {
     return new Promise((resolve, reject) => {
