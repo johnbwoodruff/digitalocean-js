@@ -1,6 +1,6 @@
 # DigitalOcean JS
 
-[![Build Status](https://travis-ci.org/jbw91/digitalocean-js.svg?branch=master)](https://travis-ci.org/jbw91/digitalocean-js)
+[![Build Status](https://travis-ci.org/jbw91/digitalocean-js.svg?branch=master)](https://travis-ci.org/jbw91/digitalocean-js) [![npm](https://img.shields.io/npm/dm/digitalocean-js.svg)](https://www.npmjs.com/package/digitalocean-js) [![npm](https://img.shields.io/npm/dt/digitalocean-js.svg)](https://www.npmjs.com/package/digitalocean-js) [![npm](https://img.shields.io/npm/v/digitalocean-js.svg)](https://www.npmjs.com/package/digitalocean-js)
 
 JavaScript library for the DigitalOcean API. For use in Node or the browser.
 
