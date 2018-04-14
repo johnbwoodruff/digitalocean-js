@@ -22,14 +22,12 @@ import { DigitalOcean } from 'digitalocean-js';
 const client = new DigitalOcean('my-api-token');
 ```
 
-To see all the services available, check out the [documentation](http://johnbwoodruff.com/digitalocean-js/).
+To see all the services available, check out the [documentation](https://jbw91.github.io/digitalocean-js/).
 
 ## Un-Implemented Services
 
 There are a few unavailable aspects of the API currently. They are:
 
-* Floating IPs
-* Floating IP Actions
 * Firewalls
 * Load Balancers
 
