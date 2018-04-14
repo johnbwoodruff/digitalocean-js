@@ -9,6 +9,7 @@ import { DomainRecordService } from './services/domain-record-service';
 import { DomainService } from './services/domain-service';
 import { DropletActionService } from './services/droplet-actions-service';
 import { DropletService } from './services/droplet-service';
+import { FloatingIPActionService } from './services/floating-ip-actions-service';
 import { FloatingIPService } from './services/floating-ip-service';
 import { ImageActionService } from './services/image-actions-service';
 import { ImageService } from './services/image-service';
@@ -29,6 +30,7 @@ export class DigitalOcean {
   public droplets: DropletService;
   public dropletActions: DropletActionService;
   public floatingIPs: FloatingIPService;
+  public floatingIPActions: FloatingIPActionService;
   public images: ImageService;
   public imageActions: ImageActionService;
   public regions: RegionService;
@@ -51,6 +53,7 @@ export class DigitalOcean {
     this.droplets = new DropletService();
     this.dropletActions = new DropletActionService();
     this.floatingIPs = new FloatingIPService();
+    this.floatingIPActions = new FloatingIPActionService();
     this.images = new ImageService();
     this.imageActions = new ImageActionService();
     this.regions = new RegionService();
