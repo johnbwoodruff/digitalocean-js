@@ -80,6 +80,8 @@
 								<li class="tsd-kind-class"><a href="classes/domainservice.html" class="tsd-kind-icon">Domain<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/dropletactionservice.html" class="tsd-kind-icon">Droplet<wbr>Action<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/dropletservice.html" class="tsd-kind-icon">Droplet<wbr>Service</a></li>
+								<li class="tsd-kind-class"><a href="classes/floatingipactionservice.html" class="tsd-kind-icon">FloatingIPAction<wbr>Service</a></li>
+								<li class="tsd-kind-class"><a href="classes/floatingipservice.html" class="tsd-kind-icon">FloatingIPService</a></li>
 								<li class="tsd-kind-class"><a href="classes/imageactionservice.html" class="tsd-kind-icon">Image<wbr>Action<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/imageservice.html" class="tsd-kind-icon">Image<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/regionservice.html" class="tsd-kind-icon">Region<wbr>Service</a></li>
@@ -107,6 +109,7 @@
 								<li class="tsd-kind-interface"><a href="interfaces/droplet.html" class="tsd-kind-icon">Droplet</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/dropletactionrequest.html" class="tsd-kind-icon">Droplet<wbr>Action<wbr>Request</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/dropletrequest.html" class="tsd-kind-icon">Droplet<wbr>Request</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/floatingip.html" class="tsd-kind-icon">FloatingIP</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/image.html" class="tsd-kind-icon">Image</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/imageactionrequest.html" class="tsd-kind-icon">Image<wbr>Action<wbr>Request</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/kernel.html" class="tsd-kind-icon">Kernel</a></li>
@@ -144,7 +147,7 @@
 					<div class="tsd-signature tsd-kind-icon">Action<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"attach"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"detach"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"resize"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7e7f054/src/lib/models/action.ts#L15">lib/models/action.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/models/action.ts#L15">lib/models/action.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -154,7 +157,7 @@
 					<div class="tsd-signature tsd-kind-icon">Domain<wbr>Record<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"A"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"AAAA"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"CNAME"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"MX"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"TXT"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"NS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"SRV"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7e7f054/src/lib/models/domain-record.ts#L12">lib/models/domain-record.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/models/domain-record.ts#L12">lib/models/domain-record.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -164,7 +167,7 @@
 					<div class="tsd-signature tsd-kind-icon">Snapshot<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"all"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"droplet"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"volume"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7e7f054/src/lib/services/snapshot-service.ts#L6">lib/services/snapshot-service.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/snapshot-service.ts#L6">lib/services/snapshot-service.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -177,7 +180,7 @@
 					<div class="tsd-signature tsd-kind-icon">API_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://api.digitalocean.com/v2"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://api.digitalocean.com/v2&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7e7f054/src/lib/conf/environment.ts#L4">lib/conf/environment.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/conf/environment.ts#L4">lib/conf/environment.ts:4</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -227,6 +230,12 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/dropletservice.html" class="tsd-kind-icon">Droplet<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/floatingipactionservice.html" class="tsd-kind-icon">FloatingIPAction<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/floatingipservice.html" class="tsd-kind-icon">FloatingIPService</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/imageactionservice.html" class="tsd-kind-icon">Image<wbr>Action<wbr>Service</a>
@@ -293,6 +302,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/dropletrequest.html" class="tsd-kind-icon">Droplet<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/floatingip.html" class="tsd-kind-icon">FloatingIP</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/image.html" class="tsd-kind-icon">Image</a>

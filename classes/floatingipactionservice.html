@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DomainService | digitalocean-js</title>
+	<title>FloatingIPActionService | digitalocean-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="domainservice.html">DomainService</a>
+					<a href="floatingipactionservice.html">FloatingIPActionService</a>
 				</li>
 			</ul>
-			<h1>Class DomainService</h1>
+			<h1>Class FloatingIPActionService</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DomainService</span>
+						<span class="target">FloatingIPActionService</span>
 					</li>
 				</ul>
 			</section>
@@ -81,16 +81,16 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="domainservice.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="floatingipactionservice.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="domainservice.html#createdomain" class="tsd-kind-icon">create<wbr>Domain</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="domainservice.html#deletedomain" class="tsd-kind-icon">delete<wbr>Domain</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="domainservice.html#getalldomains" class="tsd-kind-icon">get<wbr>All<wbr>Domains</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="domainservice.html#getexistingdomain" class="tsd-kind-icon">get<wbr>Existing<wbr>Domain</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="floatingipactionservice.html#assignfloatingiptodroplet" class="tsd-kind-icon">assign<wbr>FloatingIPTo<wbr>Droplet</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="floatingipactionservice.html#getallfloatingipactions" class="tsd-kind-icon">get<wbr>All<wbr>FloatingIPActions</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="floatingipactionservice.html#getexistingfloatingipaction" class="tsd-kind-icon">get<wbr>Existing<wbr>FloatingIPAction</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="floatingipactionservice.html#unassignfloatingip" class="tsd-kind-icon">unassign<wbr>FloatingIP</a></li>
 							</ul>
 						</section>
 					</div>
@@ -102,16 +102,16 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Domain<wbr>Service<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="domainservice.html" class="tsd-signature-type">DomainService</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>FloatingIPAction<wbr>Service<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="floatingipactionservice.html" class="tsd-signature-type">FloatingIPActionService</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/domain-service.ts#L6">lib/services/domain-service.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/floating-ip-actions-service.ts#L6">lib/services/floating-ip-actions-service.ts:6</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="domainservice.html" class="tsd-signature-type">DomainService</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="floatingipactionservice.html" class="tsd-signature-type">FloatingIPActionService</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -119,136 +119,148 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="createdomain" class="tsd-anchor"></a>
-					<h3>create<wbr>Domain</h3>
+					<a name="assignfloatingiptodroplet" class="tsd-anchor"></a>
+					<h3>assign<wbr>FloatingIPTo<wbr>Droplet</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Domain<span class="tsd-signature-symbol">(</span>domainRequest<span class="tsd-signature-symbol">: </span><a href="../interfaces/domainrequest.html" class="tsd-signature-type">DomainRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">assign<wbr>FloatingIPTo<wbr>Droplet<span class="tsd-signature-symbol">(</span>floatingIPAddress<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, dropletId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/action.html" class="tsd-signature-type">Action</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/domain-service.ts#L48">lib/services/domain-service.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/floating-ip-actions-service.ts#L21">lib/services/floating-ip-actions-service.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Create a new domain on your account</p>
+									<p>Assign an existing Floating IP to a Droplet</p>
 								</div>
 								<h3 id="example">Example</h3>
 								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">name</span>: <span class="hljs-string">'example.com'</span>,
-  <span class="hljs-attr">ip_address</span>: <span class="hljs-string">'1.2.3.4'</span>
-};
-<span class="hljs-keyword">const</span> domain = <span class="hljs-keyword">await</span> client.domains.createDomain(request);
+<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.floatingIPActions
+   .assignFloatingIPToDroplet(<span class="hljs-string">'1.2.3.4'</span>, <span class="hljs-string">'droplet-id'</span>);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>domainRequest: <a href="../interfaces/domainrequest.html" class="tsd-signature-type">DomainRequest</a></h5>
+									<h5>floatingIPAddress: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>dropletId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/action.html" class="tsd-signature-type">Action</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="deletedomain" class="tsd-anchor"></a>
-					<h3>delete<wbr>Domain</h3>
+					<a name="getallfloatingipactions" class="tsd-anchor"></a>
+					<h3>get<wbr>All<wbr>FloatingIPActions</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">delete<wbr>Domain<span class="tsd-signature-symbol">(</span>domainName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>All<wbr>FloatingIPActions<span class="tsd-signature-symbol">(</span>floatingIPAddress<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/action.html" class="tsd-signature-type">Action</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/domain-service.ts#L96">lib/services/domain-service.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/floating-ip-actions-service.ts#L87">lib/services/floating-ip-actions-service.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Delete a specific domain from your account</p>
+									<p>Retrieve all actions that have been executed on a Floating IP</p>
 								</div>
 								<h3 id="example">Example</h3>
 								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.domains.deleteDomain(<span class="hljs-string">'example.com'</span>);
+<span class="hljs-keyword">const</span> actions = <span class="hljs-keyword">await</span> client.floatingIPActions
+   .getAllFloatingIPActions(<span class="hljs-string">'1.2.3.4'</span>);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>domainName: <span class="tsd-signature-type">string</span></h5>
+									<h5>floatingIPAddress: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/action.html" class="tsd-signature-type">Action</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getalldomains" class="tsd-anchor"></a>
-					<h3>get<wbr>All<wbr>Domains</h3>
+					<a name="getexistingfloatingipaction" class="tsd-anchor"></a>
+					<h3>get<wbr>Existing<wbr>FloatingIPAction</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>All<wbr>Domains<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Existing<wbr>FloatingIPAction<span class="tsd-signature-symbol">(</span>floatingIPAddress<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, actionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/action.html" class="tsd-signature-type">Action</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/domain-service.ts#L20">lib/services/domain-service.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/floating-ip-actions-service.ts#L112">lib/services/floating-ip-actions-service.ts:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get a list of all the domains on your account</p>
+									<p>Retrieve the status of a Floating IP action</p>
 								</div>
 								<h3 id="example">Example</h3>
 								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> domains = <span class="hljs-keyword">await</span> client.domains.getAllDomains();
-</code></pre>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getexistingdomain" class="tsd-anchor"></a>
-					<h3>get<wbr>Existing<wbr>Domain</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Existing<wbr>Domain<span class="tsd-signature-symbol">(</span>domainName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/domain-service.ts#L72">lib/services/domain-service.ts:72</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get information about a specific domain</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> domain = <span class="hljs-keyword">await</span> client.domains.getExistingDomain(<span class="hljs-string">'example.com'</span>);
+<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.floatingIPActions
+   .getExistingFloatingIPAction(<span class="hljs-string">'1.2.3.4'</span>, <span class="hljs-string">'action-id'</span>);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>domainName: <span class="tsd-signature-type">string</span></h5>
+									<h5>floatingIPAddress: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>actionId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/action.html" class="tsd-signature-type">Action</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="unassignfloatingip" class="tsd-anchor"></a>
+					<h3>unassign<wbr>FloatingIP</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">unassign<wbr>FloatingIP<span class="tsd-signature-symbol">(</span>floatingIPAddress<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/action.html" class="tsd-signature-type">Action</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/services/floating-ip-actions-service.ts#L56">lib/services/floating-ip-actions-service.ts:56</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Unassign an existing Floating IP</p>
+								</div>
+								<h3 id="example">Example</h3>
+								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.floatingIPActions
+   .unassignFloatingIP(<span class="hljs-string">'1.2.3.4'</span>);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>floatingIPAddress: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/action.html" class="tsd-signature-type">Action</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -267,22 +279,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="domainservice.html" class="tsd-kind-icon">Domain<wbr>Service</a>
+						<a href="floatingipactionservice.html" class="tsd-kind-icon">FloatingIPAction<wbr>Service</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="domainservice.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="floatingipactionservice.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="domainservice.html#createdomain" class="tsd-kind-icon">create<wbr>Domain</a>
+								<a href="floatingipactionservice.html#assignfloatingiptodroplet" class="tsd-kind-icon">assign<wbr>FloatingIPTo<wbr>Droplet</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="domainservice.html#deletedomain" class="tsd-kind-icon">delete<wbr>Domain</a>
+								<a href="floatingipactionservice.html#getallfloatingipactions" class="tsd-kind-icon">get<wbr>All<wbr>FloatingIPActions</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="domainservice.html#getalldomains" class="tsd-kind-icon">get<wbr>All<wbr>Domains</a>
+								<a href="floatingipactionservice.html#getexistingfloatingipaction" class="tsd-kind-icon">get<wbr>Existing<wbr>FloatingIPAction</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="domainservice.html#getexistingdomain" class="tsd-kind-icon">get<wbr>Existing<wbr>Domain</a>
+								<a href="floatingipactionservice.html#unassignfloatingip" class="tsd-kind-icon">unassign<wbr>FloatingIP</a>
 							</li>
 						</ul>
 					</li>

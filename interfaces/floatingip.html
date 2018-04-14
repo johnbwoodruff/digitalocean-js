@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ActionRequest | digitalocean-js</title>
+	<title>FloatingIP | digitalocean-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="actionrequest.html">ActionRequest</a>
+					<a href="floatingip.html">FloatingIP</a>
 				</li>
 			</ul>
-			<h1>Interface ActionRequest</h1>
+			<h1>Interface FloatingIP</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ActionRequest</span>
+						<span class="target">FloatingIP</span>
 					</li>
 				</ul>
 			</section>
@@ -81,11 +81,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="actionrequest.html#droplet_id" class="tsd-kind-icon">droplet_<wbr>id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="actionrequest.html#region" class="tsd-kind-icon">region</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="actionrequest.html#size_gigabytes" class="tsd-kind-icon">size_<wbr>gigabytes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="actionrequest.html#type" class="tsd-kind-icon">type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="actionrequest.html#volume_name" class="tsd-kind-icon">volume_<wbr>name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="floatingip.html#droplet" class="tsd-kind-icon">droplet</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="floatingip.html#ip" class="tsd-kind-icon">ip</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="floatingip.html#region" class="tsd-kind-icon">region</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,52 +92,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="droplet_id" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> droplet_<wbr>id</h3>
-					<div class="tsd-signature tsd-kind-icon">droplet_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<a name="droplet" class="tsd-anchor"></a>
+					<h3>droplet</h3>
+					<div class="tsd-signature tsd-kind-icon">droplet<span class="tsd-signature-symbol">:</span> <a href="droplet.html" class="tsd-signature-type">Droplet</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/models/action.ts#L20">lib/models/action.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/models/floating-ip.ts#L7">lib/models/floating-ip.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="ip" class="tsd-anchor"></a>
+					<h3>ip</h3>
+					<div class="tsd-signature tsd-kind-icon">ip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/models/floating-ip.ts#L5">lib/models/floating-ip.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="region" class="tsd-anchor"></a>
 					<h3>region</h3>
-					<div class="tsd-signature tsd-kind-icon">region<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">region<span class="tsd-signature-symbol">:</span> <a href="region.html" class="tsd-signature-type">Region</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/models/action.ts#L19">lib/models/action.ts:19</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="size_gigabytes" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> size_<wbr>gigabytes</h3>
-					<div class="tsd-signature tsd-kind-icon">size_<wbr>gigabytes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/models/action.ts#L21">lib/models/action.ts:21</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../globals.html#actiontype" class="tsd-signature-type">ActionType</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/models/action.ts#L18">lib/models/action.ts:18</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="volume_name" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> volume_<wbr>name</h3>
-					<div class="tsd-signature tsd-kind-icon">volume_<wbr>name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/models/action.ts#L22">lib/models/action.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/a383a54/src/lib/models/floating-ip.ts#L6">lib/models/floating-ip.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -158,22 +136,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="actionrequest.html" class="tsd-kind-icon">Action<wbr>Request</a>
+						<a href="floatingip.html" class="tsd-kind-icon">FloatingIP</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="actionrequest.html#droplet_id" class="tsd-kind-icon">droplet_<wbr>id</a>
+								<a href="floatingip.html#droplet" class="tsd-kind-icon">droplet</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="actionrequest.html#region" class="tsd-kind-icon">region</a>
+								<a href="floatingip.html#ip" class="tsd-kind-icon">ip</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="actionrequest.html#size_gigabytes" class="tsd-kind-icon">size_<wbr>gigabytes</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="actionrequest.html#type" class="tsd-kind-icon">type</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="actionrequest.html#volume_name" class="tsd-kind-icon">volume_<wbr>name</a>
+								<a href="floatingip.html#region" class="tsd-kind-icon">region</a>
 							</li>
 						</ul>
 					</li>
