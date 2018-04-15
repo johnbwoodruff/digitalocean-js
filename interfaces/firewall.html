@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DropletRequest | digitalocean-js</title>
+	<title>Firewall | digitalocean-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="dropletrequest.html">DropletRequest</a>
+					<a href="firewall.html">Firewall</a>
 				</li>
 			</ul>
-			<h1>Interface DropletRequest</h1>
+			<h1>Interface Firewall</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DropletRequest</span>
+						<span class="target">Firewall</span>
 					</li>
 				</ul>
 			</section>
@@ -81,19 +81,15 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#backups" class="tsd-kind-icon">backups</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#image" class="tsd-kind-icon">image</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#ipv6" class="tsd-kind-icon">ipv6</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#monitoring" class="tsd-kind-icon">monitoring</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#names" class="tsd-kind-icon">names</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#private_networking" class="tsd-kind-icon">private_<wbr>networking</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#region" class="tsd-kind-icon">region</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#size" class="tsd-kind-icon">size</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#ssh_keys" class="tsd-kind-icon">ssh_<wbr>keys</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#tags" class="tsd-kind-icon">tags</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#user_data" class="tsd-kind-icon">user_<wbr>data</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dropletrequest.html#volumes" class="tsd-kind-icon">volumes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewall.html#created_at" class="tsd-kind-icon">created_<wbr>at</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewall.html#droplet_ids" class="tsd-kind-icon">droplet_<wbr>ids</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewall.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewall.html#inbound_rules" class="tsd-kind-icon">inbound_<wbr>rules</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewall.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewall.html#outbound_rules" class="tsd-kind-icon">outbound_<wbr>rules</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewall.html#pending_changes" class="tsd-kind-icon">pending_<wbr>changes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewall.html#status" class="tsd-kind-icon">status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewall.html#tags" class="tsd-kind-icon">tags</a></li>
 							</ul>
 						</section>
 					</div>
@@ -102,132 +98,92 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="backups" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> backups</h3>
-					<div class="tsd-signature tsd-kind-icon">backups<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
+					<a name="created_at" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> created_<wbr>at</h3>
+					<div class="tsd-signature tsd-kind-icon">created_<wbr>at<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L37">lib/models/droplet.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/firewall.ts#L4">lib/models/firewall.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="image" class="tsd-anchor"></a>
-					<h3>image</h3>
-					<div class="tsd-signature tsd-kind-icon">image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="droplet_ids" class="tsd-anchor"></a>
+					<h3>droplet_<wbr>ids</h3>
+					<div class="tsd-signature tsd-kind-icon">droplet_<wbr>ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L35">lib/models/droplet.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/firewall.ts#L9">lib/models/firewall.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="ipv6" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ipv6</h3>
-					<div class="tsd-signature tsd-kind-icon">ipv6<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
+					<a name="id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L38">lib/models/droplet.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/firewall.ts#L2">lib/models/firewall.ts:2</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="monitoring" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> monitoring</h3>
-					<div class="tsd-signature tsd-kind-icon">monitoring<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
+					<a name="inbound_rules" class="tsd-anchor"></a>
+					<h3>inbound_<wbr>rules</h3>
+					<div class="tsd-signature tsd-kind-icon">inbound_<wbr>rules<span class="tsd-signature-symbol">:</span> <a href="firewallinboundrule.html" class="tsd-signature-type">FirewallInboundRule</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L41">lib/models/droplet.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/firewall.ts#L7">lib/models/firewall.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="name" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L31">lib/models/droplet.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/firewall.ts#L6">lib/models/firewall.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="names" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> names</h3>
-					<div class="tsd-signature tsd-kind-icon">names<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="outbound_rules" class="tsd-anchor"></a>
+					<h3>outbound_<wbr>rules</h3>
+					<div class="tsd-signature tsd-kind-icon">outbound_<wbr>rules<span class="tsd-signature-symbol">:</span> <a href="firewalloutboundrule.html" class="tsd-signature-type">FirewallOutboundRule</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L32">lib/models/droplet.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/firewall.ts#L8">lib/models/firewall.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="private_networking" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> private_<wbr>networking</h3>
-					<div class="tsd-signature tsd-kind-icon">private_<wbr>networking<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
+					<a name="pending_changes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> pending_<wbr>changes</h3>
+					<div class="tsd-signature tsd-kind-icon">pending_<wbr>changes<span class="tsd-signature-symbol">:</span> <a href="firewallchange.html" class="tsd-signature-type">FirewallChange</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L39">lib/models/droplet.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/firewall.ts#L5">lib/models/firewall.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="region" class="tsd-anchor"></a>
-					<h3>region</h3>
-					<div class="tsd-signature tsd-kind-icon">region<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="status" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> status</h3>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L33">lib/models/droplet.ts:33</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="size" class="tsd-anchor"></a>
-					<h3>size</h3>
-					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L34">lib/models/droplet.ts:34</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="ssh_keys" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ssh_<wbr>keys</h3>
-					<div class="tsd-signature tsd-kind-icon">ssh_<wbr>keys<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L36">lib/models/droplet.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/firewall.ts#L3">lib/models/firewall.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="tags" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tags</h3>
+					<h3>tags</h3>
 					<div class="tsd-signature tsd-kind-icon">tags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L43">lib/models/droplet.ts:43</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="user_data" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> user_<wbr>data</h3>
-					<div class="tsd-signature tsd-kind-icon">user_<wbr>data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L40">lib/models/droplet.ts:40</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="volumes" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> volumes</h3>
-					<div class="tsd-signature tsd-kind-icon">volumes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/droplet.ts#L42">lib/models/droplet.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/06d2a91/src/lib/models/firewall.ts#L10">lib/models/firewall.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -246,46 +202,34 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="dropletrequest.html" class="tsd-kind-icon">Droplet<wbr>Request</a>
+						<a href="firewall.html" class="tsd-kind-icon">Firewall</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#backups" class="tsd-kind-icon">backups</a>
+								<a href="firewall.html#created_at" class="tsd-kind-icon">created_<wbr>at</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#image" class="tsd-kind-icon">image</a>
+								<a href="firewall.html#droplet_ids" class="tsd-kind-icon">droplet_<wbr>ids</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#ipv6" class="tsd-kind-icon">ipv6</a>
+								<a href="firewall.html#id" class="tsd-kind-icon">id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#monitoring" class="tsd-kind-icon">monitoring</a>
+								<a href="firewall.html#inbound_rules" class="tsd-kind-icon">inbound_<wbr>rules</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#name" class="tsd-kind-icon">name</a>
+								<a href="firewall.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#names" class="tsd-kind-icon">names</a>
+								<a href="firewall.html#outbound_rules" class="tsd-kind-icon">outbound_<wbr>rules</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#private_networking" class="tsd-kind-icon">private_<wbr>networking</a>
+								<a href="firewall.html#pending_changes" class="tsd-kind-icon">pending_<wbr>changes</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#region" class="tsd-kind-icon">region</a>
+								<a href="firewall.html#status" class="tsd-kind-icon">status</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#size" class="tsd-kind-icon">size</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#ssh_keys" class="tsd-kind-icon">ssh_<wbr>keys</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#tags" class="tsd-kind-icon">tags</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#user_data" class="tsd-kind-icon">user_<wbr>data</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dropletrequest.html#volumes" class="tsd-kind-icon">volumes</a>
+								<a href="firewall.html#tags" class="tsd-kind-icon">tags</a>
 							</li>
 						</ul>
 					</li>
