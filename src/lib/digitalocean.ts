@@ -9,6 +9,7 @@ import { DomainRecordService } from './services/domain-record-service';
 import { DomainService } from './services/domain-service';
 import { DropletActionService } from './services/droplet-actions-service';
 import { DropletService } from './services/droplet-service';
+import { FirewallService } from './services/firewall-service';
 import { FloatingIPActionService } from './services/floating-ip-actions-service';
 import { FloatingIPService } from './services/floating-ip-service';
 import { ImageActionService } from './services/image-actions-service';
@@ -29,6 +30,7 @@ export class DigitalOcean {
   public domainRecords: DomainRecordService;
   public droplets: DropletService;
   public dropletActions: DropletActionService;
+  public firewalls: FirewallService;
   public floatingIPs: FloatingIPService;
   public floatingIPActions: FloatingIPActionService;
   public images: ImageService;
@@ -52,6 +54,7 @@ export class DigitalOcean {
     this.domainRecords = new DomainRecordService();
     this.droplets = new DropletService();
     this.dropletActions = new DropletActionService();
+    this.firewalls = new FirewallService();
     this.floatingIPs = new FloatingIPService();
     this.floatingIPActions = new FloatingIPActionService();
     this.images = new ImageService();
