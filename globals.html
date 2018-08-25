@@ -85,6 +85,7 @@
 								<li class="tsd-kind-class"><a href="classes/floatingipservice.html" class="tsd-kind-icon">FloatingIPService</a></li>
 								<li class="tsd-kind-class"><a href="classes/imageactionservice.html" class="tsd-kind-icon">Image<wbr>Action<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/imageservice.html" class="tsd-kind-icon">Image<wbr>Service</a></li>
+								<li class="tsd-kind-class"><a href="classes/loadbalancerservice.html" class="tsd-kind-icon">Load<wbr>Balancer<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/regionservice.html" class="tsd-kind-icon">Region<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/sizeservice.html" class="tsd-kind-icon">Size<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/snapshotservice.html" class="tsd-kind-icon">Snapshot<wbr>Service</a></li>
@@ -116,15 +117,19 @@
 								<li class="tsd-kind-interface"><a href="interfaces/firewalloutboundrule.html" class="tsd-kind-icon">Firewall<wbr>Outbound<wbr>Rule</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/firewallsourcedestination.html" class="tsd-kind-icon">Firewall<wbr>Source<wbr>Destination</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/floatingip.html" class="tsd-kind-icon">FloatingIP</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/forwardingrule.html" class="tsd-kind-icon">Forwarding<wbr>Rule</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/healthcheck.html" class="tsd-kind-icon">Health<wbr>Check</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/image.html" class="tsd-kind-icon">Image</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/imageactionrequest.html" class="tsd-kind-icon">Image<wbr>Action<wbr>Request</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/kernel.html" class="tsd-kind-icon">Kernel</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/loadbalancer.html" class="tsd-kind-icon">Load<wbr>Balancer</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/network.html" class="tsd-kind-icon">Network</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/networks.html" class="tsd-kind-icon">Networks</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/region.html" class="tsd-kind-icon">Region</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/size.html" class="tsd-kind-icon">Size</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/snapshot.html" class="tsd-kind-icon">Snapshot</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/sshkey.html" class="tsd-kind-icon">Ssh<wbr>Key</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/stickysession.html" class="tsd-kind-icon">Sticky<wbr>Session</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/tag.html" class="tsd-kind-icon">Tag</a></li>
 							</ul>
 						</section>
@@ -153,7 +158,7 @@
 					<div class="tsd-signature tsd-kind-icon">Action<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"attach"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"detach"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"resize"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/1e2cab1/src/lib/models/action.ts#L15">lib/models/action.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/action.ts#L15">lib/models/action.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -163,7 +168,7 @@
 					<div class="tsd-signature tsd-kind-icon">Domain<wbr>Record<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"A"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"AAAA"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"CNAME"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"MX"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"TXT"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"NS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"SRV"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/1e2cab1/src/lib/models/domain-record.ts#L12">lib/models/domain-record.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/domain-record.ts#L12">lib/models/domain-record.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -173,7 +178,7 @@
 					<div class="tsd-signature tsd-kind-icon">Snapshot<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"all"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"droplet"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"volume"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/1e2cab1/src/lib/services/snapshot-service.ts#L6">lib/services/snapshot-service.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/services/snapshot-service.ts#L6">lib/services/snapshot-service.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -186,7 +191,7 @@
 					<div class="tsd-signature tsd-kind-icon">API_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://api.digitalocean.com/v2"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://api.digitalocean.com/v2&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/1e2cab1/src/lib/conf/environment.ts#L4">lib/conf/environment.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/conf/environment.ts#L4">lib/conf/environment.ts:4</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -251,6 +256,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/imageservice.html" class="tsd-kind-icon">Image<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/loadbalancerservice.html" class="tsd-kind-icon">Load<wbr>Balancer<wbr>Service</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/regionservice.html" class="tsd-kind-icon">Region<wbr>Service</a>
@@ -331,6 +339,12 @@
 						<a href="interfaces/floatingip.html" class="tsd-kind-icon">FloatingIP</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/forwardingrule.html" class="tsd-kind-icon">Forwarding<wbr>Rule</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/healthcheck.html" class="tsd-kind-icon">Health<wbr>Check</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/image.html" class="tsd-kind-icon">Image</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -338,6 +352,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/kernel.html" class="tsd-kind-icon">Kernel</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loadbalancer.html" class="tsd-kind-icon">Load<wbr>Balancer</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/network.html" class="tsd-kind-icon">Network</a>
@@ -356,6 +373,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/sshkey.html" class="tsd-kind-icon">Ssh<wbr>Key</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/stickysession.html" class="tsd-kind-icon">Sticky<wbr>Session</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/tag.html" class="tsd-kind-icon">Tag</a>

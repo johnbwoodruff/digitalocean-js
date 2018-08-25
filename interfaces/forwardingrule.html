@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ImageActionRequest | digitalocean-js</title>
+	<title>ForwardingRule | digitalocean-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="imageactionrequest.html">ImageActionRequest</a>
+					<a href="forwardingrule.html">ForwardingRule</a>
 				</li>
 			</ul>
-			<h1>Interface ImageActionRequest</h1>
+			<h1>Interface ForwardingRule</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ImageActionRequest</span>
+						<span class="target">ForwardingRule</span>
 					</li>
 				</ul>
 			</section>
@@ -81,8 +81,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imageactionrequest.html#region" class="tsd-kind-icon">region</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imageactionrequest.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="forwardingrule.html#certificate_id" class="tsd-kind-icon">certificate_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="forwardingrule.html#entry_port" class="tsd-kind-icon">entry_<wbr>port</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="forwardingrule.html#entry_protocol" class="tsd-kind-icon">entry_<wbr>protocol</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="forwardingrule.html#target_port" class="tsd-kind-icon">target_<wbr>port</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="forwardingrule.html#target_protocol" class="tsd-kind-icon">target_<wbr>protocol</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="forwardingrule.html#tls_passthrough" class="tsd-kind-icon">tls_<wbr>passthrough</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,22 +95,62 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="region" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> region</h3>
-					<div class="tsd-signature tsd-kind-icon">region<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="certificate_id" class="tsd-anchor"></a>
+					<h3>certificate_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">certificate_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/image.ts#L16">lib/models/image.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/load-balancer.ts#L24">lib/models/load-balancer.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="entry_port" class="tsd-anchor"></a>
+					<h3>entry_<wbr>port</h3>
+					<div class="tsd-signature tsd-kind-icon">entry_<wbr>port<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/image.ts#L15">lib/models/image.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/load-balancer.ts#L21">lib/models/load-balancer.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="entry_protocol" class="tsd-anchor"></a>
+					<h3>entry_<wbr>protocol</h3>
+					<div class="tsd-signature tsd-kind-icon">entry_<wbr>protocol<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"http"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"https"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"http2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"tcp"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/load-balancer.ts#L20">lib/models/load-balancer.ts:20</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="target_port" class="tsd-anchor"></a>
+					<h3>target_<wbr>port</h3>
+					<div class="tsd-signature tsd-kind-icon">target_<wbr>port<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/load-balancer.ts#L23">lib/models/load-balancer.ts:23</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="target_protocol" class="tsd-anchor"></a>
+					<h3>target_<wbr>protocol</h3>
+					<div class="tsd-signature tsd-kind-icon">target_<wbr>protocol<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"http"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"https"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"http2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"tcp"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/load-balancer.ts#L22">lib/models/load-balancer.ts:22</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="tls_passthrough" class="tsd-anchor"></a>
+					<h3>tls_<wbr>passthrough</h3>
+					<div class="tsd-signature tsd-kind-icon">tls_<wbr>passthrough<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/load-balancer.ts#L25">lib/models/load-balancer.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -125,13 +169,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="imageactionrequest.html" class="tsd-kind-icon">Image<wbr>Action<wbr>Request</a>
+						<a href="forwardingrule.html" class="tsd-kind-icon">Forwarding<wbr>Rule</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="imageactionrequest.html#region" class="tsd-kind-icon">region</a>
+								<a href="forwardingrule.html#certificate_id" class="tsd-kind-icon">certificate_<wbr>id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="imageactionrequest.html#type" class="tsd-kind-icon">type</a>
+								<a href="forwardingrule.html#entry_port" class="tsd-kind-icon">entry_<wbr>port</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="forwardingrule.html#entry_protocol" class="tsd-kind-icon">entry_<wbr>protocol</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="forwardingrule.html#target_port" class="tsd-kind-icon">target_<wbr>port</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="forwardingrule.html#target_protocol" class="tsd-kind-icon">target_<wbr>protocol</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="forwardingrule.html#tls_passthrough" class="tsd-kind-icon">tls_<wbr>passthrough</a>
 							</li>
 						</ul>
 					</li>

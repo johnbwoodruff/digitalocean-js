@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ImageActionRequest | digitalocean-js</title>
+	<title>StickySession | digitalocean-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="imageactionrequest.html">ImageActionRequest</a>
+					<a href="stickysession.html">StickySession</a>
 				</li>
 			</ul>
-			<h1>Interface ImageActionRequest</h1>
+			<h1>Interface StickySession</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ImageActionRequest</span>
+						<span class="target">StickySession</span>
 					</li>
 				</ul>
 			</section>
@@ -81,8 +81,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imageactionrequest.html#region" class="tsd-kind-icon">region</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imageactionrequest.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="stickysession.html#cookie_name" class="tsd-kind-icon">cookie_<wbr>name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="stickysession.html#cookie_ttl_seconds" class="tsd-kind-icon">cookie_<wbr>ttl_<wbr>seconds</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="stickysession.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,22 +92,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="region" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> region</h3>
-					<div class="tsd-signature tsd-kind-icon">region<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="cookie_name" class="tsd-anchor"></a>
+					<h3>cookie_<wbr>name</h3>
+					<div class="tsd-signature tsd-kind-icon">cookie_<wbr>name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/image.ts#L16">lib/models/image.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/load-balancer.ts#L40">lib/models/load-balancer.ts:40</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="cookie_ttl_seconds" class="tsd-anchor"></a>
+					<h3>cookie_<wbr>ttl_<wbr>seconds</h3>
+					<div class="tsd-signature tsd-kind-icon">cookie_<wbr>ttl_<wbr>seconds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/load-balancer.ts#L41">lib/models/load-balancer.ts:41</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="type" class="tsd-anchor"></a>
 					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"cookies"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"none"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/image.ts#L15">lib/models/image.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7ed924d/src/lib/models/load-balancer.ts#L39">lib/models/load-balancer.ts:39</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -125,13 +136,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="imageactionrequest.html" class="tsd-kind-icon">Image<wbr>Action<wbr>Request</a>
+						<a href="stickysession.html" class="tsd-kind-icon">Sticky<wbr>Session</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="imageactionrequest.html#region" class="tsd-kind-icon">region</a>
+								<a href="stickysession.html#cookie_name" class="tsd-kind-icon">cookie_<wbr>name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="imageactionrequest.html#type" class="tsd-kind-icon">type</a>
+								<a href="stickysession.html#cookie_ttl_seconds" class="tsd-kind-icon">cookie_<wbr>ttl_<wbr>seconds</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="stickysession.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
