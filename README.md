@@ -23,11 +23,3 @@ const client = new DigitalOcean('my-api-token');
 ```
 
 To see all the services available, check out the [documentation](https://jbw91.github.io/digitalocean-js/).
-
-## Un-Implemented Services
-
-There are a few unavailable aspects of the API currently. They are:
-
-* Load Balancers [#5](https://github.com/jbw91/digitalocean-js/issues/5)
-
-If a service you need is unavailable, feel free to contribute a pull request!
