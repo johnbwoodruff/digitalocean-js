@@ -1,5 +1,4 @@
 import Axios from 'axios';
-
 import { AccountService } from './services/account-service';
 import { ActionService } from './services/actions-service';
 import { BlockStorageActionService } from './services/block-storage-actions-service';
@@ -14,6 +13,7 @@ import { FloatingIPActionService } from './services/floating-ip-actions-service'
 import { FloatingIPService } from './services/floating-ip-service';
 import { ImageActionService } from './services/image-actions-service';
 import { ImageService } from './services/image-service';
+import { LoadBalancerService } from './services/load-balancer-service';
 import { RegionService } from './services/region-service';
 import { SizeService } from './services/size-service';
 import { SnapshotService } from './services/snapshot-service';
@@ -35,6 +35,7 @@ export class DigitalOcean {
   public floatingIPActions: FloatingIPActionService;
   public images: ImageService;
   public imageActions: ImageActionService;
+  public loadBalancers: LoadBalancerService;
   public regions: RegionService;
   public sizes: SizeService;
   public snapshots: SnapshotService;
@@ -59,6 +60,7 @@ export class DigitalOcean {
     this.floatingIPActions = new FloatingIPActionService();
     this.images = new ImageService();
     this.imageActions = new ImageActionService();
+    this.loadBalancers = new LoadBalancerService();
     this.regions = new RegionService();
     this.sizes = new SizeService();
     this.snapshots = new SnapshotService();
