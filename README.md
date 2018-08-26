@@ -8,10 +8,10 @@ JavaScript library for the DigitalOcean API. For use in Node or the browser.
 
 This library was built with a few goals in mind:
 
-- [x] Be able to use in a Node or Browser environment with no difference in usage.
-- [x] Use Promises instead of callbacks so clients can make use of `async`/`await`.
-- [x] Be built in TypeScript so consumers of the library can benefit from excellent intellisense with the TypeScript definitions.
-- [x] Provide solid documentation including examples for usage.
+* Be able to use in a Node or Browser environment with no difference in usage.
+* Use Promises instead of callbacks so clients can make use of `async`/`await`.
+* Be built in TypeScript so consumers of the library can benefit from excellent intellisense with the TypeScript definitions.
+* Provide solid documentation including examples for usage.
 
 ## Usage
 
