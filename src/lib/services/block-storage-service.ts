@@ -1,5 +1,4 @@
 import Axios from 'axios';
-
 import { API_BASE_URL } from '../conf/environment';
 import { BlockStorage, BlockStorageRequest } from '../models/block-storage';
 import { Snapshot } from '../models/snapshot';
@@ -52,6 +51,9 @@ export class BlockStorageService {
     volume: BlockStorageRequest
   ): Promise<BlockStorage> {
     return new Promise((resolve, reject) => {
+      if (!this.volumeIsValid(volume)) {
+        throw new Error('Required fields missing from Block Storage Object');
+      }
       Axios.post(`${API_BASE_URL}/volumes`, volume)
         .then(response => {
           // Return actual volume instead of wrapped volume
@@ -212,5 +214,13 @@ export class BlockStorageService {
           reject(error);
         });
     });
+  }
+
+  ////////// Validation Methods //////////
+  private volumeIsValid(vol: BlockStorageRequest): boolean {
+    if (!vol.size_gigabytes || !vol.name) {
+      return false;
+    }
+    return true;
   }
 }
