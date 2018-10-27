@@ -61,7 +61,7 @@ export class LoadBalancerService {
    */
   public createLoadBalancer(loadBalancer: LoadBalancer): Promise<LoadBalancer> {
     return new Promise((resolve, reject) => {
-      if (this.loadBalancerIsValid(loadBalancer)) {
+      if (!this.loadBalancerIsValid(loadBalancer)) {
         throw new Error('Required fields missing from Load Balancer Object');
       }
       loadBalancer.forwarding_rules.forEach(rule => {
@@ -188,7 +188,7 @@ export class LoadBalancerService {
    */
   public updateLoadBalancer(loadBalancer: LoadBalancer): Promise<LoadBalancer> {
     return new Promise((resolve, reject) => {
-      if (this.loadBalancerIsValid(loadBalancer)) {
+      if (!this.loadBalancerIsValid(loadBalancer)) {
         throw new Error('Required fields missing from Load Balancer Object');
       }
       loadBalancer.forwarding_rules.forEach(rule => {
