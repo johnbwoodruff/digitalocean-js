@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/jbw91/digitalocean-js/compare/v1.0.2...v1.2.0) (2018-10-27)
+
+
+### Bug Fixes
+
+* **services:** Fix Load Balancer validation issue ([630aa2d](https://github.com/jbw91/digitalocean-js/commit/630aa2d))
+
+
+### Features
+
+* **services:** Add CDN service ([#14](https://github.com/jbw91/digitalocean-js/issues/14)) ([00fe9b3](https://github.com/jbw91/digitalocean-js/commit/00fe9b3)), closes [#13](https://github.com/jbw91/digitalocean-js/issues/13)
+* **services:** Add validation to several services ([#12](https://github.com/jbw91/digitalocean-js/issues/12)) ([96887ad](https://github.com/jbw91/digitalocean-js/commit/96887ad))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/jbw91/digitalocean-js/compare/v1.0.1...v1.0.2) (2018-08-26)
 
