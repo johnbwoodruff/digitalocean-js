@@ -2,6 +2,7 @@ export * from './account';
 export * from './action';
 export * from './backup';
 export * from './block-storage';
+export * from './cdn';
 export * from './certificate';
 export * from './domain';
 export * from './domain-record';

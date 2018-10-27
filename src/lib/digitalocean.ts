@@ -3,6 +3,7 @@ import { AccountService } from './services/account-service';
 import { ActionService } from './services/actions-service';
 import { BlockStorageActionService } from './services/block-storage-actions-service';
 import { BlockStorageService } from './services/block-storage-service';
+import { CdnService } from './services/cdn-service';
 import { CertificateService } from './services/certificate-service';
 import { DomainRecordService } from './services/domain-record-service';
 import { DomainService } from './services/domain-service';
@@ -25,6 +26,7 @@ export class DigitalOcean {
   public actions: ActionService;
   public blockStorage: BlockStorageService;
   public blockStorageActions: BlockStorageActionService;
+  public cdn: CdnService;
   public certificates: CertificateService;
   public domains: DomainService;
   public domainRecords: DomainRecordService;
@@ -50,6 +52,7 @@ export class DigitalOcean {
     this.actions = new ActionService();
     this.blockStorage = new BlockStorageService();
     this.blockStorageActions = new BlockStorageActionService();
+    this.cdn = new CdnService();
     this.certificates = new CertificateService();
     this.domains = new DomainService();
     this.domainRecords = new DomainRecordService();
