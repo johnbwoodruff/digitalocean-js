@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Account | digitalocean-js</title>
+	<title>CdnEndpoint | digitalocean-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="account.html">Account</a>
+					<a href="cdnendpoint.html">CdnEndpoint</a>
 				</li>
 			</ul>
-			<h1>Interface Account</h1>
+			<h1>Interface CdnEndpoint</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Account</span>
+						<span class="target">CdnEndpoint</span>
 					</li>
 				</ul>
 			</section>
@@ -81,13 +81,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#droplet_limit" class="tsd-kind-icon">droplet_<wbr>limit</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#email" class="tsd-kind-icon">email</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#email_verified" class="tsd-kind-icon">email_<wbr>verified</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#floating_ip_limit" class="tsd-kind-icon">floating_<wbr>ip_<wbr>limit</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#status" class="tsd-kind-icon">status</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#status_message" class="tsd-kind-icon">status_<wbr>message</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#uuid" class="tsd-kind-icon">uuid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="cdnendpoint.html#created_at" class="tsd-kind-icon">created_<wbr>at</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="cdnendpoint.html#endpoint" class="tsd-kind-icon">endpoint</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="cdnendpoint.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="cdnendpoint.html#origin" class="tsd-kind-icon">origin</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="cdnendpoint.html#ttl" class="tsd-kind-icon">ttl</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,72 +94,52 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="droplet_limit" class="tsd-anchor"></a>
-					<h3>droplet_<wbr>limit</h3>
-					<div class="tsd-signature tsd-kind-icon">droplet_<wbr>limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="created_at" class="tsd-anchor"></a>
+					<h3>created_<wbr>at</h3>
+					<div class="tsd-signature tsd-kind-icon">created_<wbr>at<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/account.ts#L2">lib/models/account.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/cdn.ts#L5">lib/models/cdn.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="email" class="tsd-anchor"></a>
-					<h3>email</h3>
-					<div class="tsd-signature tsd-kind-icon">email<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="endpoint" class="tsd-anchor"></a>
+					<h3>endpoint</h3>
+					<div class="tsd-signature tsd-kind-icon">endpoint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/account.ts#L4">lib/models/account.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/cdn.ts#L4">lib/models/cdn.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="email_verified" class="tsd-anchor"></a>
-					<h3>email_<wbr>verified</h3>
-					<div class="tsd-signature tsd-kind-icon">email_<wbr>verified<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/account.ts#L6">lib/models/account.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/cdn.ts#L2">lib/models/cdn.ts:2</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="floating_ip_limit" class="tsd-anchor"></a>
-					<h3>floating_<wbr>ip_<wbr>limit</h3>
-					<div class="tsd-signature tsd-kind-icon">floating_<wbr>ip_<wbr>limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="origin" class="tsd-anchor"></a>
+					<h3>origin</h3>
+					<div class="tsd-signature tsd-kind-icon">origin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/account.ts#L3">lib/models/account.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/cdn.ts#L3">lib/models/cdn.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="status" class="tsd-anchor"></a>
-					<h3>status</h3>
-					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="ttl" class="tsd-anchor"></a>
+					<h3>ttl</h3>
+					<div class="tsd-signature tsd-kind-icon">ttl<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/account.ts#L7">lib/models/account.ts:7</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="status_message" class="tsd-anchor"></a>
-					<h3>status_<wbr>message</h3>
-					<div class="tsd-signature tsd-kind-icon">status_<wbr>message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/account.ts#L8">lib/models/account.ts:8</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="uuid" class="tsd-anchor"></a>
-					<h3>uuid</h3>
-					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/account.ts#L5">lib/models/account.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/cdn.ts#L6">lib/models/cdn.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -180,28 +158,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="account.html" class="tsd-kind-icon">Account</a>
+						<a href="cdnendpoint.html" class="tsd-kind-icon">Cdn<wbr>Endpoint</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="account.html#droplet_limit" class="tsd-kind-icon">droplet_<wbr>limit</a>
+								<a href="cdnendpoint.html#created_at" class="tsd-kind-icon">created_<wbr>at</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="account.html#email" class="tsd-kind-icon">email</a>
+								<a href="cdnendpoint.html#endpoint" class="tsd-kind-icon">endpoint</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="account.html#email_verified" class="tsd-kind-icon">email_<wbr>verified</a>
+								<a href="cdnendpoint.html#id" class="tsd-kind-icon">id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="account.html#floating_ip_limit" class="tsd-kind-icon">floating_<wbr>ip_<wbr>limit</a>
+								<a href="cdnendpoint.html#origin" class="tsd-kind-icon">origin</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="account.html#status" class="tsd-kind-icon">status</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="account.html#status_message" class="tsd-kind-icon">status_<wbr>message</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="account.html#uuid" class="tsd-kind-icon">uuid</a>
+								<a href="cdnendpoint.html#ttl" class="tsd-kind-icon">ttl</a>
 							</li>
 						</ul>
 					</li>

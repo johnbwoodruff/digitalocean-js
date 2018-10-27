@@ -74,6 +74,7 @@
 								<li class="tsd-kind-class"><a href="classes/actionservice.html" class="tsd-kind-icon">Action<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/blockstorageactionservice.html" class="tsd-kind-icon">Block<wbr>Storage<wbr>Action<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/blockstorageservice.html" class="tsd-kind-icon">Block<wbr>Storage<wbr>Service</a></li>
+								<li class="tsd-kind-class"><a href="classes/cdnservice.html" class="tsd-kind-icon">Cdn<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/certificateservice.html" class="tsd-kind-icon">Certificate<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/digitalocean.html" class="tsd-kind-icon">Digital<wbr>Ocean</a></li>
 								<li class="tsd-kind-class"><a href="classes/domainrecordservice.html" class="tsd-kind-icon">Domain<wbr>Record<wbr>Service</a></li>
@@ -102,6 +103,8 @@
 								<li class="tsd-kind-interface"><a href="interfaces/backup.html" class="tsd-kind-icon">Backup</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/blockstorage.html" class="tsd-kind-icon">Block<wbr>Storage</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/blockstoragerequest.html" class="tsd-kind-icon">Block<wbr>Storage<wbr>Request</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/cdnendpoint.html" class="tsd-kind-icon">Cdn<wbr>Endpoint</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/cdnendpointrequest.html" class="tsd-kind-icon">Cdn<wbr>Endpoint<wbr>Request</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/certificate.html" class="tsd-kind-icon">Certificate</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/certificaterequest.html" class="tsd-kind-icon">Certificate<wbr>Request</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/domain.html" class="tsd-kind-icon">Domain</a></li>
@@ -158,7 +161,7 @@
 					<div class="tsd-signature tsd-kind-icon">Action<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"attach"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"detach"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"resize"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0d3bbb9/src/lib/models/action.ts#L15">lib/models/action.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/action.ts#L15">lib/models/action.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -168,7 +171,7 @@
 					<div class="tsd-signature tsd-kind-icon">Domain<wbr>Record<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"A"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"AAAA"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"CNAME"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"MX"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"TXT"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"NS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"SRV"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0d3bbb9/src/lib/models/domain-record.ts#L12">lib/models/domain-record.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/models/domain-record.ts#L12">lib/models/domain-record.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -178,7 +181,7 @@
 					<div class="tsd-signature tsd-kind-icon">Snapshot<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"all"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"droplet"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"volume"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0d3bbb9/src/lib/services/snapshot-service.ts#L6">lib/services/snapshot-service.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/services/snapshot-service.ts#L6">lib/services/snapshot-service.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -191,7 +194,7 @@
 					<div class="tsd-signature tsd-kind-icon">API_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://api.digitalocean.com/v2"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://api.digitalocean.com/v2&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0d3bbb9/src/lib/conf/environment.ts#L4">lib/conf/environment.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/0f8d7a9/src/lib/conf/environment.ts#L4">lib/conf/environment.ts:4</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -223,6 +226,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/blockstorageservice.html" class="tsd-kind-icon">Block<wbr>Storage<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cdnservice.html" class="tsd-kind-icon">Cdn<wbr>Service</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/certificateservice.html" class="tsd-kind-icon">Certificate<wbr>Service</a>
@@ -292,6 +298,12 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/blockstoragerequest.html" class="tsd-kind-icon">Block<wbr>Storage<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/cdnendpoint.html" class="tsd-kind-icon">Cdn<wbr>Endpoint</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/cdnendpointrequest.html" class="tsd-kind-icon">Cdn<wbr>Endpoint<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/certificate.html" class="tsd-kind-icon">Certificate</a>
