@@ -68,6 +68,12 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum"><a href="enums/projectpurpose.html" class="tsd-kind-icon">Project<wbr>Purpose</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-class"><a href="classes/accountservice.html" class="tsd-kind-icon">Account<wbr>Service</a></li>
@@ -87,6 +93,7 @@
 								<li class="tsd-kind-class"><a href="classes/imageactionservice.html" class="tsd-kind-icon">Image<wbr>Action<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/imageservice.html" class="tsd-kind-icon">Image<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/loadbalancerservice.html" class="tsd-kind-icon">Load<wbr>Balancer<wbr>Service</a></li>
+								<li class="tsd-kind-class"><a href="classes/projectservice.html" class="tsd-kind-icon">Project<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/regionservice.html" class="tsd-kind-icon">Region<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/sizeservice.html" class="tsd-kind-icon">Size<wbr>Service</a></li>
 								<li class="tsd-kind-class"><a href="classes/snapshotservice.html" class="tsd-kind-icon">Snapshot<wbr>Service</a></li>
@@ -128,6 +135,8 @@
 								<li class="tsd-kind-interface"><a href="interfaces/loadbalancer.html" class="tsd-kind-icon">Load<wbr>Balancer</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/network.html" class="tsd-kind-icon">Network</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/networks.html" class="tsd-kind-icon">Networks</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/project.html" class="tsd-kind-icon">Project</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/projectresource.html" class="tsd-kind-icon">Project<wbr>Resource</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/region.html" class="tsd-kind-icon">Region</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/size.html" class="tsd-kind-icon">Size</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/snapshot.html" class="tsd-kind-icon">Snapshot</a></li>
@@ -142,6 +151,8 @@
 								<li class="tsd-kind-type-alias"><a href="globals.html#actiontype" class="tsd-kind-icon">Action<wbr>Type</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#certificatetype" class="tsd-kind-icon">Certificate<wbr>Type</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#domainrecordtypes" class="tsd-kind-icon">Domain<wbr>Record<wbr>Types</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#projectenvironment" class="tsd-kind-icon">Project<wbr>Environment</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#projectresourcestatus" class="tsd-kind-icon">Project<wbr>Resource<wbr>Status</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#snapshottype" class="tsd-kind-icon">Snapshot<wbr>Type</a></li>
 							</ul>
 						</section>
@@ -149,6 +160,12 @@
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable"><a href="globals.html#api_base_url" class="tsd-kind-icon">API_<wbr>BASE_<wbr>URL</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal"><a href="globals.html#resource_prefix" class="tsd-kind-icon">RESOURCE_<wbr>PREFIX</a></li>
 							</ul>
 						</section>
 					</div>
@@ -162,7 +179,7 @@
 					<div class="tsd-signature tsd-kind-icon">Action<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"attach"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"detach"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"resize"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/43d05d8/src/lib/models/action.ts#L15">lib/models/action.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/action.ts#L15">lib/models/action.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -172,7 +189,7 @@
 					<div class="tsd-signature tsd-kind-icon">Certificate<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"custom"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"lets_encrypt"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/43d05d8/src/lib/models/certificate.ts#L1">lib/models/certificate.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/certificate.ts#L1">lib/models/certificate.ts:1</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -182,7 +199,27 @@
 					<div class="tsd-signature tsd-kind-icon">Domain<wbr>Record<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"A"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"AAAA"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"CNAME"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"MX"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"TXT"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"NS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"SRV"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/43d05d8/src/lib/models/domain-record.ts#L12">lib/models/domain-record.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/domain-record.ts#L12">lib/models/domain-record.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="projectenvironment" class="tsd-anchor"></a>
+					<h3>Project<wbr>Environment</h3>
+					<div class="tsd-signature tsd-kind-icon">Project<wbr>Environment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Development"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Staging"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Production"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/project.ts#L13">lib/models/project.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="projectresourcestatus" class="tsd-anchor"></a>
+					<h3>Project<wbr>Resource<wbr>Status</h3>
+					<div class="tsd-signature tsd-kind-icon">Project<wbr>Resource<wbr>Status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"ok"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"not_found"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"assigned"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"already_assigned"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"service_down"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/project.ts#L28">lib/models/project.ts:28</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -192,7 +229,7 @@
 					<div class="tsd-signature tsd-kind-icon">Snapshot<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"all"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"droplet"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"volume"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/43d05d8/src/lib/services/snapshot-service.ts#L6">lib/services/snapshot-service.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/services/snapshot-service.ts#L6">lib/services/snapshot-service.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -205,7 +242,7 @@
 					<div class="tsd-signature tsd-kind-icon">API_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://api.digitalocean.com/v2"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://api.digitalocean.com/v2&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/43d05d8/src/lib/conf/environment.ts#L4">lib/conf/environment.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/conf/environment.ts#L4">lib/conf/environment.ts:4</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -213,6 +250,79 @@
 							<p>Base URL for DigitalOcean API v2</p>
 						</div>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="resource_prefix" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> RESOURCE_<wbr>PREFIX</h3>
+					<div class="tsd-signature tsd-kind-icon">RESOURCE_<wbr>PREFIX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/project.ts#L42">lib/models/project.ts:42</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="resource_prefix.domain" class="tsd-anchor"></a>
+						<h3>DOMAIN</h3>
+						<div class="tsd-signature tsd-kind-icon">DOMAIN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;do:domain:&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/project.ts#L43">lib/models/project.ts:43</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="resource_prefix.droplet" class="tsd-anchor"></a>
+						<h3>DROPLET</h3>
+						<div class="tsd-signature tsd-kind-icon">DROPLET<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;do:droplet:&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/project.ts#L44">lib/models/project.ts:44</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="resource_prefix.floating_ip" class="tsd-anchor"></a>
+						<h3>FLOATING_<wbr>IP</h3>
+						<div class="tsd-signature tsd-kind-icon">FLOATING_<wbr>IP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;do:floatingip:&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/project.ts#L45">lib/models/project.ts:45</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="resource_prefix.load_balancer" class="tsd-anchor"></a>
+						<h3>LOAD_<wbr>BALANCER</h3>
+						<div class="tsd-signature tsd-kind-icon">LOAD_<wbr>BALANCER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;do:loadbalancer:&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/project.ts#L46">lib/models/project.ts:46</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="resource_prefix.space" class="tsd-anchor"></a>
+						<h3>SPACE</h3>
+						<div class="tsd-signature tsd-kind-icon">SPACE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;do:space:&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/project.ts#L47">lib/models/project.ts:47</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="resource_prefix.volume" class="tsd-anchor"></a>
+						<h3>VOLUME</h3>
+						<div class="tsd-signature tsd-kind-icon">VOLUME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;do:volume:&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jbw91/digitalocean-js/blob/7734bcc/src/lib/models/project.ts#L48">lib/models/project.ts:48</a></li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 			</section>
 		</div>
@@ -226,6 +336,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/projectpurpose.html" class="tsd-kind-icon">Project<wbr>Purpose</a>
+					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/accountservice.html" class="tsd-kind-icon">Account<wbr>Service</a>
 					</li>
@@ -276,6 +389,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/loadbalancerservice.html" class="tsd-kind-icon">Load<wbr>Balancer<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/projectservice.html" class="tsd-kind-icon">Project<wbr>Service</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/regionservice.html" class="tsd-kind-icon">Region<wbr>Service</a>
@@ -386,6 +502,12 @@
 						<a href="interfaces/networks.html" class="tsd-kind-icon">Networks</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/project.html" class="tsd-kind-icon">Project</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/projectresource.html" class="tsd-kind-icon">Project<wbr>Resource</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/region.html" class="tsd-kind-icon">Region</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -413,10 +535,19 @@
 						<a href="globals.html#domainrecordtypes" class="tsd-kind-icon">Domain<wbr>Record<wbr>Types</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#projectenvironment" class="tsd-kind-icon">Project<wbr>Environment</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#projectresourcestatus" class="tsd-kind-icon">Project<wbr>Resource<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#snapshottype" class="tsd-kind-icon">Snapshot<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#api_base_url" class="tsd-kind-icon">API_<wbr>BASE_<wbr>URL</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#resource_prefix" class="tsd-kind-icon">RESOURCE_<wbr>PREFIX</a>
 					</li>
 				</ul>
 			</nav>
