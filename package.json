@@ -1,6 +1,6 @@
 {
   "name": "digitalocean-js",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "JavaScript library for the DigitalOcean API.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -40,8 +40,7 @@
     "reset": "git clean -dfx && git reset --hard && yarn install",
     "clean": "trash build test",
     "all": "run-s reset test cov:check doc:html",
-    "prepare-release": "run-s all version doc:publish",
-    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('digitalocean-js must be installed with Yarn: https://yarnpkg.com/')\""
+    "prepare-release": "run-s all version doc:publish"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
