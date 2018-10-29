@@ -14,6 +14,7 @@ export * from './kernel';
 export * from './load-balancer';
 export * from './network';
 export * from './networks';
+export * from './project';
 export * from './region';
 export * from './size';
 export * from './snapshot';

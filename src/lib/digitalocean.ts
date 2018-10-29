@@ -15,6 +15,7 @@ import { FloatingIPService } from './services/floating-ip-service';
 import { ImageActionService } from './services/image-actions-service';
 import { ImageService } from './services/image-service';
 import { LoadBalancerService } from './services/load-balancer-service';
+import { ProjectService } from './services/project-service';
 import { RegionService } from './services/region-service';
 import { SizeService } from './services/size-service';
 import { SnapshotService } from './services/snapshot-service';
@@ -38,6 +39,7 @@ export class DigitalOcean {
   public images: ImageService;
   public imageActions: ImageActionService;
   public loadBalancers: LoadBalancerService;
+  public projects: ProjectService;
   public regions: RegionService;
   public sizes: SizeService;
   public snapshots: SnapshotService;
@@ -64,6 +66,7 @@ export class DigitalOcean {
     this.images = new ImageService();
     this.imageActions = new ImageActionService();
     this.loadBalancers = new LoadBalancerService();
+    this.projects = new ProjectService();
     this.regions = new RegionService();
     this.sizes = new SizeService();
     this.snapshots = new SnapshotService();
