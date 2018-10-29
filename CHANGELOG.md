@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/jbw91/digitalocean-js/compare/v1.2.2...v1.4.0) (2018-10-29)
+
+
+### Features
+
+* **services:** Add new Projects service ([7734bcc](https://github.com/jbw91/digitalocean-js/commit/7734bcc))
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/jbw91/digitalocean-js/compare/v1.2.0...v1.2.2) (2018-10-29)
 
