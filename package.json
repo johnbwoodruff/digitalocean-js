@@ -1,11 +1,11 @@
 {
   "name": "digitalocean-js",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "JavaScript library for the DigitalOcean API.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/jbw91/digitalocean-js",
+  "repository": "https://github.com/johnbwoodruff/digitalocean-js",
   "license": "MIT",
   "keywords": [
     "digitalocean",
