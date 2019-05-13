@@ -89,6 +89,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdnservice.html#createendpoint" class="tsd-kind-icon">create<wbr>Endpoint</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdnservice.html#deleteendpoint" class="tsd-kind-icon">delete<wbr>Endpoint</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="cdnservice.html#endpointisvalid" class="tsd-kind-icon">endpoint<wbr>IsValid</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdnservice.html#getallendpoints" class="tsd-kind-icon">get<wbr>All<wbr>Endpoints</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdnservice.html#getexistingendpoint" class="tsd-kind-icon">get<wbr>Existing<wbr>Endpoint</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdnservice.html#purgeendpointcache" class="tsd-kind-icon">purge<wbr>Endpoint<wbr>Cache</a></li>
@@ -110,7 +111,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/cdn-service.ts#L5">lib/services/cdn-service.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/cdn-service.ts#L5">lib/services/cdn-service.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="cdnservice.html" class="tsd-signature-type">CdnService</a></h4>
@@ -130,7 +131,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/cdn-service.ts#L71">lib/services/cdn-service.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/cdn-service.ts#L71">lib/services/cdn-service.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -138,15 +139,14 @@
 									<p>Create a new CDN endpoint</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
 <span class="hljs-keyword">const</span> request = {
   <span class="hljs-string">"origin"</span>: <span class="hljs-string">"static-images.nyc3.digitaloceanspaces.com"</span>,
   <span class="hljs-string">"ttl"</span>: <span class="hljs-number">3600</span>
 };
-<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.createEndpoint(request);
-</code></pre>
+<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.createEndpoint(request);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -168,7 +168,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/cdn-service.ts#L122">lib/services/cdn-service.ts:122</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/cdn-service.ts#L122">lib/services/cdn-service.ts:122</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -176,11 +176,10 @@
 									<p>Delete an existing CDN endpoint</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.deleteEndpoint(<span class="hljs-string">'endpoint-id'</span>);
-</code></pre>
+<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.deleteEndpoint(<span class="hljs-string">'endpoint-id'</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -189,6 +188,29 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="endpointisvalid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> endpoint<wbr>IsValid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">endpoint<wbr>IsValid<span class="tsd-signature-symbol">(</span>end<span class="tsd-signature-symbol">: </span><a href="../interfaces/cdnendpointrequest.html" class="tsd-signature-type">CdnEndpointRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/cdn-service.ts#L162">lib/services/cdn-service.ts:162</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>end: <a href="../interfaces/cdnendpointrequest.html" class="tsd-signature-type">CdnEndpointRequest</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -202,7 +224,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/cdn-service.ts#L19">lib/services/cdn-service.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/cdn-service.ts#L19">lib/services/cdn-service.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -210,11 +232,10 @@
 									<p>List all of the CDN endpoints available on your account</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> endpoints = <span class="hljs-keyword">await</span> client.cdn.getAllEndpoints();
-</code></pre>
+<span class="hljs-keyword">const</span> endpoints = <span class="hljs-keyword">await</span> client.cdn.getAllEndpoints();</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/cdnendpoint.html" class="tsd-signature-type">CdnEndpoint</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -230,7 +251,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/cdn-service.ts#L43">lib/services/cdn-service.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/cdn-service.ts#L43">lib/services/cdn-service.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -238,11 +259,10 @@
 									<p>Get an existing CDN endpoint</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.getExistingEndpoint(<span class="hljs-string">'endpoint-id'</span>);
-</code></pre>
+<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.getExistingEndpoint(<span class="hljs-string">'endpoint-id'</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -264,7 +284,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/cdn-service.ts#L149">lib/services/cdn-service.ts:149</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/cdn-service.ts#L149">lib/services/cdn-service.ts:149</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -272,15 +292,14 @@
 									<p>Purge cached content from a CDN endpoint</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
 <span class="hljs-keyword">const</span> files = [
   <span class="hljs-string">'assets/img/hero.png'</span>,
   <span class="hljs-string">'assets/css/*'</span>
 ];
-<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.purgeEndpointCache(<span class="hljs-string">'endpoint-id'</span>, files);
-</code></pre>
+<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.purgeEndpointCache(<span class="hljs-string">'endpoint-id'</span>, files);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -305,7 +324,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/cdn-service.ts#L98">lib/services/cdn-service.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/cdn-service.ts#L98">lib/services/cdn-service.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -313,11 +332,10 @@
 									<p>Update the ttl of an existing CDN endpoint</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.updateEndpoint(<span class="hljs-string">'endpoint-id'</span>, <span class="hljs-number">1800</span>);
-</code></pre>
+<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.updateEndpoint(<span class="hljs-string">'endpoint-id'</span>, <span class="hljs-number">1800</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -357,6 +375,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="cdnservice.html#deleteendpoint" class="tsd-kind-icon">delete<wbr>Endpoint</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="cdnservice.html#endpointisvalid" class="tsd-kind-icon">endpoint<wbr>IsValid</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="cdnservice.html#getallendpoints" class="tsd-kind-icon">get<wbr>All<wbr>Endpoints</a>

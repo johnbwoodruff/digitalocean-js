@@ -90,11 +90,14 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#assignresourcestodefaultproject" class="tsd-kind-icon">assign<wbr>Resources<wbr>ToDefault<wbr>Project</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#assignresourcestoproject" class="tsd-kind-icon">assign<wbr>Resources<wbr>ToProject</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#createproject" class="tsd-kind-icon">create<wbr>Project</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="projectservice.html#createprojectisvalid" class="tsd-kind-icon">create<wbr>Project<wbr>IsValid</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#getallprojects" class="tsd-kind-icon">get<wbr>All<wbr>Projects</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#getdefaultproject" class="tsd-kind-icon">get<wbr>Default<wbr>Project</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#getdefaultprojectresources" class="tsd-kind-icon">get<wbr>Default<wbr>Project<wbr>Resources</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#getexistingproject" class="tsd-kind-icon">get<wbr>Existing<wbr>Project</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#getprojectresources" class="tsd-kind-icon">get<wbr>Project<wbr>Resources</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="projectservice.html#projectisvalid" class="tsd-kind-icon">project<wbr>IsValid</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="projectservice.html#purposeisvalid" class="tsd-kind-icon">purpose<wbr>IsValid</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#updatedefaultproject" class="tsd-kind-icon">update<wbr>Default<wbr>Project</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#updateproject" class="tsd-kind-icon">update<wbr>Project</a></li>
 							</ul>
@@ -114,7 +117,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L5">lib/services/project-service.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L5">lib/services/project-service.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="projectservice.html" class="tsd-signature-type">ProjectService</a></h4>
@@ -134,7 +137,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L263">lib/services/project-service.ts:263</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L263">lib/services/project-service.ts:263</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -142,7 +145,7 @@
 									<p>Assign resources to the default project</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean, RESOURCE_PREFIX } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean, RESOURCE_PREFIX } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
 <span class="hljs-keyword">const</span> dropletId = <span class="hljs-number">1</span>;
@@ -153,8 +156,7 @@
    <span class="hljs-string">`<span class="hljs-subst">${RESOURCE_PREFIX.FLOATING_IP}</span><span class="hljs-subst">${ip}</span>`</span>     <span class="hljs-comment">// 'do:floatingip:192.168.99.100'</span>
 ];
 <span class="hljs-keyword">const</span> resources = <span class="hljs-keyword">await</span> client.projects
-   .assignResourcesToDefaultProject(resources);
-</code></pre>
+   .assignResourcesToDefaultProject(resources);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -176,7 +178,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L228">lib/services/project-service.ts:228</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L228">lib/services/project-service.ts:228</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -184,7 +186,7 @@
 									<p>Assign resources to an existing project</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean, RESOURCE_PREFIX } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean, RESOURCE_PREFIX } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
 <span class="hljs-keyword">const</span> dropletId = <span class="hljs-number">1</span>;
@@ -195,8 +197,7 @@
    <span class="hljs-string">`<span class="hljs-subst">${RESOURCE_PREFIX.FLOATING_IP}</span><span class="hljs-subst">${ip}</span>`</span>     <span class="hljs-comment">// 'do:floatingip:192.168.99.100'</span>
 ];
 <span class="hljs-keyword">const</span> resources = <span class="hljs-keyword">await</span> client.projects
-   .assignResourcesToProject(<span class="hljs-string">'project-id'</span>, resources);
-</code></pre>
+   .assignResourcesToProject(<span class="hljs-string">'project-id'</span>, resources);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -221,7 +222,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L88">lib/services/project-service.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L88">lib/services/project-service.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -229,7 +230,7 @@
 									<p>Create a new project</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
 <span class="hljs-keyword">const</span> request = {
@@ -238,8 +239,7 @@
   <span class="hljs-string">"purpose"</span>: <span class="hljs-string">"Service or API"</span>,
   <span class="hljs-string">"environment"</span>: <span class="hljs-string">"Production"</span>
 };
-<span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> client.projects.createProject(request);
-</code></pre>
+<span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> client.projects.createProject(request);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -248,6 +248,29 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="createprojectisvalid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> create<wbr>Project<wbr>IsValid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Project<wbr>IsValid<span class="tsd-signature-symbol">(</span>project<span class="tsd-signature-symbol">: </span><a href="../interfaces/project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L277">lib/services/project-service.ts:277</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>project: <a href="../interfaces/project.html" class="tsd-signature-type">Project</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -261,7 +284,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L19">lib/services/project-service.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L19">lib/services/project-service.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -269,11 +292,10 @@
 									<p>Get all projects on your account</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> projects = <span class="hljs-keyword">await</span> client.projects.getAllProjects();
-</code></pre>
+<span class="hljs-keyword">const</span> projects = <span class="hljs-keyword">await</span> client.projects.getAllProjects();</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -289,7 +311,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L67">lib/services/project-service.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L67">lib/services/project-service.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -297,11 +319,10 @@
 									<p>Get the default project</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> client.projects.getDefaultProject();
-</code></pre>
+<span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> client.projects.getDefaultProject();</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -317,7 +338,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L205">lib/services/project-service.ts:205</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L205">lib/services/project-service.ts:205</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -325,11 +346,10 @@
 									<p>Get all resources attached to the default project</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> resources = <span class="hljs-keyword">await</span> client.projects.getDefaultProjectResources();
-</code></pre>
+<span class="hljs-keyword">const</span> resources = <span class="hljs-keyword">await</span> client.projects.getDefaultProjectResources();</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/projectresource.html" class="tsd-signature-type">ProjectResource</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -345,7 +365,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L43">lib/services/project-service.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L43">lib/services/project-service.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -353,11 +373,10 @@
 									<p>Get an existing project</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> client.projects.getExistingProject(<span class="hljs-string">'project-id'</span>);
-</code></pre>
+<span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> client.projects.getExistingProject(<span class="hljs-string">'project-id'</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -379,7 +398,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L181">lib/services/project-service.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L181">lib/services/project-service.ts:181</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -387,11 +406,10 @@
 									<p>Get all resources attached to a specific project</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> resources = <span class="hljs-keyword">await</span> client.projects.getProjectResources(<span class="hljs-string">'project-id'</span>);
-</code></pre>
+<span class="hljs-keyword">const</span> resources = <span class="hljs-keyword">await</span> client.projects.getProjectResources(<span class="hljs-string">'project-id'</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -400,6 +418,52 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/projectresource.html" class="tsd-signature-type">ProjectResource</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="projectisvalid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> project<wbr>IsValid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">project<wbr>IsValid<span class="tsd-signature-symbol">(</span>project<span class="tsd-signature-symbol">: </span><a href="../interfaces/project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L270">lib/services/project-service.ts:270</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>project: <a href="../interfaces/project.html" class="tsd-signature-type">Project</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="purposeisvalid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> purpose<wbr>IsValid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">purpose<wbr>IsValid<span class="tsd-signature-symbol">(</span>purpose<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L284">lib/services/project-service.ts:284</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> purpose: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -413,7 +477,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L166">lib/services/project-service.ts:166</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L166">lib/services/project-service.ts:166</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -421,7 +485,7 @@
 									<p>Update the default project</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
 <span class="hljs-keyword">const</span> request = {
@@ -431,8 +495,7 @@
   <span class="hljs-string">"environment"</span>: <span class="hljs-string">"Staging"</span>,
   <span class="hljs-string">"is_default"</span>: <span class="hljs-literal">true</span>
 };
-<span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> client.projects.updateDefaultProject(request);
-</code></pre>
+<span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> client.projects.updateDefaultProject(request);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -454,7 +517,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/project-service.ts#L127">lib/services/project-service.ts:127</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/project-service.ts#L127">lib/services/project-service.ts:127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -462,7 +525,7 @@
 									<p>Update an existing project</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
 <span class="hljs-keyword">const</span> request = {
@@ -472,8 +535,7 @@
   <span class="hljs-string">"environment"</span>: <span class="hljs-string">"Staging"</span>,
   <span class="hljs-string">"is_default"</span>: <span class="hljs-literal">false</span>
 };
-<span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> client.projects.updateProject(<span class="hljs-string">'project-id'</span>, request);
-</code></pre>
+<span class="hljs-keyword">const</span> project = <span class="hljs-keyword">await</span> client.projects.updateProject(<span class="hljs-string">'project-id'</span>, request);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -517,6 +579,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="projectservice.html#createproject" class="tsd-kind-icon">create<wbr>Project</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="projectservice.html#createprojectisvalid" class="tsd-kind-icon">create<wbr>Project<wbr>IsValid</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="projectservice.html#getallprojects" class="tsd-kind-icon">get<wbr>All<wbr>Projects</a>
 							</li>
@@ -531,6 +596,12 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="projectservice.html#getprojectresources" class="tsd-kind-icon">get<wbr>Project<wbr>Resources</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="projectservice.html#projectisvalid" class="tsd-kind-icon">project<wbr>IsValid</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="projectservice.html#purposeisvalid" class="tsd-kind-icon">purpose<wbr>IsValid</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="projectservice.html#updatedefaultproject" class="tsd-kind-icon">update<wbr>Default<wbr>Project</a>

@@ -107,7 +107,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/snapshot-service.ts#L8">lib/services/snapshot-service.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/snapshot-service.ts#L8">lib/services/snapshot-service.ts:8</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="snapshotservice.html" class="tsd-signature-type">SnapshotService</a></h4>
@@ -127,7 +127,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/snapshot-service.ts#L80">lib/services/snapshot-service.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/snapshot-service.ts#L80">lib/services/snapshot-service.ts:80</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -135,11 +135,10 @@
 									<p>Delete a specific snapshot by ID</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.snapshots.deleteSnapshot(<span class="hljs-string">'snapshot-id'</span>);
-</code></pre>
+<span class="hljs-keyword">await</span> client.snapshots.deleteSnapshot(<span class="hljs-string">'snapshot-id'</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -161,7 +160,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/snapshot-service.ts#L56">lib/services/snapshot-service.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/snapshot-service.ts#L56">lib/services/snapshot-service.ts:56</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -169,11 +168,10 @@
 									<p>Get a specific existing snapshot by ID</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> snapshot = <span class="hljs-keyword">await</span> client.snapshots.getSnapshotById(<span class="hljs-string">'snapshot-id'</span>);
-</code></pre>
+<span class="hljs-keyword">const</span> snapshot = <span class="hljs-keyword">await</span> client.snapshots.getSnapshotById(<span class="hljs-string">'snapshot-id'</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -195,7 +193,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/be70cb4/src/lib/services/snapshot-service.ts#L28">lib/services/snapshot-service.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/495452c/src/lib/services/snapshot-service.ts#L28">lib/services/snapshot-service.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -204,7 +202,7 @@
 									Optionally provide a resource type to filter snapshots.</p>
 								</div>
 								<h3 id="example">Example</h3>
-								<pre><code class="lang-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
 <span class="hljs-comment">// Get all snapshots</span>
@@ -212,8 +210,7 @@
 <span class="hljs-comment">// Get all droplet snapshots</span>
 snapshots = <span class="hljs-keyword">await</span> client.snapshots.getSnapshots(<span class="hljs-string">'droplet'</span>);
 <span class="hljs-comment">// Get all volume snapshots</span>
-snapshots = <span class="hljs-keyword">await</span> client.snapshots.getSnapshots(<span class="hljs-string">'volume'</span>);
-</code></pre>
+snapshots = <span class="hljs-keyword">await</span> client.snapshots.getSnapshots(<span class="hljs-string">'volume'</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
