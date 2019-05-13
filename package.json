@@ -1,6 +1,6 @@
 {
   "name": "digitalocean-js",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "JavaScript library for the DigitalOcean API",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
