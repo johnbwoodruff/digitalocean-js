@@ -1,4 +1,4 @@
-import { test } from 'ava';
+import test from 'ava';
 import { DigitalOcean } from './digitalocean';
 
 test('should exist', async t => {
