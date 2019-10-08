@@ -285,7 +285,7 @@ export class ProjectService {
     if (!purpose) {
       return false;
     }
-    if (!Object.values(ProjectPurpose).includes(purpose)) {
+    if (!Object.values(ProjectPurpose as any).includes(purpose)) {
       // Purpose doesn't correspond to allowed values. Check if Other.
       if (purpose.substring(0, 7) !== 'Other: ') {
         return false;
