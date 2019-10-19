@@ -21,6 +21,7 @@ import { SizeService } from './services/size-service';
 import { SnapshotService } from './services/snapshot-service';
 import { SshService } from './services/ssh-service';
 import { TagService } from './services/tag-service';
+import { KubernetesService } from './services/kubernetes-service';
 
 export class DigitalOcean {
   public account: AccountService;
@@ -38,6 +39,7 @@ export class DigitalOcean {
   public floatingIPActions: FloatingIPActionService;
   public images: ImageService;
   public imageActions: ImageActionService;
+  public kubernetes: KubernetesService;
   public loadBalancers: LoadBalancerService;
   public projects: ProjectService;
   public regions: RegionService;
@@ -65,6 +67,7 @@ export class DigitalOcean {
     this.floatingIPActions = new FloatingIPActionService();
     this.images = new ImageService();
     this.imageActions = new ImageActionService();
+    this.kubernetes = new KubernetesService();
     this.loadBalancers = new LoadBalancerService();
     this.projects = new ProjectService();
     this.regions = new RegionService();
