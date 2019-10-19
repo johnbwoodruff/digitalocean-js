@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FirewallSourceDestination | digitalocean-js</title>
+	<title>KubernetesClusterMaintenancePolicy | digitalocean-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="firewallsourcedestination.html">FirewallSourceDestination</a>
+					<a href="kubernetesclustermaintenancepolicy.html">KubernetesClusterMaintenancePolicy</a>
 				</li>
 			</ul>
-			<h1>Interface FirewallSourceDestination</h1>
+			<h1>Interface KubernetesClusterMaintenancePolicy</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">FirewallSourceDestination</span>
+						<span class="target">KubernetesClusterMaintenancePolicy</span>
 					</li>
 				</ul>
 			</section>
@@ -81,10 +81,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewallsourcedestination.html#addresses" class="tsd-kind-icon">addresses</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewallsourcedestination.html#droplet_ids" class="tsd-kind-icon">droplet_<wbr>ids</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewallsourcedestination.html#load_balancer_uids" class="tsd-kind-icon">load_<wbr>balancer_<wbr>uids</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="firewallsourcedestination.html#tags" class="tsd-kind-icon">tags</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="kubernetesclustermaintenancepolicy.html#day" class="tsd-kind-icon">day</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="kubernetesclustermaintenancepolicy.html#duration" class="tsd-kind-icon">duration</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="kubernetesclustermaintenancepolicy.html#start_time" class="tsd-kind-icon">start_<wbr>time</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,42 +92,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="addresses" class="tsd-anchor"></a>
-					<h3>addresses</h3>
-					<div class="tsd-signature tsd-kind-icon">addresses<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="day" class="tsd-anchor"></a>
+					<h3>day</h3>
+					<div class="tsd-signature tsd-kind-icon">day<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/models/firewall.ts#L32">lib/models/firewall.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/models/kubernetes-cluster.ts#L22">lib/models/kubernetes-cluster.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="droplet_ids" class="tsd-anchor"></a>
-					<h3>droplet_<wbr>ids</h3>
-					<div class="tsd-signature tsd-kind-icon">droplet_<wbr>ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="duration" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> duration</h3>
+					<div class="tsd-signature tsd-kind-icon">duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/models/firewall.ts#L33">lib/models/firewall.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/models/kubernetes-cluster.ts#L21">lib/models/kubernetes-cluster.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="load_balancer_uids" class="tsd-anchor"></a>
-					<h3>load_<wbr>balancer_<wbr>uids</h3>
-					<div class="tsd-signature tsd-kind-icon">load_<wbr>balancer_<wbr>uids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="start_time" class="tsd-anchor"></a>
+					<h3>start_<wbr>time</h3>
+					<div class="tsd-signature tsd-kind-icon">start_<wbr>time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/models/firewall.ts#L34">lib/models/firewall.ts:34</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="tags" class="tsd-anchor"></a>
-					<h3>tags</h3>
-					<div class="tsd-signature tsd-kind-icon">tags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/models/firewall.ts#L35">lib/models/firewall.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/models/kubernetes-cluster.ts#L20">lib/models/kubernetes-cluster.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -147,19 +136,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="firewallsourcedestination.html" class="tsd-kind-icon">Firewall<wbr>Source<wbr>Destination</a>
+						<a href="kubernetesclustermaintenancepolicy.html" class="tsd-kind-icon">Kubernetes<wbr>Cluster<wbr>Maintenance<wbr>Policy</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="firewallsourcedestination.html#addresses" class="tsd-kind-icon">addresses</a>
+								<a href="kubernetesclustermaintenancepolicy.html#day" class="tsd-kind-icon">day</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="firewallsourcedestination.html#droplet_ids" class="tsd-kind-icon">droplet_<wbr>ids</a>
+								<a href="kubernetesclustermaintenancepolicy.html#duration" class="tsd-kind-icon">duration</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="firewallsourcedestination.html#load_balancer_uids" class="tsd-kind-icon">load_<wbr>balancer_<wbr>uids</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="firewallsourcedestination.html#tags" class="tsd-kind-icon">tags</a>
+								<a href="kubernetesclustermaintenancepolicy.html#start_time" class="tsd-kind-icon">start_<wbr>time</a>
 							</li>
 						</ul>
 					</li>
