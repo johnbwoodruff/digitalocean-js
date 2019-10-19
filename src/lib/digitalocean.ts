@@ -14,6 +14,7 @@ import { FloatingIPActionService } from './services/floating-ip-actions-service'
 import { FloatingIPService } from './services/floating-ip-service';
 import { ImageActionService } from './services/image-actions-service';
 import { ImageService } from './services/image-service';
+import { KubernetesService } from './services/kubernetes-service';
 import { LoadBalancerService } from './services/load-balancer-service';
 import { ProjectService } from './services/project-service';
 import { RegionService } from './services/region-service';
@@ -21,7 +22,6 @@ import { SizeService } from './services/size-service';
 import { SnapshotService } from './services/snapshot-service';
 import { SshService } from './services/ssh-service';
 import { TagService } from './services/tag-service';
-import { KubernetesService } from './services/kubernetes-service';
 
 export class DigitalOcean {
   public account: AccountService;
