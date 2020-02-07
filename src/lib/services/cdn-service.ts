@@ -148,7 +148,7 @@ export class CdnService {
    */
   public purgeEndpointCache(id: string, files: string[]): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`${API_BASE_URL}/cdn/endpoints/${id}`, { data: { files } })
+      Axios.delete(`${API_BASE_URL}/cdn/endpoints/${id}`, { files })
         .then(() => {
           resolve();
         })
