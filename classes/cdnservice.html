@@ -111,7 +111,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/cdn-service.ts#L5">lib/services/cdn-service.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/cdn-service.ts#L5">lib/services/cdn-service.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="cdnservice.html" class="tsd-signature-type">CdnService</a></h4>
@@ -131,23 +131,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/cdn-service.ts#L71">lib/services/cdn-service.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/cdn-service.ts#L71">lib/services/cdn-service.ts:71</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create a new CDN endpoint</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-string">"origin"</span>: <span class="hljs-string">"static-images.nyc3.digitaloceanspaces.com"</span>,
-  <span class="hljs-string">"ttl"</span>: <span class="hljs-number">3600</span>
-};
-<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.createEndpoint(request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -168,19 +154,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/cdn-service.ts#L122">lib/services/cdn-service.ts:122</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/cdn-service.ts#L122">lib/services/cdn-service.ts:122</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Delete an existing CDN endpoint</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.deleteEndpoint(<span class="hljs-string">'endpoint-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -201,7 +177,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/cdn-service.ts#L162">lib/services/cdn-service.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/cdn-service.ts#L164">lib/services/cdn-service.ts:164</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -224,19 +200,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/cdn-service.ts#L19">lib/services/cdn-service.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/cdn-service.ts#L19">lib/services/cdn-service.ts:19</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>List all of the CDN endpoints available on your account</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> endpoints = <span class="hljs-keyword">await</span> client.cdn.getAllEndpoints();</code></pre>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/cdnendpoint.html" class="tsd-signature-type">CdnEndpoint</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -251,19 +217,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/cdn-service.ts#L43">lib/services/cdn-service.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/cdn-service.ts#L43">lib/services/cdn-service.ts:43</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get an existing CDN endpoint</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.getExistingEndpoint(<span class="hljs-string">'endpoint-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -284,23 +240,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/cdn-service.ts#L149">lib/services/cdn-service.ts:149</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/cdn-service.ts#L149">lib/services/cdn-service.ts:149</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Purge cached content from a CDN endpoint</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> files = [
-  <span class="hljs-string">'assets/img/hero.png'</span>,
-  <span class="hljs-string">'assets/css/*'</span>
-];
-<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.purgeEndpointCache(<span class="hljs-string">'endpoint-id'</span>, files);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -324,19 +266,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/cdn-service.ts#L98">lib/services/cdn-service.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/cdn-service.ts#L98">lib/services/cdn-service.ts:98</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Update the ttl of an existing CDN endpoint</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> endpoint = <span class="hljs-keyword">await</span> client.cdn.updateEndpoint(<span class="hljs-string">'endpoint-id'</span>, <span class="hljs-number">1800</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>

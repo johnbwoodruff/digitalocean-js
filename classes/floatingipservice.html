@@ -109,7 +109,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/floating-ip-service.ts#L6">lib/services/floating-ip-service.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/floating-ip-service.ts#L6">lib/services/floating-ip-service.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="floatingipservice.html" class="tsd-signature-type">FloatingIPService</a></h4>
@@ -129,20 +129,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/floating-ip-service.ts#L45">lib/services/floating-ip-service.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/floating-ip-service.ts#L45">lib/services/floating-ip-service.ts:45</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create a new Floating IP assigned to a Droplet</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> floatingIP =
-   <span class="hljs-keyword">await</span> client.floatingIPs.createFloatingIPForDroplet(<span class="hljs-string">'droplet-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -163,20 +152,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/floating-ip-service.ts#L71">lib/services/floating-ip-service.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/floating-ip-service.ts#L71">lib/services/floating-ip-service.ts:71</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create a Floating IP reserved to a Region</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> floatingIP =
-   <span class="hljs-keyword">await</span> client.floatingIPs.createFloatingIPForRegion(<span class="hljs-string">'nyc3'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -197,19 +175,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/floating-ip-service.ts#L118">lib/services/floating-ip-service.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/floating-ip-service.ts#L118">lib/services/floating-ip-service.ts:118</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Delete an existing Floating IP and remove it from your account</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.floatingIPs.deleteFloatingIP(<span class="hljs-string">'1.2.3.4'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -230,19 +198,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/floating-ip-service.ts#L20">lib/services/floating-ip-service.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/floating-ip-service.ts#L20">lib/services/floating-ip-service.ts:20</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>List all of the Floating IPs available on your account</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> floatingIPs = <span class="hljs-keyword">await</span> client.floatingIPs.getAllFloatingIPs();</code></pre>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/floatingip.html" class="tsd-signature-type">FloatingIP</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -257,20 +215,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/floating-ip-service.ts#L95">lib/services/floating-ip-service.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/floating-ip-service.ts#L95">lib/services/floating-ip-service.ts:95</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Show information about an existing Floating IP</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> floatingIP =
-   <span class="hljs-keyword">await</span> client.floatingIPs.getExistingFloatingIP(<span class="hljs-string">'1.2.3.4'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>

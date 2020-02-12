@@ -114,7 +114,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L5">lib/services/block-storage-actions-service.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L5">lib/services/block-storage-actions-service.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="blockstorageactionservice.html" class="tsd-signature-type">BlockStorageActionService</a></h4>
@@ -134,7 +134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L261">lib/services/block-storage-actions-service.ts:261</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L261">lib/services/block-storage-actions-service.ts:261</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -157,7 +157,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L254">lib/services/block-storage-actions-service.ts:254</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L254">lib/services/block-storage-actions-service.ts:254</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -180,25 +180,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L25">lib/services/block-storage-actions-service.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L25">lib/services/block-storage-actions-service.ts:25</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Attach a Block Storage volume to a droplet</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'attach'</span>,
-  <span class="hljs-attr">droplet_id</span>: <span class="hljs-number">11612190</span>,
-  <span class="hljs-attr">region</span>: <span class="hljs-string">'nyc1'</span>
-}
-<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.blockStorageActions
-   .attachVolumeToDroplet(<span class="hljs-string">'volume-id'</span>, request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -222,26 +206,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L62">lib/services/block-storage-actions-service.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L62">lib/services/block-storage-actions-service.ts:62</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Attach a Block Storage volume to a droplet using the volume name</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'attach'</span>,
-  <span class="hljs-attr">volume_name</span>: <span class="hljs-string">'example'</span>,
-  <span class="hljs-attr">region</span>: <span class="hljs-string">'nyc1'</span>,
-  <span class="hljs-attr">droplet_id</span>: <span class="hljs-number">116121901</span>
-}
-<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.blockStorageActions
-   .attachVolumeToDropletByName(request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -262,25 +229,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L97">lib/services/block-storage-actions-service.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L97">lib/services/block-storage-actions-service.ts:97</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Detach a Block Storage volume from a droplet</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'detach'</span>,
-  <span class="hljs-attr">droplet_id</span>: <span class="hljs-number">11612190</span>,
-  <span class="hljs-attr">region</span>: <span class="hljs-string">'nyc1'</span>
-}
-<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.blockStorageActions
-   .detachVolumeFromDroplet(<span class="hljs-string">'volume-id'</span>, request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -304,26 +255,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L134">lib/services/block-storage-actions-service.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L134">lib/services/block-storage-actions-service.ts:134</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Detach a Block Storage volume from a droplet using the volume name</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'detach'</span>,
-  <span class="hljs-attr">volume_name</span>: <span class="hljs-string">'example'</span>,
-  <span class="hljs-attr">region</span>: <span class="hljs-string">'nyc1'</span>,
-  <span class="hljs-attr">droplet_id</span>: <span class="hljs-number">116121901</span>
-}
-<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.blockStorageActions
-   .detachVolumeFromDropletByName(request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -344,23 +278,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L203">lib/services/block-storage-actions-service.ts:203</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L203">lib/services/block-storage-actions-service.ts:203</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>List all actions that have been executed on the specified volume.
-									Limited to 25 actions per page unless otherwise specified.</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> actions = <span class="hljs-keyword">await</span> client.blockStorageActions.getAllVolumeActions(<span class="hljs-string">'volume-id'</span>);
-<span class="hljs-comment">// Paginate actions, 10 per page, starting on page 1</span>
-actions = <span class="hljs-keyword">await</span> client.blockStorageActions
-   .getAllVolumeActions(<span class="hljs-string">'volume-id'</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -387,20 +307,9 @@ actions = <span class="hljs-keyword">await</span> client.blockStorageActions
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L237">lib/services/block-storage-actions-service.ts:237</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L237">lib/services/block-storage-actions-service.ts:237</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get an existing volume action based on the provided ID</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.blockStorageActions
-   .getExistingVolumeAction(<span class="hljs-string">'volume-id'</span>, <span class="hljs-string">'action-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -424,7 +333,7 @@ actions = <span class="hljs-keyword">await</span> client.blockStorageActions
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L268">lib/services/block-storage-actions-service.ts:268</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L268">lib/services/block-storage-actions-service.ts:268</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -447,25 +356,9 @@ actions = <span class="hljs-keyword">await</span> client.blockStorageActions
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/block-storage-actions-service.ts#L169">lib/services/block-storage-actions-service.ts:169</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/block-storage-actions-service.ts#L169">lib/services/block-storage-actions-service.ts:169</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Resize a Block Storage volume</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'resize'</span>,
-  <span class="hljs-attr">size_gigabytes</span>: <span class="hljs-number">100</span>,
-  <span class="hljs-attr">region</span>: <span class="hljs-string">'nyc1'</span>
-}
-<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.blockStorageActions
-   .resizeVolume(<span class="hljs-string">'volume-id'</span>, request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>

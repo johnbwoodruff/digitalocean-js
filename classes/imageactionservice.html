@@ -107,7 +107,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/image-actions-service.ts#L6">lib/services/image-actions-service.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/image-actions-service.ts#L6">lib/services/image-actions-service.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="imageactionservice.html" class="tsd-signature-type">ImageActionService</a></h4>
@@ -127,19 +127,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/image-actions-service.ts#L48">lib/services/image-actions-service.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/image-actions-service.ts#L48">lib/services/image-actions-service.ts:48</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Convert an image (a backup for example) to a snapshot</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.imageActions.convertImageToSnapshot(<span class="hljs-string">'image-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -160,19 +150,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/image-actions-service.ts#L75">lib/services/image-actions-service.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/image-actions-service.ts#L75">lib/services/image-actions-service.ts:75</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieve the status of an image action</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.imageActions.getExistingImageAction(<span class="hljs-string">'image-id'</span>, <span class="hljs-string">'action-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -196,19 +176,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/image-actions-service.ts#L20">lib/services/image-actions-service.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/image-actions-service.ts#L20">lib/services/image-actions-service.ts:20</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Transfer an image to another region</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> action = <span class="hljs-keyword">await</span> client.imageActions.transferImage(<span class="hljs-string">'image-id'</span>, <span class="hljs-string">'nyc1'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>

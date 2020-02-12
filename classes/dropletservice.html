@@ -117,7 +117,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L10">lib/services/droplet-service.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L10">lib/services/droplet-service.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="dropletservice.html" class="tsd-signature-type">DropletService</a></h4>
@@ -137,36 +137,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L80">lib/services/droplet-service.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L80">lib/services/droplet-service.ts:80</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create multiple droplets with the same specs but different names</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">names</span>: [
-    <span class="hljs-string">'sub-01.example.com'</span>,
-    <span class="hljs-string">'sub-02.example.com'</span>
-  ],
-  <span class="hljs-attr">region</span>: <span class="hljs-string">'nyc3'</span>,
-  <span class="hljs-attr">size</span>: <span class="hljs-string">'s-1vcpu-1gb'</span>,
-  <span class="hljs-attr">image</span>: <span class="hljs-string">'ubuntu-16-04-x64'</span>,
-  <span class="hljs-attr">ssh_keys</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">backups</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">ipv6</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">user_data</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">private_networking</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">tags</span>: [
-    <span class="hljs-string">'web'</span>
-  ]
-};
-<span class="hljs-keyword">const</span> droplets = <span class="hljs-keyword">await</span> client.droplets.createMultipleDroplets(request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -187,34 +160,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L39">lib/services/droplet-service.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L39">lib/services/droplet-service.ts:39</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create a new droplet</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">name</span>: <span class="hljs-string">'example.com'</span>,
-  <span class="hljs-attr">region</span>: <span class="hljs-string">'nyc3'</span>,
-  <span class="hljs-attr">size</span>: <span class="hljs-string">'s-1vcpu-1gb'</span>,
-  <span class="hljs-attr">image</span>: <span class="hljs-string">'ubuntu-16-04-x64'</span>,
-  <span class="hljs-attr">ssh_keys</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">backups</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">ipv6</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">user_data</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">private_networking</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">volumes</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">tags</span>: [
-    <span class="hljs-string">'web'</span>
-  ]
-};
-<span class="hljs-keyword">const</span> droplet = <span class="hljs-keyword">await</span> client.droplets.createNewDroplet(request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -235,19 +183,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L274">lib/services/droplet-service.ts:274</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L274">lib/services/droplet-service.ts:274</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Delete a specific droplet by ID</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.droplets.deleteDroplet(<span class="hljs-string">'droplet-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -268,19 +206,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L297">lib/services/droplet-service.ts:297</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L297">lib/services/droplet-service.ts:297</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Delete Droplets by a tag</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.droplets.deleteDropletsByTag(<span class="hljs-string">'tag'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -301,19 +229,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L130">lib/services/droplet-service.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L130">lib/services/droplet-service.ts:130</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get all droplets on the account</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> droplets = <span class="hljs-keyword">await</span> client.droplets.getAllDroplets();</code></pre>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/droplet.html" class="tsd-signature-type">Droplet</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -328,19 +246,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L178">lib/services/droplet-service.ts:178</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L178">lib/services/droplet-service.ts:178</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieve a list of all kernels available to a Droplet</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> kernels = <span class="hljs-keyword">await</span> client.droplets.getAvailableKernelsForDroplet(<span class="hljs-string">'droplet-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -361,19 +269,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L226">lib/services/droplet-service.ts:226</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L226">lib/services/droplet-service.ts:226</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieve any backups associated with a Droplet</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> backups = <span class="hljs-keyword">await</span> client.droplets.getBackupsForDroplet(<span class="hljs-string">'droplet-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -394,19 +292,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L250">lib/services/droplet-service.ts:250</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L250">lib/services/droplet-service.ts:250</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieve all actions that have been executed on a Droplet</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> actions = <span class="hljs-keyword">await</span> client.droplets.getDropletActions(<span class="hljs-string">'droplet-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -427,19 +315,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L344">lib/services/droplet-service.ts:344</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L344">lib/services/droplet-service.ts:344</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieve a list of any Droplets that are running on the same physical hardware</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> droplets = <span class="hljs-keyword">await</span> client.droplets.getDropletNeighbors();</code></pre>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/droplet.html" class="tsd-signature-type">Droplet</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -454,19 +332,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L154">lib/services/droplet-service.ts:154</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L154">lib/services/droplet-service.ts:154</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get all droplets on the account that has a given tag</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> droplets = <span class="hljs-keyword">await</span> client.droplets.getDropletsByTag(<span class="hljs-string">'tag-name'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -487,19 +355,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L106">lib/services/droplet-service.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L106">lib/services/droplet-service.ts:106</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get a specific existing droplet by ID</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> droplet = <span class="hljs-keyword">await</span> client.droplets.getExistingDroplet(<span class="hljs-string">'droplet-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -520,19 +378,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L320">lib/services/droplet-service.ts:320</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L320">lib/services/droplet-service.ts:320</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieve a list of Droplets that are running on the same physical server</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> droplets = <span class="hljs-keyword">await</span> client.droplets.getNeighborsForDroplet(<span class="hljs-string">'droplet-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -553,19 +401,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/droplet-service.ts#L202">lib/services/droplet-service.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/droplet-service.ts#L202">lib/services/droplet-service.ts:202</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieve the snapshots that have been created from a Droplet</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> snapshots = <span class="hljs-keyword">await</span> client.droplets.getSnapshotsForDroplet(<span class="hljs-string">'droplet-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>

@@ -116,7 +116,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L9">lib/services/load-balancer-service.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L9">lib/services/load-balancer-service.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="loadbalancerservice.html" class="tsd-signature-type">LoadBalancerService</a></h4>
@@ -136,24 +136,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L259">lib/services/load-balancer-service.ts:259</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L259">lib/services/load-balancer-service.ts:259</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Add droplets to a Load Balancer</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> dropletIds = [
-  <span class="hljs-string">'droplet-id-1'</span>,
-  <span class="hljs-string">'droplet-id-2'</span>,
-  <span class="hljs-string">'droplet-id-3'</span>,
-];
-<span class="hljs-keyword">await</span> client.loadBalancers.addDropletsToLoadBalancer(dropletIds);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -177,28 +162,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L329">lib/services/load-balancer-service.ts:329</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L329">lib/services/load-balancer-service.ts:329</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Add forwarding rules to an existing Load Balancer</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> rules = [
-  {
-    <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"tcp"</span>,
-    <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">3306</span>,
-    <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"tcp"</span>,
-    <span class="hljs-string">"target_port"</span>: <span class="hljs-number">3306</span>
-  }
-];
-<span class="hljs-keyword">await</span> client.loadBalancers
-   .addForwardingRulesToLoadBalancer(<span class="hljs-string">'load-balancer-id'</span>, rules);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -222,58 +188,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L62">lib/services/load-balancer-service.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L62">lib/services/load-balancer-service.ts:62</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create a new Load Balancer</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-
-<span class="hljs-keyword">const</span> lb = {
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"example-lb-01"</span>,
-  <span class="hljs-string">"region"</span>: <span class="hljs-string">"nyc3"</span>,
-  <span class="hljs-string">"forwarding_rules"</span>: [
-    {
-      <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"http"</span>,
-      <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">80</span>,
-      <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"http"</span>,
-      <span class="hljs-string">"target_port"</span>: <span class="hljs-number">80</span>,
-      <span class="hljs-string">"certificate_id"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-string">"tls_passthrough"</span>: <span class="hljs-literal">false</span>
-    },
-    {
-      <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"https"</span>,
-      <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">444</span>,
-      <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"https"</span>,
-      <span class="hljs-string">"target_port"</span>: <span class="hljs-number">443</span>,
-      <span class="hljs-string">"tls_passthrough"</span>: <span class="hljs-literal">true</span>
-    }
-  ],
-  <span class="hljs-string">"health_check"</span>: {
-    <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"http"</span>,
-    <span class="hljs-string">"port"</span>: <span class="hljs-number">80</span>,
-    <span class="hljs-string">"path"</span>: <span class="hljs-string">"/"</span>,
-    <span class="hljs-string">"check_interval_seconds"</span>: <span class="hljs-number">10</span>,
-    <span class="hljs-string">"response_timeout_seconds"</span>: <span class="hljs-number">5</span>,
-    <span class="hljs-string">"healthy_threshold"</span>: <span class="hljs-number">5</span>,
-    <span class="hljs-string">"unhealthy_threshold"</span>: <span class="hljs-number">3</span>
-  },
-  <span class="hljs-string">"sticky_sessions"</span>: {
-    <span class="hljs-string">"type"</span>: <span class="hljs-string">"none"</span>
-  },
-  <span class="hljs-string">"droplet_ids"</span>: [
-    <span class="hljs-number">3164444</span>,
-    <span class="hljs-number">3164445</span>
-  ]
-};
-
-<span class="hljs-keyword">const</span> loadBalancer = <span class="hljs-keyword">await</span> client.loadBalancers.createLoadBalancer(lb);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -294,19 +211,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L231">lib/services/load-balancer-service.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L231">lib/services/load-balancer-service.ts:231</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Delete an existing Load Balancer</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.loadBalancers.deleteLoadBalancer(<span class="hljs-string">'load-balancer-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -327,7 +234,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L410">lib/services/load-balancer-service.ts:410</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L410">lib/services/load-balancer-service.ts:410</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -350,19 +257,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L125">lib/services/load-balancer-service.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L125">lib/services/load-balancer-service.ts:125</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get all existing Load Balancers</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> loadBalancers = <span class="hljs-keyword">await</span> client.loadBalancers.getAllLoadBalancers();</code></pre>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/loadbalancer.html" class="tsd-signature-type">LoadBalancer</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -377,19 +274,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L101">lib/services/load-balancer-service.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L101">lib/services/load-balancer-service.ts:101</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get an existing Load Balancer</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> loadBalancer = <span class="hljs-keyword">await</span> client.loadBalancers.getExistingLoadBalancer(<span class="hljs-string">'load-balancer-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -410,7 +297,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L422">lib/services/load-balancer-service.ts:422</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L422">lib/services/load-balancer-service.ts:422</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -433,7 +320,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L398">lib/services/load-balancer-service.ts:398</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L398">lib/services/load-balancer-service.ts:398</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -456,24 +343,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L292">lib/services/load-balancer-service.ts:292</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L292">lib/services/load-balancer-service.ts:292</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Remove droplets from a Load Balancer</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> dropletIds = [
-  <span class="hljs-string">'droplet-id-1'</span>,
-  <span class="hljs-string">'droplet-id-2'</span>,
-  <span class="hljs-string">'droplet-id-3'</span>,
-];
-<span class="hljs-keyword">await</span> client.loadBalancers.removeDropletsFromLoadBalancer(<span class="hljs-string">'load-balancer-id'</span>, dropletIds);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -497,28 +369,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L373">lib/services/load-balancer-service.ts:373</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L373">lib/services/load-balancer-service.ts:373</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Remove forwarding rules from an existing Load Balancer</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> rules = [
-  {
-    <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"tcp"</span>,
-    <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">3306</span>,
-    <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"tcp"</span>,
-    <span class="hljs-string">"target_port"</span>: <span class="hljs-number">3306</span>
-  }
-];
-<span class="hljs-keyword">await</span> client.loadBalancers
-   .removeForwardingRulesFromLoadBalancer(<span class="hljs-string">'load-balancer-id'</span>, rules);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -542,59 +395,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/load-balancer-service.ts#L189">lib/services/load-balancer-service.ts:189</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/load-balancer-service.ts#L189">lib/services/load-balancer-service.ts:189</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Update an existing Load Balancer</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-
-<span class="hljs-keyword">const</span> lb = {
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"example-lb-01"</span>,
-  <span class="hljs-string">"region"</span>: <span class="hljs-string">"nyc3"</span>,
-  <span class="hljs-string">"algorithm"</span>: <span class="hljs-string">"least_connections"</span>,
-  <span class="hljs-string">"forwarding_rules"</span>: [
-    {
-      <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"http"</span>,
-      <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">80</span>,
-      <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"http"</span>,
-      <span class="hljs-string">"target_port"</span>: <span class="hljs-number">80</span>
-    },
-    {
-      <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"https"</span>,
-      <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">444</span>,
-      <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"https"</span>,
-      <span class="hljs-string">"target_port"</span>: <span class="hljs-number">443</span>,
-      <span class="hljs-string">"tls_passthrough"</span>: <span class="hljs-literal">true</span>
-    }
-  ],
-  <span class="hljs-string">"health_check"</span>: {
-    <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"http"</span>,
-    <span class="hljs-string">"port"</span>: <span class="hljs-number">80</span>,
-    <span class="hljs-string">"path"</span>: <span class="hljs-string">"/"</span>,
-    <span class="hljs-string">"check_interval_seconds"</span>: <span class="hljs-number">10</span>,
-    <span class="hljs-string">"response_timeout_seconds"</span>: <span class="hljs-number">5</span>,
-    <span class="hljs-string">"healthy_threshold"</span>: <span class="hljs-number">5</span>,
-    <span class="hljs-string">"unhealthy_threshold"</span>: <span class="hljs-number">3</span>
-  },
-  <span class="hljs-string">"sticky_sessions"</span>: {
-    <span class="hljs-string">"type"</span>: <span class="hljs-string">"cookies"</span>,
-    <span class="hljs-string">"cookie_name"</span>: <span class="hljs-string">"DO_LB"</span>,
-    <span class="hljs-string">"cookie_ttl_seconds"</span>: <span class="hljs-number">300</span>
-  },
-  <span class="hljs-string">"droplet_ids"</span>: [
-    <span class="hljs-number">3164444</span>,
-    <span class="hljs-number">3164445</span>
-  ]
-};
-
-<span class="hljs-keyword">const</span> loadBalancer = <span class="hljs-keyword">await</span> client.loadBalancers.updateLoadBalancer(lb);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>

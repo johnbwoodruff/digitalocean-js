@@ -109,7 +109,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/domain-record-service.ts#L6">lib/services/domain-record-service.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/domain-record-service.ts#L6">lib/services/domain-record-service.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="domainrecordservice.html" class="tsd-signature-type">DomainRecordService</a></h4>
@@ -129,31 +129,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/domain-record-service.ts#L56">lib/services/domain-record-service.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/domain-record-service.ts#L56">lib/services/domain-record-service.ts:56</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create a new record for a domain</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'A'</span>,
-  <span class="hljs-attr">name</span>: <span class="hljs-string">'www'</span>,
-  <span class="hljs-attr">data</span>: <span class="hljs-string">'162.10.66.0'</span>,
-  <span class="hljs-attr">priority</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">port</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">ttl</span>: <span class="hljs-number">1800</span>,
-  <span class="hljs-attr">weight</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">flags</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">tag</span>: <span class="hljs-literal">null</span>
-};
-<span class="hljs-keyword">const</span> record = <span class="hljs-keyword">await</span> client.domainRecords
-   .createDomainRecord(<span class="hljs-string">'example.com'</span>, request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -177,19 +155,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/domain-record-service.ts#L147">lib/services/domain-record-service.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/domain-record-service.ts#L147">lib/services/domain-record-service.ts:147</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Delete a record for a domain</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.domainRecords.deleteDomainRecord(<span class="hljs-string">'example.com'</span>, <span class="hljs-string">'record-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -213,19 +181,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/domain-record-service.ts#L20">lib/services/domain-record-service.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/domain-record-service.ts#L20">lib/services/domain-record-service.ts:20</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get all records configured for a domain</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> records = <span class="hljs-keyword">await</span> client.domainRecords.getAllDomainRecords(<span class="hljs-string">'example.com'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -246,20 +204,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/domain-record-service.ts#L84">lib/services/domain-record-service.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/domain-record-service.ts#L84">lib/services/domain-record-service.ts:84</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get a specific existing domain record</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> record = <span class="hljs-keyword">await</span> client.domainRecords
-   .getExistingDomainRecord(<span class="hljs-string">'example.com'</span>, <span class="hljs-string">'record-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -283,24 +230,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/domain-record-service.ts#L116">lib/services/domain-record-service.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/domain-record-service.ts#L116">lib/services/domain-record-service.ts:116</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Update an existing domain record</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-comment">// Any valid domain record attribute can be changed</span>
-  name: <span class="hljs-string">'blog'</span>
-};
-<span class="hljs-keyword">const</span> record = <span class="hljs-keyword">await</span> client.domainRecords
-   .updateDomainRecord(<span class="hljs-string">'example.com'</span>, <span class="hljs-string">'record-id'</span>, request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>

@@ -119,7 +119,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L12">lib/services/kubernetes-service.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L12">lib/services/kubernetes-service.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="kubernetesservice.html" class="tsd-signature-type">KubernetesService</a></h4>
@@ -139,27 +139,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L319">lib/services/kubernetes-service.ts:319</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L319">lib/services/kubernetes-service.ts:319</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Add a node pool to a kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-string">"size"</span>: <span class="hljs-string">"s-2vcpu-4gb"</span>,
-  <span class="hljs-string">"count"</span>: <span class="hljs-number">1</span>,
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"pool-02"</span>,
-  <span class="hljs-string">"tags"</span>: [
-    <span class="hljs-string">"web"</span>
-  ]
-};
-<span class="hljs-keyword">const</span> nodePool = <span class="hljs-keyword">await</span> client.kubernetes.addNodePoolToCluster(<span class="hljs-string">'cluster-id'</span>, request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -183,43 +165,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L50">lib/services/kubernetes-service.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L50">lib/services/kubernetes-service.ts:50</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create a new kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"prod-cluster-01"</span>,
-  <span class="hljs-string">"region"</span>: <span class="hljs-string">"nyc1"</span>,
-  <span class="hljs-string">"version"</span>: <span class="hljs-string">"1.14.1-do.4"</span>,
-  <span class="hljs-string">"tags"</span>: [
-    <span class="hljs-string">"production"</span>,
-    <span class="hljs-string">"web-team"</span>
-  ],
-  <span class="hljs-string">"node_pools"</span>: [
-    {
-      <span class="hljs-string">"size"</span>: <span class="hljs-string">"s-1vcpu-2gb"</span>,
-      <span class="hljs-string">"count"</span>: <span class="hljs-number">3</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"frontend-pool"</span>,
-      <span class="hljs-string">"tags"</span>: [
-        <span class="hljs-string">"frontend"</span>
-      ]
-    },
-    {
-      <span class="hljs-string">"size"</span>: <span class="hljs-string">"c-4"</span>,
-      <span class="hljs-string">"count"</span>: <span class="hljs-number">2</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"backend-pool"</span>
-    }
-  ]
-};
-<span class="hljs-keyword">const</span> cluster = <span class="hljs-keyword">await</span> client.kubernetes.createCluster(request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -240,19 +188,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L212">lib/services/kubernetes-service.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L212">lib/services/kubernetes-service.ts:212</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Delete an existing kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.kubernetes.deleteCluster(<span class="hljs-string">'cluster-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -273,20 +211,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L414">lib/services/kubernetes-service.ts:414</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L414">lib/services/kubernetes-service.ts:414</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Delete an existing node from a node pool in a kubernetes cluster.
-									Optionally specify to skip node draining or to replace with a new node after deletion.</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.kubernetes.deleteNodeFromNodePoolForCluster(<span class="hljs-string">'cluster-id'</span>, <span class="hljs-string">'pool-id'</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -316,19 +243,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L385">lib/services/kubernetes-service.ts:385</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L385">lib/services/kubernetes-service.ts:385</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Delete an existing node pool from a kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.kubernetes.deleteNodePoolFromCluster(<span class="hljs-string">'cluster-id'</span>, <span class="hljs-string">'pool-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -352,19 +269,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L100">lib/services/kubernetes-service.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L100">lib/services/kubernetes-service.ts:100</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get all existing kubernetes clusters</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> clusters = <span class="hljs-keyword">await</span> client.kubernetes.getAllClusters();</code></pre>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/kubernetescluster.html" class="tsd-signature-type">KubernetesCluster</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -379,19 +286,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L286">lib/services/kubernetes-service.ts:286</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L286">lib/services/kubernetes-service.ts:286</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get all existing node pools on a kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> nodePools = <span class="hljs-keyword">await</span> client.kubernetes.getAllNodePoolsForCluster(<span class="hljs-string">'cluster-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -412,19 +309,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L158">lib/services/kubernetes-service.ts:158</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L158">lib/services/kubernetes-service.ts:158</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get available upgrades for an existing kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> upgrades = <span class="hljs-keyword">await</span> client.kubernetes.getAvailableUpgradesForCluster(<span class="hljs-string">'cluster-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -445,19 +332,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L76">lib/services/kubernetes-service.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L76">lib/services/kubernetes-service.ts:76</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get a specific existing kubernetes cluster by ID</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> cluster = <span class="hljs-keyword">await</span> client.kubernetes.getCluster(<span class="hljs-string">'cluster-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -478,19 +355,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L235">lib/services/kubernetes-service.ts:235</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L235">lib/services/kubernetes-service.ts:235</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the contents of the kubeconfig yaml file for use with a Kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> kubeconfig = <span class="hljs-keyword">await</span> client.kubernetes.getClusterKubeconfig(<span class="hljs-string">'cluster-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -511,19 +378,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L258">lib/services/kubernetes-service.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L258">lib/services/kubernetes-service.ts:258</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get an existing node pool on a kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> nodePool = <span class="hljs-keyword">await</span> client.kubernetes.getExistingNodePoolForCluster(<span class="hljs-string">'cluster-id'</span>, <span class="hljs-string">'pool-id'</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -547,19 +404,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L445">lib/services/kubernetes-service.ts:445</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L445">lib/services/kubernetes-service.ts:445</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get available Kubernetes versions, regions that support Kubernetes, and the available node sizes.</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> options = <span class="hljs-keyword">await</span> client.kubernetes.getKubernetesOptions();</code></pre>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/kubernetesoptions.html" class="tsd-signature-type">KubernetesOptions</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -574,26 +421,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L131">lib/services/kubernetes-service.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L131">lib/services/kubernetes-service.ts:131</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Update an existing kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"stage-cluster-01"</span>,
-  <span class="hljs-string">"tags"</span>: [
-    <span class="hljs-string">"staging"</span>,
-    <span class="hljs-string">"web-team"</span>
-  ]
-};
-<span class="hljs-keyword">const</span> cluster = <span class="hljs-keyword">await</span> client.kubernetes.updateCluster(<span class="hljs-string">'cluster-id'</span>, request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -617,26 +447,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L355">lib/services/kubernetes-service.ts:355</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L355">lib/services/kubernetes-service.ts:355</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Update an existing node pool in a kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> request = {
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"frontend"</span>,
-  <span class="hljs-string">"count"</span>: <span class="hljs-number">1</span>,
-  <span class="hljs-string">"tags"</span>: [
-    <span class="hljs-string">"frontend"</span>
-  ]
-};
-<span class="hljs-keyword">const</span> nodePool = <span class="hljs-keyword">await</span> client.kubernetes.updateNodePoolForCluster(<span class="hljs-string">'cluster-id'</span>, <span class="hljs-string">'pool-id'</span>, request);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -663,19 +476,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/a8eb4bc/src/lib/services/kubernetes-service.ts#L184">lib/services/kubernetes-service.ts:184</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/2aead6c/src/lib/services/kubernetes-service.ts#L184">lib/services/kubernetes-service.ts:184</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Upgrade the version of an existing kubernetes cluster</p>
-								</div>
-								<h3 id="example">Example</h3>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
-
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.kubernetes.upgradeExistingCluster(<span class="hljs-string">'cluster-id'</span>, <span class="hljs-string">"1.12.3-do.1"</span>);</code></pre>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
