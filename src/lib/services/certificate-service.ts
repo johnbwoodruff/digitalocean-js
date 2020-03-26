@@ -1,6 +1,5 @@
 import Axios from 'axios';
 
-import { API_BASE_URL } from '../conf/environment';
 import { Certificate, CertificateRequest } from '../models/certificate';
 
 export class CertificateService {
@@ -27,7 +26,7 @@ export class CertificateService {
     certificateRequest: CertificateRequest
   ): Promise<Certificate> {
     return new Promise((resolve, reject) => {
-      Axios.post(`${API_BASE_URL}/certificates`, certificateRequest)
+      Axios.post(`/certificates`, certificateRequest)
         .then(response => {
           // Return actual certificate instead of wrapped certificate
           resolve(response.data.certificate);
@@ -51,7 +50,7 @@ export class CertificateService {
    */
   public getExistingCertificate(certificateId: string): Promise<Certificate> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/certificates/${certificateId}`)
+      Axios.get(`/certificates/${certificateId}`)
         .then(response => {
           // Return actual certificate instead of wrapped certificate
           resolve(response.data.certificate);
@@ -75,7 +74,7 @@ export class CertificateService {
    */
   public getAllCertificates(): Promise<Certificate[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/certificates`)
+      Axios.get(`/certificates`)
         .then(response => {
           // Return actual certificates instead of wrapped certificates
           resolve(response.data.certificates);
@@ -99,7 +98,7 @@ export class CertificateService {
    */
   public deleteCertificate(certificateId: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`${API_BASE_URL}/certificates/${certificateId}`)
+      Axios.delete(`/certificates/${certificateId}`)
         .then(() => {
           resolve();
         })

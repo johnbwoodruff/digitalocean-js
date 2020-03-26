@@ -1,6 +1,5 @@
 import Axios from 'axios';
 
-import { API_BASE_URL } from '../conf/environment';
 import { Domain, DomainRequest } from '../models/domain';
 
 export class DomainService {
@@ -19,7 +18,7 @@ export class DomainService {
    */
   public getAllDomains(): Promise<Domain[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/domains`)
+      Axios.get(`/domains`)
         .then(response => {
           // Return actual domains instead of wrapped domains
           resolve(response.data.domains);
@@ -47,7 +46,7 @@ export class DomainService {
    */
   public createDomain(domainRequest: DomainRequest): Promise<Domain> {
     return new Promise((resolve, reject) => {
-      Axios.post(`${API_BASE_URL}/domains`, domainRequest)
+      Axios.post(`/domains`, domainRequest)
         .then(response => {
           // Return actual domain instead of wrapped domain
           resolve(response.data.domain);
@@ -71,7 +70,7 @@ export class DomainService {
    */
   public getExistingDomain(domainName: string): Promise<Domain> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/domains/${domainName}`)
+      Axios.get(`/domains/${domainName}`)
         .then(response => {
           // Return actual domain instead of wrapped domain
           resolve(response.data.domain);
@@ -95,7 +94,7 @@ export class DomainService {
    */
   public deleteDomain(domainName: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`${API_BASE_URL}/domains/${domainName}`)
+      Axios.delete(`/domains/${domainName}`)
         .then(() => {
           resolve();
         })

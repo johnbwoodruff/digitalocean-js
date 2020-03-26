@@ -1,6 +1,5 @@
 import Axios from 'axios';
 
-import { API_BASE_URL } from '../conf/environment';
 import { Action } from '../models/action';
 
 export class ActionService {
@@ -24,7 +23,7 @@ export class ActionService {
     page = page ? page : 1;
     perPage = perPage ? perPage : 25;
     return new Promise((resolve, reject) => {
-      let url = `${API_BASE_URL}/actions`;
+      let url = `/actions`;
       url += `?page=${page}`;
       url += `&per_page=${perPage}`;
       Axios.get(url)
@@ -51,7 +50,7 @@ export class ActionService {
    */
   public getExistingAction(id: number): Promise<Action> {
     return new Promise((resolve, reject) => {
-      const url = `${API_BASE_URL}/actions/${id}`;
+      const url = `/actions/${id}`;
       Axios.get(url)
         .then(response => {
           // Return actual action instead of wrapped action

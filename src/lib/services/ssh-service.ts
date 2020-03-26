@@ -1,6 +1,5 @@
 import Axios from 'axios';
 
-import { API_BASE_URL } from '../conf/environment';
 import { SshKey } from '../models/ssh-key';
 
 export class SshService {
@@ -19,7 +18,7 @@ export class SshService {
    */
   public getAllKeys(): Promise<SshKey[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/account/keys`)
+      Axios.get(`/account/keys`)
         .then(response => {
           // Return actual ssh keys instead of wrapped ssh keys
           resolve(response.data.ssh_keys);
@@ -47,7 +46,7 @@ export class SshService {
    */
   public createNewKey(key: SshKey): Promise<SshKey> {
     return new Promise((resolve, reject) => {
-      Axios.post(`${API_BASE_URL}/account/keys`, key)
+      Axios.post(`/account/keys`, key)
         .then(response => {
           // Return actual ssh key instead of wrapped ssh key
           resolve(response.data.ssh_key);
@@ -71,7 +70,7 @@ export class SshService {
    */
   public getExistingKey(idOrFingerprint: string): Promise<SshKey> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/account/keys/${idOrFingerprint}`)
+      Axios.get(`/account/keys/${idOrFingerprint}`)
         .then(response => {
           // Return actual ssh key instead of wrapped ssh key
           resolve(response.data.ssh_key);
@@ -98,7 +97,7 @@ export class SshService {
    */
   public updateKey(idOrFingerprint: string, key: SshKey): Promise<SshKey> {
     return new Promise((resolve, reject) => {
-      Axios.put(`${API_BASE_URL}/account/keys/${idOrFingerprint}`, key)
+      Axios.put(`/account/keys/${idOrFingerprint}`, key)
         .then(response => {
           // Return actual ssh key instead of wrapped ssh key
           resolve(response.data.ssh_key);
@@ -122,7 +121,7 @@ export class SshService {
    */
   public deleteKey(idOrFingerprint: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`${API_BASE_URL}/account/keys/${idOrFingerprint}`)
+      Axios.delete(`/account/keys/${idOrFingerprint}`)
         .then(() => {
           // Return actual ssh key instead of wrapped ssh key
           resolve();
