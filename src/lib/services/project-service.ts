@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { API_BASE_URL } from '../conf/environment';
+
 import { Project, ProjectPurpose, ProjectResource } from '../models/project';
 
 export class ProjectService {
@@ -18,7 +18,7 @@ export class ProjectService {
    */
   public getAllProjects(): Promise<Project[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/projects`)
+      Axios.get(`/projects`)
         .then(response => {
           // Return actual projects instead of wrapped projects
           resolve(response.data.projects);
@@ -42,7 +42,7 @@ export class ProjectService {
    */
   public getExistingProject(id: string): Promise<Project> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/projects/${id}`)
+      Axios.get(`/projects/${id}`)
         .then(response => {
           // Return actual project instead of wrapped project
           resolve(response.data.project);
@@ -95,7 +95,7 @@ export class ProjectService {
           'Project purpose is not one of the allowed values. Use a proper purpose value.'
         );
       }
-      Axios.post(`${API_BASE_URL}/projects`, project)
+      Axios.post(`/projects`, project)
         .then(response => {
           // Return actual project instead of wrapped project
           resolve(response.data.project);
@@ -134,7 +134,7 @@ export class ProjectService {
           'Project purpose is not one of the allowed values. Use a proper purpose value.'
         );
       }
-      Axios.put(`${API_BASE_URL}/projects/${id}`, project)
+      Axios.put(`/projects/${id}`, project)
         .then(response => {
           // Return actual project instead of wrapped project
           resolve(response.data.project);
@@ -180,7 +180,7 @@ export class ProjectService {
    */
   public getProjectResources(id: string): Promise<ProjectResource[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/projects/${id}/resources`)
+      Axios.get(`/projects/${id}/resources`)
         .then(response => {
           // Return actual resources instead of wrapped resources
           resolve(response.data.resources);
@@ -230,7 +230,7 @@ export class ProjectService {
     resources: string[]
   ): Promise<ProjectResource[]> {
     return new Promise((resolve, reject) => {
-      Axios.post(`${API_BASE_URL}/projects/${id}/resources`, { resources })
+      Axios.post(`/projects/${id}/resources`, { resources })
         .then(response => {
           // Return actual resources instead of wrapped resources
           resolve(response.data.resources);

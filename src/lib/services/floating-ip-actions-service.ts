@@ -1,6 +1,5 @@
 import Axios from 'axios';
 
-import { API_BASE_URL } from '../conf/environment';
 import { Action } from '../models/action';
 
 export class FloatingIPActionService {
@@ -27,10 +26,7 @@ export class FloatingIPActionService {
         droplet_id: dropletId,
         type: 'assign'
       };
-      Axios.post(
-        `${API_BASE_URL}/floating_ips/${floatingIPAddress}/actions`,
-        request
-      )
+      Axios.post(`/floating_ips/${floatingIPAddress}/actions`, request)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -58,10 +54,7 @@ export class FloatingIPActionService {
       const request = {
         type: 'unassign'
       };
-      Axios.post(
-        `${API_BASE_URL}/floating_ips/${floatingIPAddress}/actions`,
-        request
-      )
+      Axios.post(`/floating_ips/${floatingIPAddress}/actions`, request)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -86,7 +79,7 @@ export class FloatingIPActionService {
    */
   public getAllFloatingIPActions(floatingIPAddress: string): Promise<Action[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/floating_ips/${floatingIPAddress}/actions`)
+      Axios.get(`/floating_ips/${floatingIPAddress}/actions`)
         .then(response => {
           // Return actual actions instead of wrapped actions
           resolve(response.data.actions);
@@ -114,9 +107,7 @@ export class FloatingIPActionService {
     actionId: string
   ): Promise<Action> {
     return new Promise((resolve, reject) => {
-      Axios.get(
-        `${API_BASE_URL}/floating_ips/${floatingIPAddress}/actions/${actionId}`
-      )
+      Axios.get(`/floating_ips/${floatingIPAddress}/actions/${actionId}`)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);

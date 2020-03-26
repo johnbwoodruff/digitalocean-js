@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { API_BASE_URL } from '../conf/environment';
+
 import { BlockStorage, BlockStorageRequest } from '../models/block-storage';
 import { Snapshot } from '../models/snapshot';
 
@@ -19,7 +19,7 @@ export class BlockStorageService {
    */
   public getAllBlockStorage(): Promise<BlockStorage[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/volumes`)
+      Axios.get(`/volumes`)
         .then(response => {
           // Return actual volumes instead of wrapped volumes
           resolve(response.data.volumes);
@@ -54,7 +54,7 @@ export class BlockStorageService {
       if (!this.volumeIsValid(volume)) {
         throw new Error('Required fields missing from Block Storage Object');
       }
-      Axios.post(`${API_BASE_URL}/volumes`, volume)
+      Axios.post(`/volumes`, volume)
         .then(response => {
           // Return actual volume instead of wrapped volume
           resolve(response.data.volume);
@@ -78,7 +78,7 @@ export class BlockStorageService {
    */
   public getBlockStorageById(id: string): Promise<BlockStorage> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/volumes/${id}`)
+      Axios.get(`/volumes/${id}`)
         .then(response => {
           // Return actual volume instead of wrapped volume
           resolve(response.data.volume);
@@ -106,7 +106,7 @@ export class BlockStorageService {
     regionSlug: string
   ): Promise<BlockStorage[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/volumes?name=${name}&region=${regionSlug}`)
+      Axios.get(`/volumes?name=${name}&region=${regionSlug}`)
         .then(response => {
           // Return actual volumes instead of wrapped volumes
           resolve(response.data.volumes);
@@ -131,7 +131,7 @@ export class BlockStorageService {
    */
   public getSnapshotsForVolume(id: string): Promise<Snapshot[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/volumes/${id}/snapshots`)
+      Axios.get(`/volumes/${id}/snapshots`)
         .then(response => {
           // Return actual snapshots instead of wrapped snapshots
           resolve(response.data.snapshots);
@@ -156,7 +156,7 @@ export class BlockStorageService {
    */
   public createSnapshotFromVolume(id: string, name: string): Promise<Snapshot> {
     return new Promise((resolve, reject) => {
-      Axios.post(`${API_BASE_URL}/volumes/${id}/snapshots`, { name })
+      Axios.post(`/volumes/${id}/snapshots`, { name })
         .then(response => {
           // Return actual snapshot instead of wrapped snapshot
           resolve(response.data.snapshot);
@@ -180,7 +180,7 @@ export class BlockStorageService {
    */
   public deleteBlockStorageById(id: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`${API_BASE_URL}/volumes/${id}`)
+      Axios.delete(`/volumes/${id}`)
         .then(() => {
           resolve();
         })
@@ -206,7 +206,7 @@ export class BlockStorageService {
     regionSlug: string
   ): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`${API_BASE_URL}/volumes?name=${name}&region=${regionSlug}`)
+      Axios.delete(`/volumes?name=${name}&region=${regionSlug}`)
         .then(() => {
           resolve();
         })

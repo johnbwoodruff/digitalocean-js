@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { API_BASE_URL } from './conf/environment';
 import { AccountService } from './services/account-service';
 import { ActionService } from './services/actions-service';
 import { BlockStorageActionService } from './services/block-storage-actions-service';
@@ -48,9 +49,10 @@ export class DigitalOcean {
   public ssh: SshService;
   public tags: TagService;
 
-  constructor(private token: string) {
+  constructor(private token: string, url = API_BASE_URL) {
     Axios.defaults.headers.common.Authorization = `Bearer ${this.token}`;
     Axios.defaults.headers.common['Content-Type'] = `application/json`;
+    Axios.defaults.baseURL = url;
 
     this.account = new AccountService();
     this.actions = new ActionService();

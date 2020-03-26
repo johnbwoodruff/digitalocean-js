@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { API_BASE_URL } from '../conf/environment';
+
 import { CdnEndpoint, CdnEndpointRequest } from '../models/cdn';
 
 export class CdnService {
@@ -18,7 +18,7 @@ export class CdnService {
    */
   public getAllEndpoints(): Promise<CdnEndpoint[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/cdn/endpoints`)
+      Axios.get(`/cdn/endpoints`)
         .then(response => {
           // Return actual endpoints instead of wrapped endpoints
           resolve(response.data.endpoints);
@@ -42,7 +42,7 @@ export class CdnService {
    */
   public getExistingEndpoint(id: string): Promise<CdnEndpoint> {
     return new Promise((resolve, reject) => {
-      Axios.get(`${API_BASE_URL}/cdn/endpoints/${id}`)
+      Axios.get(`/cdn/endpoints/${id}`)
         .then(response => {
           // Return actual endpoint instead of wrapped endpoint
           resolve(response.data.endpoint);
@@ -73,7 +73,7 @@ export class CdnService {
       if (!this.endpointIsValid(endpoint)) {
         throw new Error('Required fields missing from Endpoint Object');
       }
-      Axios.post(`${API_BASE_URL}/cdn/endpoints`, endpoint)
+      Axios.post(`/cdn/endpoints`, endpoint)
         .then(response => {
           // Return actual endpoint instead of wrapped endpoint
           resolve(response.data.endpoint);
@@ -97,7 +97,7 @@ export class CdnService {
    */
   public updateEndpoint(id: string, ttl: number): Promise<CdnEndpoint> {
     return new Promise((resolve, reject) => {
-      Axios.put(`${API_BASE_URL}/cdn/endpoints/${id}`, { ttl })
+      Axios.put(`/cdn/endpoints/${id}`, { ttl })
         .then(response => {
           // Return actual endpoint instead of wrapped endpoint
           resolve(response.data.endpoint);
@@ -121,7 +121,7 @@ export class CdnService {
    */
   public deleteEndpoint(id: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`${API_BASE_URL}/cdn/endpoints/${id}`)
+      Axios.delete(`/cdn/endpoints/${id}`)
         .then(() => {
           resolve();
         })
@@ -148,7 +148,7 @@ export class CdnService {
    */
   public purgeEndpointCache(id: string, files: string[]): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`${API_BASE_URL}/cdn/endpoints/${id}/cache`, {
+      Axios.delete(`/cdn/endpoints/${id}/cache`, {
         data: { files }
       })
         .then(() => {
