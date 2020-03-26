@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.5"></a>
+## [1.5.5](https://github.com/johnbwoodruff/digitalocean-js/compare/v1.5.4...v1.5.5) (2020-03-26)
+
+
+
 <a name="1.5.4"></a>
 ## [1.5.4](https://github.com/johnbwoodruff/digitalocean-js/compare/v1.5.2...v1.5.4) (2020-02-12)
 
