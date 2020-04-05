@@ -116,7 +116,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L9">lib/services/load-balancer-service.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L9">lib/services/load-balancer-service.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="loadbalancerservice.html" class="tsd-signature-type">LoadBalancerService</a></h4>
@@ -136,9 +136,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L256">lib/services/load-balancer-service.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L256">lib/services/load-balancer-service.ts:256</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add droplets to a Load Balancer</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> dropletIds = [
+  <span class="hljs-string">'droplet-id-1'</span>,
+  <span class="hljs-string">'droplet-id-2'</span>,
+  <span class="hljs-string">'droplet-id-3'</span>,
+];
+<span class="hljs-keyword">await</span> client.loadBalancers.addDropletsToLoadBalancer(dropletIds);</code></pre>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -162,9 +179,30 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L326">lib/services/load-balancer-service.ts:326</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L326">lib/services/load-balancer-service.ts:326</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add forwarding rules to an existing Load Balancer</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> rules = [
+  {
+    <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"tcp"</span>,
+    <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">3306</span>,
+    <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"tcp"</span>,
+    <span class="hljs-string">"target_port"</span>: <span class="hljs-number">3306</span>
+  }
+];
+<span class="hljs-keyword">await</span> client.loadBalancers
+   .addForwardingRulesToLoadBalancer(<span class="hljs-string">'load-balancer-id'</span>, rules);</code></pre>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -188,9 +226,60 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L62">lib/services/load-balancer-service.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L62">lib/services/load-balancer-service.ts:62</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a new Load Balancer</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+
+<span class="hljs-keyword">const</span> lb = {
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"example-lb-01"</span>,
+  <span class="hljs-string">"region"</span>: <span class="hljs-string">"nyc3"</span>,
+  <span class="hljs-string">"forwarding_rules"</span>: [
+    {
+      <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"http"</span>,
+      <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">80</span>,
+      <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"http"</span>,
+      <span class="hljs-string">"target_port"</span>: <span class="hljs-number">80</span>,
+      <span class="hljs-string">"certificate_id"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-string">"tls_passthrough"</span>: <span class="hljs-literal">false</span>
+    },
+    {
+      <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"https"</span>,
+      <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">444</span>,
+      <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"https"</span>,
+      <span class="hljs-string">"target_port"</span>: <span class="hljs-number">443</span>,
+      <span class="hljs-string">"tls_passthrough"</span>: <span class="hljs-literal">true</span>
+    }
+  ],
+  <span class="hljs-string">"health_check"</span>: {
+    <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"http"</span>,
+    <span class="hljs-string">"port"</span>: <span class="hljs-number">80</span>,
+    <span class="hljs-string">"path"</span>: <span class="hljs-string">"/"</span>,
+    <span class="hljs-string">"check_interval_seconds"</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-string">"response_timeout_seconds"</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-string">"healthy_threshold"</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-string">"unhealthy_threshold"</span>: <span class="hljs-number">3</span>
+  },
+  <span class="hljs-string">"sticky_sessions"</span>: {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"none"</span>
+  },
+  <span class="hljs-string">"droplet_ids"</span>: [
+    <span class="hljs-number">3164444</span>,
+    <span class="hljs-number">3164445</span>
+  ]
+};
+
+<span class="hljs-keyword">const</span> loadBalancer = <span class="hljs-keyword">await</span> client.loadBalancers.createLoadBalancer(lb);</code></pre>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -211,9 +300,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L228">lib/services/load-balancer-service.ts:228</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L228">lib/services/load-balancer-service.ts:228</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Delete an existing Load Balancer</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">await</span> client.loadBalancers.deleteLoadBalancer(<span class="hljs-string">'load-balancer-id'</span>);</code></pre>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -234,7 +335,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L407">lib/services/load-balancer-service.ts:407</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L407">lib/services/load-balancer-service.ts:407</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -257,9 +358,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L125">lib/services/load-balancer-service.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L125">lib/services/load-balancer-service.ts:125</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get all existing Load Balancers</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> loadBalancers = <span class="hljs-keyword">await</span> client.loadBalancers.getAllLoadBalancers();</code></pre>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/loadbalancer.html" class="tsd-signature-type">LoadBalancer</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -274,9 +387,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L101">lib/services/load-balancer-service.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L101">lib/services/load-balancer-service.ts:101</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get an existing Load Balancer</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> loadBalancer = <span class="hljs-keyword">await</span> client.loadBalancers.getExistingLoadBalancer(<span class="hljs-string">'load-balancer-id'</span>);</code></pre>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -297,7 +422,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L419">lib/services/load-balancer-service.ts:419</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L419">lib/services/load-balancer-service.ts:419</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -320,7 +445,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L395">lib/services/load-balancer-service.ts:395</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L395">lib/services/load-balancer-service.ts:395</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -343,9 +468,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L289">lib/services/load-balancer-service.ts:289</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L289">lib/services/load-balancer-service.ts:289</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove droplets from a Load Balancer</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> dropletIds = [
+  <span class="hljs-string">'droplet-id-1'</span>,
+  <span class="hljs-string">'droplet-id-2'</span>,
+  <span class="hljs-string">'droplet-id-3'</span>,
+];
+<span class="hljs-keyword">await</span> client.loadBalancers.removeDropletsFromLoadBalancer(<span class="hljs-string">'load-balancer-id'</span>, dropletIds);</code></pre>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -369,9 +511,30 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L370">lib/services/load-balancer-service.ts:370</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L370">lib/services/load-balancer-service.ts:370</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove forwarding rules from an existing Load Balancer</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> rules = [
+  {
+    <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"tcp"</span>,
+    <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">3306</span>,
+    <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"tcp"</span>,
+    <span class="hljs-string">"target_port"</span>: <span class="hljs-number">3306</span>
+  }
+];
+<span class="hljs-keyword">await</span> client.loadBalancers
+   .removeForwardingRulesFromLoadBalancer(<span class="hljs-string">'load-balancer-id'</span>, rules);</code></pre>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -395,9 +558,61 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/c7753ad/src/lib/services/load-balancer-service.ts#L189">lib/services/load-balancer-service.ts:189</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/583cf07/src/lib/services/load-balancer-service.ts#L189">lib/services/load-balancer-service.ts:189</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Update an existing Load Balancer</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+
+<span class="hljs-keyword">const</span> lb = {
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"example-lb-01"</span>,
+  <span class="hljs-string">"region"</span>: <span class="hljs-string">"nyc3"</span>,
+  <span class="hljs-string">"algorithm"</span>: <span class="hljs-string">"least_connections"</span>,
+  <span class="hljs-string">"forwarding_rules"</span>: [
+    {
+      <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"http"</span>,
+      <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">80</span>,
+      <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"http"</span>,
+      <span class="hljs-string">"target_port"</span>: <span class="hljs-number">80</span>
+    },
+    {
+      <span class="hljs-string">"entry_protocol"</span>: <span class="hljs-string">"https"</span>,
+      <span class="hljs-string">"entry_port"</span>: <span class="hljs-number">444</span>,
+      <span class="hljs-string">"target_protocol"</span>: <span class="hljs-string">"https"</span>,
+      <span class="hljs-string">"target_port"</span>: <span class="hljs-number">443</span>,
+      <span class="hljs-string">"tls_passthrough"</span>: <span class="hljs-literal">true</span>
+    }
+  ],
+  <span class="hljs-string">"health_check"</span>: {
+    <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"http"</span>,
+    <span class="hljs-string">"port"</span>: <span class="hljs-number">80</span>,
+    <span class="hljs-string">"path"</span>: <span class="hljs-string">"/"</span>,
+    <span class="hljs-string">"check_interval_seconds"</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-string">"response_timeout_seconds"</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-string">"healthy_threshold"</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-string">"unhealthy_threshold"</span>: <span class="hljs-number">3</span>
+  },
+  <span class="hljs-string">"sticky_sessions"</span>: {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"cookies"</span>,
+    <span class="hljs-string">"cookie_name"</span>: <span class="hljs-string">"DO_LB"</span>,
+    <span class="hljs-string">"cookie_ttl_seconds"</span>: <span class="hljs-number">300</span>
+  },
+  <span class="hljs-string">"droplet_ids"</span>: [
+    <span class="hljs-number">3164444</span>,
+    <span class="hljs-number">3164445</span>
+  ]
+};
+
+<span class="hljs-keyword">const</span> loadBalancer = <span class="hljs-keyword">await</span> client.loadBalancers.updateLoadBalancer(lb);</code></pre>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -478,62 +693,22 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
