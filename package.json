@@ -62,6 +62,7 @@
     "sha.js": "^2.4.11"
   },
   "devDependencies": {
+    "@types/node": "^13.11.0",
     "ava": "1.0.0-beta.7",
     "codecov": "^3.1.0",
     "cz-conventional-changelog": "^2.1.0",
@@ -75,7 +76,7 @@
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.17.0",
     "tslint-immutable": "^5.0.0",
-    "typedoc": "^0.13.0",
+    "typedoc": "^0.17.3",
     "typescript": "^3.1.6"
   },
   "ava": {
