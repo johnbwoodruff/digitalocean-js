@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import { Action, ActionRequest } from '../models/action';
 
@@ -30,7 +30,8 @@ export class BlockStorageActionService {
       if (!this.attachActionIsValid(actionRequest)) {
         throw new Error('Required fields missing from Action Object');
       }
-      Axios.post(`/volumes/${volumeId}/actions`, actionRequest)
+      axios
+        .post(`/volumes/${volumeId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -66,7 +67,8 @@ export class BlockStorageActionService {
       if (!this.attachActionByNameIsValid(actionRequest)) {
         throw new Error('Required fields missing from Action Object');
       }
-      Axios.post(`/volumes/actions`, actionRequest)
+      axios
+        .post(`/volumes/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -102,7 +104,8 @@ export class BlockStorageActionService {
       if (!this.attachActionIsValid(actionRequest)) {
         throw new Error('Required fields missing from Action Object');
       }
-      Axios.post(`/volumes/${volumeId}/actions`, actionRequest)
+      axios
+        .post(`/volumes/${volumeId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -138,7 +141,8 @@ export class BlockStorageActionService {
       if (!this.attachActionByNameIsValid(actionRequest)) {
         throw new Error('Required fields missing from Action Object');
       }
-      Axios.post(`/volumes/actions`, actionRequest)
+      axios
+        .post(`/volumes/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -174,7 +178,8 @@ export class BlockStorageActionService {
       if (!this.resizeActionIsValid(actionRequest)) {
         throw new Error('Required fields missing from Action Object');
       }
-      Axios.post(`/volumes/${volumeId}/actions`, actionRequest)
+      axios
+        .post(`/volumes/${volumeId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -211,7 +216,8 @@ export class BlockStorageActionService {
       let url = `/volumes/${volumeId}/actions`;
       url += `?page=${page}`;
       url += `&per_page=${perPage}`;
-      Axios.get(url)
+      axios
+        .get(url)
         .then(response => {
           // Return actual actions instead of wrapped actions
           resolve(response.data.actions);
@@ -239,7 +245,8 @@ export class BlockStorageActionService {
     actionId: number
   ): Promise<Action> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/volumes/${volumeId}/actions/${actionId}`)
+      axios
+        .get(`/volumes/${volumeId}/actions/${actionId}`)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);

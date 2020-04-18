@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import {
   KubernetesCluster,
@@ -50,7 +50,8 @@ export class KubernetesService {
     cluster: KubernetesClusterRequest
   ): Promise<KubernetesCluster> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/kubernetes/clusters`, cluster)
+      axios
+        .post(`/kubernetes/clusters`, cluster)
         .then(response => {
           // Return actual cluster instead of wrapped cluster
           resolve(response.data.kubernetes_cluster);
@@ -74,7 +75,8 @@ export class KubernetesService {
    */
   public getCluster(clusterId: string): Promise<KubernetesCluster> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/kubernetes/clusters/${clusterId}`)
+      axios
+        .get(`/kubernetes/clusters/${clusterId}`)
         .then(response => {
           // Return actual cluster instead of wrapped cluster
           resolve(response.data.kubernetes_cluster);
@@ -98,7 +100,8 @@ export class KubernetesService {
    */
   public getAllClusters(): Promise<KubernetesCluster[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/kubernetes/clusters`)
+      axios
+        .get(`/kubernetes/clusters`)
         .then(response => {
           // Return actual cluster instead of wrapped cluster
           resolve(response.data.kubernetes_clusters);
@@ -132,7 +135,8 @@ export class KubernetesService {
     cluster: KubernetesCluster
   ): Promise<KubernetesCluster> {
     return new Promise((resolve, reject) => {
-      Axios.put(`/kubernetes/clusters/${clusterId}`, cluster)
+      axios
+        .put(`/kubernetes/clusters/${clusterId}`, cluster)
         .then(response => {
           // Return actual cluster instead of wrapped cluster
           resolve(response.data.kubernetes_cluster);
@@ -158,7 +162,8 @@ export class KubernetesService {
     clusterId: string
   ): Promise<KubernetesVersion[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/kubernetes/clusters/${clusterId}/upgrades`)
+      axios
+        .get(`/kubernetes/clusters/${clusterId}/upgrades`)
         .then(response => {
           // Return actual versions instead of wrapped versions
           resolve(response.data.available_upgrade_versions);
@@ -185,9 +190,10 @@ export class KubernetesService {
     version: string
   ): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/kubernetes/clusters/${clusterId}/upgrade`, {
-        version
-      })
+      axios
+        .post(`/kubernetes/clusters/${clusterId}/upgrade`, {
+          version
+        })
         .then(() => {
           resolve();
         })
@@ -210,7 +216,8 @@ export class KubernetesService {
    */
   public deleteCluster(clusterId: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/kubernetes/clusters/${clusterId}`)
+      axios
+        .delete(`/kubernetes/clusters/${clusterId}`)
         .then(() => {
           resolve();
         })
@@ -233,7 +240,8 @@ export class KubernetesService {
    */
   public getClusterKubeconfig(clusterId: string): Promise<string> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/kubernetes/clusters/${clusterId}/kubeconfig`)
+      axios
+        .get(`/kubernetes/clusters/${clusterId}/kubeconfig`)
         .then(response => {
           resolve(response.data);
         })
@@ -259,7 +267,8 @@ export class KubernetesService {
     poolId: string
   ): Promise<KubernetesWorkerNodePool> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/kubernetes/clusters/${clusterId}/node_pools/${poolId}`)
+      axios
+        .get(`/kubernetes/clusters/${clusterId}/node_pools/${poolId}`)
         .then(response => {
           resolve(response.data.node_pool);
         })
@@ -284,7 +293,8 @@ export class KubernetesService {
     clusterId: string
   ): Promise<KubernetesWorkerNodePool[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/kubernetes/clusters/${clusterId}/node_pools`)
+      axios
+        .get(`/kubernetes/clusters/${clusterId}/node_pools`)
         .then(response => {
           resolve(response.data.node_pools);
         })
@@ -318,7 +328,8 @@ export class KubernetesService {
     nodePool: KubernetesWorkerNodePool
   ): Promise<KubernetesWorkerNodePool> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/kubernetes/clusters/${clusterId}/node_pools`, nodePool)
+      axios
+        .post(`/kubernetes/clusters/${clusterId}/node_pools`, nodePool)
         .then(response => {
           resolve(response.data.node_pool);
         })
@@ -352,10 +363,11 @@ export class KubernetesService {
     nodePool: KubernetesWorkerNodePool
   ): Promise<KubernetesWorkerNodePool> {
     return new Promise((resolve, reject) => {
-      Axios.post(
-        `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}`,
-        nodePool
-      )
+      axios
+        .post(
+          `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}`,
+          nodePool
+        )
         .then(response => {
           resolve(response.data.node_pool);
         })
@@ -381,7 +393,8 @@ export class KubernetesService {
     nodePoolId: string
   ): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}`)
+      axios
+        .delete(`/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}`)
         .then(() => {
           resolve();
         })
@@ -413,7 +426,8 @@ export class KubernetesService {
       const url = `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}?skip_drain=${
         skipDrain ? 1 : 0
       }&replace=${replace ? 1 : 0}`;
-      Axios.delete(url)
+      axios
+        .delete(url)
         .then(() => {
           resolve();
         })
@@ -436,7 +450,8 @@ export class KubernetesService {
    */
   public getKubernetesOptions(): Promise<KubernetesOptions> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/kubernetes/options`)
+      axios
+        .get(`/kubernetes/options`)
         .then(response => {
           resolve(response.data.options);
         })

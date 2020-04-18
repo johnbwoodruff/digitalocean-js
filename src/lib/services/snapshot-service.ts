@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import { Snapshot } from '../models/snapshot';
 
@@ -30,7 +30,8 @@ export class SnapshotService {
       if (resourceType && resourceType !== 'all') {
         url += `?resource_type=${resourceType}`;
       }
-      Axios.get(url)
+      axios
+        .get(url)
         .then(response => {
           // Return actual snapshots instead of wrapped snapshots
           resolve(response.data.snapshots);
@@ -54,7 +55,8 @@ export class SnapshotService {
    */
   public getSnapshotById(snapshotId: string): Promise<Snapshot> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/snapshots/${snapshotId}`)
+      axios
+        .get(`/snapshots/${snapshotId}`)
         .then(response => {
           // Return actual snapshot instead of wrapped snapshot
           resolve(response.data.snapshot);
@@ -78,7 +80,8 @@ export class SnapshotService {
    */
   public deleteSnapshot(snapshotId: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/snapshots/${snapshotId}`)
+      axios
+        .delete(`/snapshots/${snapshotId}`)
         .then(() => {
           // Return actual snapshot instead of wrapped snapshot
           resolve();

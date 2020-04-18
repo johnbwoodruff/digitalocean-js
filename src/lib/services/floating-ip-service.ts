@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import { FloatingIP } from '../models/floating-ip';
 
@@ -18,7 +18,8 @@ export class FloatingIPService {
    */
   public getAllFloatingIPs(): Promise<FloatingIP> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/floating_ips`)
+      axios
+        .get(`/floating_ips`)
         .then(response => {
           // Return actual floating ips instead of wrapped floating ips
           resolve(response.data.floating_ips);
@@ -44,7 +45,8 @@ export class FloatingIPService {
   public createFloatingIPForDroplet(dropletId: string): Promise<FloatingIP> {
     return new Promise((resolve, reject) => {
       const request = { droplet_id: dropletId };
-      Axios.post(`/floating_ips`, request)
+      axios
+        .post(`/floating_ips`, request)
         .then(response => {
           // Return actual floating ip instead of wrapped floating ip
           resolve(response.data.floating_ip);
@@ -69,7 +71,8 @@ export class FloatingIPService {
    */
   public createFloatingIPForRegion(region: string): Promise<FloatingIP> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/floating_ips`, { region })
+      axios
+        .post(`/floating_ips`, { region })
         .then(response => {
           resolve(response.data.floating_ip);
         })
@@ -93,7 +96,8 @@ export class FloatingIPService {
    */
   public getExistingFloatingIP(floatingIPAddress: string): Promise<FloatingIP> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/floating_ips/${floatingIPAddress}`)
+      axios
+        .get(`/floating_ips/${floatingIPAddress}`)
         .then(response => {
           resolve(response.data.floating_ip);
         })
@@ -116,7 +120,8 @@ export class FloatingIPService {
    */
   public deleteFloatingIP(floatingIPAddress: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/floating_ips/${floatingIPAddress}`)
+      axios
+        .delete(`/floating_ips/${floatingIPAddress}`)
         .then(() => {
           resolve();
         })

@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import { Action } from '../models/action';
 import { Image } from '../models/image';
@@ -19,7 +19,8 @@ export class ImageService {
    */
   public getAllImages(): Promise<Image[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/images`)
+      axios
+        .get(`/images`)
         .then(response => {
           // Return actual images instead of wrapped images
           resolve(response.data.images);
@@ -50,7 +51,8 @@ export class ImageService {
     return new Promise((resolve, reject) => {
       page = page ? page : 1;
       perPage = perPage ? perPage : 25;
-      Axios.get(`/images?type=distribution&page=${page}&per_page=${perPage}`)
+      axios
+        .get(`/images?type=distribution&page=${page}&per_page=${perPage}`)
         .then(response => {
           // Return actual images instead of wrapped images
           resolve(response.data.images);
@@ -81,7 +83,8 @@ export class ImageService {
     return new Promise((resolve, reject) => {
       page = page ? page : 1;
       perPage = perPage ? perPage : 25;
-      Axios.get(`/images?type=application&page=${page}&per_page=${perPage}`)
+      axios
+        .get(`/images?type=application&page=${page}&per_page=${perPage}`)
         .then(response => {
           // Return actual images instead of wrapped images
           resolve(response.data.images);
@@ -109,7 +112,8 @@ export class ImageService {
     return new Promise((resolve, reject) => {
       page = page ? page : 1;
       perPage = perPage ? perPage : 25;
-      Axios.get(`/images?private=true&page=${page}&per_page=${perPage}`)
+      axios
+        .get(`/images?private=true&page=${page}&per_page=${perPage}`)
         .then(response => {
           // Return actual images instead of wrapped images
           resolve(response.data.images);
@@ -133,7 +137,8 @@ export class ImageService {
    */
   public getImageActions(imageId: number): Promise<Action[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/images/${imageId}/actions`)
+      axios
+        .get(`/images/${imageId}/actions`)
         .then(response => {
           // Return actual actions instead of wrapped actions
           resolve(response.data.actions);
@@ -157,7 +162,8 @@ export class ImageService {
    */
   public getExistingImage(imageId: number): Promise<Image> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/images/${imageId}`)
+      axios
+        .get(`/images/${imageId}`)
         .then(response => {
           // Return actual image instead of wrapped image
           resolve(response.data.image);
@@ -181,7 +187,8 @@ export class ImageService {
    */
   public getExistingImageBySlug(imageSlug: string): Promise<Image> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/images/${imageSlug}`)
+      axios
+        .get(`/images/${imageSlug}`)
         .then(response => {
           // Return actual image instead of wrapped image
           resolve(response.data.image);
@@ -205,7 +212,8 @@ export class ImageService {
    */
   public updateImageName(imageId: number, name: string): Promise<Image> {
     return new Promise((resolve, reject) => {
-      Axios.put(`/images/${imageId}`, { name })
+      axios
+        .put(`/images/${imageId}`, { name })
         .then(response => {
           // Return actual image instead of wrapped image
           resolve(response.data.image);
@@ -229,7 +237,8 @@ export class ImageService {
    */
   public deleteImage(imageId: number): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/images/${imageId}`)
+      axios
+        .delete(`/images/${imageId}`)
         .then(() => {
           // Return actual image instead of wrapped image
           resolve();

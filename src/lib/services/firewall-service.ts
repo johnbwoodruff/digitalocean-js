@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import {
   Firewall,
@@ -64,7 +64,8 @@ export class FirewallService {
    */
   public createFirewall(firewall: Firewall): Promise<Firewall> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/firewalls`, firewall)
+      axios
+        .post(`/firewalls`, firewall)
         .then(response => {
           // Return actual firewall instead of wrapped firewall
           resolve(response.data.firewall);
@@ -88,7 +89,8 @@ export class FirewallService {
    */
   public getExistingFirewall(firewallId: string): Promise<Firewall> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/firewalls/${firewallId}`)
+      axios
+        .get(`/firewalls/${firewallId}`)
         .then(response => {
           // Return actual firewall instead of wrapped firewall
           resolve(response.data.firewall);
@@ -112,7 +114,8 @@ export class FirewallService {
    */
   public getAllFirewalls(): Promise<Firewall[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/firewalls`)
+      axios
+        .get(`/firewalls`)
         .then(response => {
           // Return actual firewalls instead of wrapped firewalls
           resolve(response.data.firewalls);
@@ -182,7 +185,8 @@ export class FirewallService {
    */
   public updateFirewall(firewall: Firewall): Promise<Firewall> {
     return new Promise((resolve, reject) => {
-      Axios.put(`/firewalls/${firewall.id}`, firewall)
+      axios
+        .put(`/firewalls/${firewall.id}`, firewall)
         .then(response => {
           // Return actual firewall instead of wrapped firewall
           resolve(response.data.firewall);
@@ -206,7 +210,8 @@ export class FirewallService {
    */
   public deleteFirewall(firewallId: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/firewalls/${firewallId}`)
+      axios
+        .delete(`/firewalls/${firewallId}`)
         .then(() => {
           resolve();
         })
@@ -239,7 +244,8 @@ export class FirewallService {
       const request = {
         droplet_ids: dropletIds
       };
-      Axios.post(`/firewalls/${firewallId}/droplets`, request)
+      axios
+        .post(`/firewalls/${firewallId}/droplets`, request)
         .then(() => {
           resolve();
         })
@@ -272,9 +278,10 @@ export class FirewallService {
       const request = {
         droplet_ids: dropletIds
       };
-      Axios.delete(`/firewalls/${firewallId}/droplets`, {
-        data: request
-      })
+      axios
+        .delete(`/firewalls/${firewallId}/droplets`, {
+          data: request
+        })
         .then(() => {
           resolve();
         })
@@ -304,7 +311,8 @@ export class FirewallService {
       const request = {
         tags
       };
-      Axios.post(`/firewalls/${firewallId}/tags`, request)
+      axios
+        .post(`/firewalls/${firewallId}/tags`, request)
         .then(() => {
           resolve();
         })
@@ -337,9 +345,10 @@ export class FirewallService {
       const request = {
         tags
       };
-      Axios.delete(`/firewalls/${firewallId}/tags`, {
-        data: request
-      })
+      axios
+        .delete(`/firewalls/${firewallId}/tags`, {
+          data: request
+        })
         .then(() => {
           resolve();
         })
@@ -392,7 +401,8 @@ export class FirewallService {
         inbound_rules: inboundRules,
         outbound_rules: outboundRules
       };
-      Axios.post(`/firewalls/${firewallId}/rules`, request)
+      axios
+        .post(`/firewalls/${firewallId}/rules`, request)
         .then(() => {
           resolve();
         })
@@ -445,9 +455,10 @@ export class FirewallService {
         inbound_rules: inboundRules,
         outbound_rules: outboundRules
       };
-      Axios.delete(`/firewalls/${firewallId}/rules`, {
-        data: request
-      })
+      axios
+        .delete(`/firewalls/${firewallId}/rules`, {
+          data: request
+        })
         .then(() => {
           resolve();
         })
