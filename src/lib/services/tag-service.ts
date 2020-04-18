@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import { Tag } from '../models/tag';
 
@@ -18,7 +18,8 @@ export class TagService {
    */
   public createTag(name: string): Promise<Tag> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/tags`, { name })
+      axios
+        .post(`/tags`, { name })
         .then(response => {
           // Return actual tag instead of wrapped tag
           resolve(response.data.tag);
@@ -42,7 +43,8 @@ export class TagService {
    */
   public getTags(): Promise<Tag> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/tags`)
+      axios
+        .get(`/tags`)
         .then(response => {
           // Return actual tags instead of wrapped tags
           resolve(response.data.tags);
@@ -66,7 +68,8 @@ export class TagService {
    */
   public getTagByName(tagName: string): Promise<Tag> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/tags/${tagName}`)
+      axios
+        .get(`/tags/${tagName}`)
         .then(response => {
           // Return actual tag instead of wrapped tag
           resolve(response.data.tag);
@@ -101,7 +104,8 @@ export class TagService {
           resource_type: 'droplet'
         };
       });
-      Axios.post(`/tags/${tagName}/resources`, { resources })
+      axios
+        .post(`/tags/${tagName}/resources`, { resources })
         .then(() => {
           resolve();
         })
@@ -138,9 +142,10 @@ export class TagService {
           resource_type: 'droplet'
         };
       });
-      Axios.delete(`/tags/${tagName}/resources`, {
-        data: { resources }
-      })
+      axios
+        .delete(`/tags/${tagName}/resources`, {
+          data: { resources }
+        })
         .then(() => {
           resolve();
         })
@@ -163,7 +168,8 @@ export class TagService {
    */
   public deleteTag(tagName: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/tags/${tagName}`)
+      axios
+        .delete(`/tags/${tagName}`)
         .then(() => {
           resolve();
         })

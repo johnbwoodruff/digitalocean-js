@@ -9,3 +9,4 @@ coverage
 *.log
 
 package-lock.json
+/test.js

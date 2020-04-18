@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import { DomainRecord, DomainRecordRequest } from '../models/domain-record';
 
@@ -18,7 +18,8 @@ export class DomainRecordService {
    */
   public getAllDomainRecords(domainName: string): Promise<DomainRecord[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/domains/${domainName}/records`)
+      axios
+        .get(`/domains/${domainName}/records`)
         .then(response => {
           // Return actual domain_records instead of wrapped domain_records
           resolve(response.data.domain_records);
@@ -57,7 +58,8 @@ export class DomainRecordService {
     domainRequest: DomainRecordRequest
   ): Promise<DomainRecord> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/domains/${domainName}/records`, domainRequest)
+      axios
+        .post(`/domains/${domainName}/records`, domainRequest)
         .then(response => {
           // Return actual domain_record instead of wrapped domain_record
           resolve(response.data.domain_record);
@@ -85,7 +87,8 @@ export class DomainRecordService {
     recordId: number
   ): Promise<DomainRecord> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/domains/${domainName}/records/${recordId}`)
+      axios
+        .get(`/domains/${domainName}/records/${recordId}`)
         .then(response => {
           // Return actual domain_record instead of wrapped domain_record
           resolve(response.data.domain_record);
@@ -118,7 +121,8 @@ export class DomainRecordService {
     domainRequest: DomainRecordRequest
   ): Promise<DomainRecord> {
     return new Promise((resolve, reject) => {
-      Axios.put(`/domains/${domainName}/records/${recordId}`, domainRequest)
+      axios
+        .put(`/domains/${domainName}/records/${recordId}`, domainRequest)
         .then(response => {
           // Return actual domain_record instead of wrapped domain_record
           resolve(response.data.domain_record);
@@ -145,7 +149,8 @@ export class DomainRecordService {
     recordId: number
   ): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/domains/${domainName}/records/${recordId}`)
+      axios
+        .delete(`/domains/${domainName}/records/${recordId}`)
         .then(() => {
           // Return actual domain_record instead of wrapped domain_record
           resolve();

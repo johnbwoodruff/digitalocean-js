@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import { Action } from '../models/action';
 import { Backup } from '../models/backup';
@@ -37,7 +37,8 @@ export class DropletService {
    */
   public createNewDroplet(dropletRequest: DropletRequest): Promise<Droplet> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/droplets`, dropletRequest)
+      axios
+        .post(`/droplets`, dropletRequest)
         .then(response => {
           // Return actual droplet instead of wrapped droplet
           resolve(response.data.droplet);
@@ -80,7 +81,8 @@ export class DropletService {
     dropletsRequest: DropletRequest
   ): Promise<Droplet[]> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/droplets`, dropletsRequest)
+      axios
+        .post(`/droplets`, dropletsRequest)
         .then(response => {
           // Return actual droplets instead of wrapped droplets
           resolve(response.data.droplets);
@@ -104,7 +106,8 @@ export class DropletService {
    */
   public getExistingDroplet(dropletId: number): Promise<Droplet> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/droplets/${dropletId}`)
+      axios
+        .get(`/droplets/${dropletId}`)
         .then(response => {
           // Return actual droplet instead of wrapped droplet
           resolve(response.data.droplet);
@@ -128,7 +131,8 @@ export class DropletService {
    */
   public getAllDroplets(): Promise<Droplet[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/droplets`)
+      axios
+        .get(`/droplets`)
         .then(response => {
           // Return actual droplets instead of wrapped droplets
           resolve(response.data.droplets);
@@ -152,7 +156,8 @@ export class DropletService {
    */
   public getDropletsByTag(tag: string): Promise<Droplet[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/droplets?tag_name=${tag}`)
+      axios
+        .get(`/droplets?tag_name=${tag}`)
         .then(response => {
           // Return actual droplets instead of wrapped droplets
           resolve(response.data.droplets);
@@ -176,7 +181,8 @@ export class DropletService {
    */
   public getAvailableKernelsForDroplet(dropletId: number): Promise<Kernel[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/droplets/${dropletId}/kernels`)
+      axios
+        .get(`/droplets/${dropletId}/kernels`)
         .then(response => {
           // Return actual kernels instead of wrapped kernels
           resolve(response.data.kernels);
@@ -200,7 +206,8 @@ export class DropletService {
    */
   public getSnapshotsForDroplet(dropletId: number): Promise<Snapshot[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/droplets/${dropletId}/snapshots`)
+      axios
+        .get(`/droplets/${dropletId}/snapshots`)
         .then(response => {
           // Return actual snapshots instead of wrapped snapshots
           resolve(response.data.snapshots);
@@ -224,7 +231,8 @@ export class DropletService {
    */
   public getBackupsForDroplet(dropletId: number): Promise<Backup[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/droplets/${dropletId}/backups`)
+      axios
+        .get(`/droplets/${dropletId}/backups`)
         .then(response => {
           // Return actual backups instead of wrapped backups
           resolve(response.data.backups);
@@ -248,7 +256,8 @@ export class DropletService {
    */
   public getDropletActions(dropletId: number): Promise<Action[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/droplets/${dropletId}/actions`)
+      axios
+        .get(`/droplets/${dropletId}/actions`)
         .then(response => {
           // Return actual actions instead of wrapped actions
           resolve(response.data.actions);
@@ -272,7 +281,8 @@ export class DropletService {
    */
   public deleteDroplet(dropletId: number): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/droplets/${dropletId}`)
+      axios
+        .delete(`/droplets/${dropletId}`)
         .then(() => {
           resolve();
         })
@@ -295,7 +305,8 @@ export class DropletService {
    */
   public deleteDropletsByTag(tag: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/droplets?tag_name=${tag}`)
+      axios
+        .delete(`/droplets?tag_name=${tag}`)
         .then(() => {
           resolve();
         })
@@ -318,7 +329,8 @@ export class DropletService {
    */
   public getNeighborsForDroplet(dropletId: number): Promise<Droplet[]> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/droplets/${dropletId}/neighbors`)
+      axios
+        .delete(`/droplets/${dropletId}/neighbors`)
         .then(response => {
           // Return actual droplets instead of wrapped droplets
           resolve(response.data.droplets);
@@ -342,7 +354,8 @@ export class DropletService {
    */
   public getDropletNeighbors(): Promise<Droplet[][]> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/reports/droplet_neighbors`)
+      axios
+        .delete(`/reports/droplet_neighbors`)
         .then(response => {
           // Return actual neighbors instead of wrapped neighbors
           resolve(response.data.neighbors);

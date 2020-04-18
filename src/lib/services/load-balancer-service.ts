@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import {
   ForwardingRule,
@@ -76,7 +76,8 @@ export class LoadBalancerService {
           throw new Error('Required fields missing from Health Check Object');
         }
       }
-      Axios.post(`/load_balancers`, loadBalancer)
+      axios
+        .post(`/load_balancers`, loadBalancer)
         .then(response => {
           // Return actual load_balancer instead of wrapped load_balancer
           resolve(response.data.load_balancer);
@@ -100,7 +101,8 @@ export class LoadBalancerService {
    */
   public getExistingLoadBalancer(id: string): Promise<LoadBalancer> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/load_balancers/${id}`)
+      axios
+        .get(`/load_balancers/${id}`)
         .then(response => {
           // Return actual load_balancer instead of wrapped load_balancer
           resolve(response.data.load_balancer);
@@ -124,7 +126,8 @@ export class LoadBalancerService {
    */
   public getAllLoadBalancers(): Promise<LoadBalancer[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/load_balancers`)
+      axios
+        .get(`/load_balancers`)
         .then(response => {
           // Return actual load_balancers instead of wrapped load_balancers
           resolve(response.data.load_balancers);
@@ -203,7 +206,8 @@ export class LoadBalancerService {
           throw new Error('Required fields missing from Health Check Object');
         }
       }
-      Axios.put(`/load_balancers/${loadBalancer.id}`, loadBalancer)
+      axios
+        .put(`/load_balancers/${loadBalancer.id}`, loadBalancer)
         .then(response => {
           // Return actual load_balancer instead of wrapped load_balancer
           resolve(response.data.load_balancer);
@@ -227,7 +231,8 @@ export class LoadBalancerService {
    */
   public deleteLoadBalancer(id: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/load_balancers/${id}`)
+      axios
+        .delete(`/load_balancers/${id}`)
         .then(() => {
           resolve();
         })
@@ -258,9 +263,10 @@ export class LoadBalancerService {
     dropletIds: number[]
   ): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/load_balancers/${id}`, {
-        droplet_ids: dropletIds
-      })
+      axios
+        .post(`/load_balancers/${id}`, {
+          droplet_ids: dropletIds
+        })
         .then(() => {
           resolve();
         })
@@ -291,9 +297,10 @@ export class LoadBalancerService {
     dropletIds: number[]
   ): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/load_balancers/${id}`, {
-        data: { droplet_ids: dropletIds }
-      })
+      axios
+        .delete(`/load_balancers/${id}`, {
+          data: { droplet_ids: dropletIds }
+        })
         .then(() => {
           resolve();
         })
@@ -335,9 +342,10 @@ export class LoadBalancerService {
           );
         }
       });
-      Axios.post(`/load_balancers/${id}/forwarding_rules`, {
-        forwarding_rules: rules
-      })
+      axios
+        .post(`/load_balancers/${id}/forwarding_rules`, {
+          forwarding_rules: rules
+        })
         .then(() => {
           resolve();
         })
@@ -379,9 +387,10 @@ export class LoadBalancerService {
           );
         }
       });
-      Axios.delete(`/load_balancers/${id}/forwarding_rules`, {
-        data: { forwarding_rules: rules }
-      })
+      axios
+        .delete(`/load_balancers/${id}/forwarding_rules`, {
+          data: { forwarding_rules: rules }
+        })
         .then(() => {
           resolve();
         })

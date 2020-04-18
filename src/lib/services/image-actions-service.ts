@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import { Action } from '../models/action';
 
@@ -22,7 +22,8 @@ export class ImageActionService {
         region,
         type: 'transfer'
       };
-      Axios.post(`/images/${imageId}/actions`, request)
+      axios
+        .post(`/images/${imageId}/actions`, request)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -49,7 +50,8 @@ export class ImageActionService {
       const request = {
         type: 'convert'
       };
-      Axios.post(`/images/${imageId}/actions`, request)
+      axios
+        .post(`/images/${imageId}/actions`, request)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -76,7 +78,8 @@ export class ImageActionService {
     actionId: number
   ): Promise<Action> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/images/${imageId}/actions/${actionId}`)
+      axios
+        .get(`/images/${imageId}/actions/${actionId}`)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);

@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import { Certificate, CertificateRequest } from '../models/certificate';
 
@@ -26,7 +26,8 @@ export class CertificateService {
     certificateRequest: CertificateRequest
   ): Promise<Certificate> {
     return new Promise((resolve, reject) => {
-      Axios.post(`/certificates`, certificateRequest)
+      axios
+        .post(`/certificates`, certificateRequest)
         .then(response => {
           // Return actual certificate instead of wrapped certificate
           resolve(response.data.certificate);
@@ -50,7 +51,8 @@ export class CertificateService {
    */
   public getExistingCertificate(certificateId: string): Promise<Certificate> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/certificates/${certificateId}`)
+      axios
+        .get(`/certificates/${certificateId}`)
         .then(response => {
           // Return actual certificate instead of wrapped certificate
           resolve(response.data.certificate);
@@ -74,7 +76,8 @@ export class CertificateService {
    */
   public getAllCertificates(): Promise<Certificate[]> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/certificates`)
+      axios
+        .get(`/certificates`)
         .then(response => {
           // Return actual certificates instead of wrapped certificates
           resolve(response.data.certificates);
@@ -98,7 +101,8 @@ export class CertificateService {
    */
   public deleteCertificate(certificateId: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      Axios.delete(`/certificates/${certificateId}`)
+      axios
+        .delete(`/certificates/${certificateId}`)
         .then(() => {
           resolve();
         })

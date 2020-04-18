@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import { axios } from '../axios-instance';
 
 import { Action } from '../models/action';
 import { DropletActionRequest } from '../models/droplet';
@@ -22,7 +22,8 @@ export class DropletActionService {
       const actionRequest: DropletActionRequest = {
         type: 'enable_backups'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -49,7 +50,8 @@ export class DropletActionService {
       const actionRequest: DropletActionRequest = {
         type: 'disable_backups'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -76,7 +78,8 @@ export class DropletActionService {
       const actionRequest: DropletActionRequest = {
         type: 'reboot'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -103,7 +106,8 @@ export class DropletActionService {
       const actionRequest: DropletActionRequest = {
         type: 'power_cycle'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -130,7 +134,8 @@ export class DropletActionService {
       const actionRequest: DropletActionRequest = {
         type: 'shutdown'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -157,7 +162,8 @@ export class DropletActionService {
       const actionRequest: DropletActionRequest = {
         type: 'power_off'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -184,7 +190,8 @@ export class DropletActionService {
       const actionRequest: DropletActionRequest = {
         type: 'power_on'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -215,7 +222,8 @@ export class DropletActionService {
         image,
         type: 'restore'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -242,7 +250,8 @@ export class DropletActionService {
       const actionRequest: DropletActionRequest = {
         type: 'password_reset'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -276,7 +285,8 @@ export class DropletActionService {
         size,
         type: 'password_reset'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -308,7 +318,8 @@ export class DropletActionService {
         image,
         type: 'rebuild'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -337,7 +348,8 @@ export class DropletActionService {
         name,
         type: 'rename'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -369,7 +381,8 @@ export class DropletActionService {
         kernel: kernelId,
         type: 'change_kernel'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -396,7 +409,8 @@ export class DropletActionService {
       const actionRequest: DropletActionRequest = {
         type: 'enable_ipv6'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -423,7 +437,8 @@ export class DropletActionService {
       const actionRequest: DropletActionRequest = {
         type: 'enable_private_networking'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -452,7 +467,8 @@ export class DropletActionService {
         name,
         type: 'snapshot'
       };
-      Axios.post(`/droplets/${dropletId}/actions`, actionRequest)
+      axios
+        .post(`/droplets/${dropletId}/actions`, actionRequest)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
@@ -482,7 +498,8 @@ export class DropletActionService {
     actionId: number
   ): Promise<Action> {
     return new Promise((resolve, reject) => {
-      Axios.get(`/droplets/${dropletId}/actions/${actionId}`)
+      axios
+        .get(`/droplets/${dropletId}/actions/${actionId}`)
         .then(response => {
           // Return actual action instead of wrapped action
           resolve(response.data.action);
