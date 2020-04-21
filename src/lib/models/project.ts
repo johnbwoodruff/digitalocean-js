@@ -1,3 +1,14 @@
+/**
+ * Various project purpose strings in enum form
+ *
+ * You can use as follows:
+ *
+ * ```js
+ * import { ProjectPurpose } from 'digitalocean-js;
+ *
+ * console.log(ProjectPurpose.Website); // Prints "Website or blog"
+ * ```
+ */
 export enum ProjectPurpose {
   Trying = 'Just trying out DigitalOcean',
   Educational = 'Class project / Educational purposes',
@@ -39,6 +50,11 @@ export interface ProjectResource {
   status: ProjectResourceStatus;
 }
 
+/**
+ * Defines the prefixes for various resource types
+ *
+ * @ignore
+ */
 export const RESOURCE_PREFIX = {
   DOMAIN: 'do:domain:',
   DROPLET: 'do:droplet:',
