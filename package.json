@@ -32,8 +32,7 @@
     "cov:send": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "cov:check": "nyc report && nyc check-coverage --lines 0 --functions 0 --branches 0",
     "doc": "run-s doc:html && opn build/docs/index.html",
-    "doc:html": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --out build/docs",
-    "doc:json": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --json build/docs/typedoc.json",
+    "doc:html": "typedoc --options typedoc.json",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
     "version": "standard-version",
     "reset": "git clean -dfx && git reset --hard && yarn install",
@@ -49,7 +48,6 @@
     "watch": "Watch and rebuild the project on save, then rerun relevant tests",
     "cov": "Rebuild, run tests, then create and open the coverage report",
     "doc": "Generate HTML API documentation and open it in a browser",
-    "doc:json": "Generate API documentation in typedoc JSON format",
     "version": "Bump package.json version, update CHANGELOG.md, tag release",
     "reset": "Delete all untracked files and reset the repo to the last commit",
     "prepare-release": "One-step: clean, build, test, publish docs, and prep a release"

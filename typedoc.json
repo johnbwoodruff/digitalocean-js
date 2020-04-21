@@ -1,0 +1,14 @@
+{
+  "inputFiles": [
+    "src/"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ],
+  "excludePrivate": true,
+  "excludeNotExported": true,
+  "target": "ES6",
+  "mode": "file",
+  "out": "build/docs",
+  "gaID": "UA-46243905-17"
+}
