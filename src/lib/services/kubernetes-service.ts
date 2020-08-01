@@ -5,7 +5,7 @@ import {
   KubernetesClusterRequest,
   KubernetesOptions,
   KubernetesVersion,
-  KubernetesWorkerNodePool
+  KubernetesWorkerNodePool,
 } from '../models/kubernetes-cluster';
 
 export class KubernetesService {
@@ -52,11 +52,11 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .post(`/kubernetes/clusters`, cluster)
-        .then(response => {
+        .then((response) => {
           // Return actual cluster instead of wrapped cluster
           resolve(response.data.kubernetes_cluster);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -77,11 +77,11 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .get(`/kubernetes/clusters/${clusterId}`)
-        .then(response => {
+        .then((response) => {
           // Return actual cluster instead of wrapped cluster
           resolve(response.data.kubernetes_cluster);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -102,11 +102,11 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .get(`/kubernetes/clusters`)
-        .then(response => {
+        .then((response) => {
           // Return actual cluster instead of wrapped cluster
           resolve(response.data.kubernetes_clusters);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -137,11 +137,11 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .put(`/kubernetes/clusters/${clusterId}`, cluster)
-        .then(response => {
+        .then((response) => {
           // Return actual cluster instead of wrapped cluster
           resolve(response.data.kubernetes_cluster);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -164,11 +164,11 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .get(`/kubernetes/clusters/${clusterId}/upgrades`)
-        .then(response => {
+        .then((response) => {
           // Return actual versions instead of wrapped versions
           resolve(response.data.available_upgrade_versions);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -192,12 +192,12 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .post(`/kubernetes/clusters/${clusterId}/upgrade`, {
-          version
+          version,
         })
         .then(() => {
           resolve();
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -221,7 +221,7 @@ export class KubernetesService {
         .then(() => {
           resolve();
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -242,10 +242,10 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .get(`/kubernetes/clusters/${clusterId}/kubeconfig`)
-        .then(response => {
+        .then((response) => {
           resolve(response.data);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -269,10 +269,10 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .get(`/kubernetes/clusters/${clusterId}/node_pools/${poolId}`)
-        .then(response => {
+        .then((response) => {
           resolve(response.data.node_pool);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -295,10 +295,10 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .get(`/kubernetes/clusters/${clusterId}/node_pools`)
-        .then(response => {
+        .then((response) => {
           resolve(response.data.node_pools);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -330,10 +330,10 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .post(`/kubernetes/clusters/${clusterId}/node_pools`, nodePool)
-        .then(response => {
+        .then((response) => {
           resolve(response.data.node_pool);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -368,10 +368,10 @@ export class KubernetesService {
           `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}`,
           nodePool
         )
-        .then(response => {
+        .then((response) => {
           resolve(response.data.node_pool);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -398,7 +398,7 @@ export class KubernetesService {
         .then(() => {
           resolve();
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -426,13 +426,13 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       const url = `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}/nodes/${nodeId}?skip_drain=${
         skipDrain ? 1 : 0
-        }&replace=${replace ? 1 : 0}`;
+      }&replace=${replace ? 1 : 0}`;
       axios
         .delete(url)
         .then(() => {
           resolve();
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
@@ -453,10 +453,10 @@ export class KubernetesService {
     return new Promise((resolve, reject) => {
       axios
         .get(`/kubernetes/options`)
-        .then(response => {
+        .then((response) => {
           resolve(response.data.options);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
