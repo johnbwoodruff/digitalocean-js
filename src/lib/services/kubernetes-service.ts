@@ -413,19 +413,20 @@ export class KubernetesService {
    * import { DigitalOcean } from 'digitalocean-js';
    *
    * const client = new DigitalOcean('your-api-key');
-   * await client.kubernetes.deleteNodeFromNodePoolForCluster('cluster-id', 'pool-id', false, false);
+   * await client.kubernetes.deleteNodeFromNodePoolForCluster('cluster-id', 'pool-id', 'node-id', false, false);
    * ```
    */
   public deleteNodeFromNodePoolForCluster(
     clusterId: string,
     nodePoolId: string,
+    nodeId: string,
     skipDrain?: boolean,
     replace?: boolean
   ): Promise<void> {
     return new Promise((resolve, reject) => {
-      const url = `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}?skip_drain=${
+      const url = `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}/nodes/${nodeId}?skip_drain=${
         skipDrain ? 1 : 0
-      }&replace=${replace ? 1 : 0}`;
+        }&replace=${replace ? 1 : 0}`;
       axios
         .delete(url)
         .then(() => {
