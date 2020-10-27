@@ -2,6 +2,7 @@ import { axios } from './axios-instance';
 import { API_BASE_URL } from './conf/environment';
 import { AccountService } from './services/account-service';
 import { ActionService } from './services/actions-service';
+import { BillingHistoryService } from './services/billing-history-service';
 import { BlockStorageActionService } from './services/block-storage-actions-service';
 import { BlockStorageService } from './services/block-storage-service';
 import { CdnService } from './services/cdn-service';
@@ -27,6 +28,7 @@ import { TagService } from './services/tag-service';
 export class DigitalOcean {
   public account: AccountService;
   public actions: ActionService;
+  public billingHistory: BillingHistoryService;
   public blockStorage: BlockStorageService;
   public blockStorageActions: BlockStorageActionService;
   public cdn: CdnService;
@@ -56,6 +58,7 @@ export class DigitalOcean {
 
     this.account = new AccountService();
     this.actions = new ActionService();
+    this.billingHistory = new BillingHistoryService();
     this.blockStorage = new BlockStorageService();
     this.blockStorageActions = new BlockStorageActionService();
     this.cdn = new CdnService();
