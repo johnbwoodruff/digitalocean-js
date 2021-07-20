@@ -1,3 +1,6 @@
+![digitalocean-js](https://user-images.githubusercontent.com/5883616/126348407-dd1e694d-64a9-402e-b8df-f59e67686014.png)
+
+
 # DigitalOcean JS
 
 [![Build Status](https://travis-ci.org/johnbwoodruff/digitalocean-js.svg?branch=master)](https://travis-ci.org/johnbwoodruff/digitalocean-js) [![npm](https://img.shields.io/npm/dm/digitalocean-js.svg)](https://www.npmjs.com/package/digitalocean-js) [![npm](https://img.shields.io/npm/dt/digitalocean-js.svg)](https://www.npmjs.com/package/digitalocean-js) [![npm](https://img.shields.io/npm/v/digitalocean-js.svg)](https://www.npmjs.com/package/digitalocean-js)
