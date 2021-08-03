@@ -32,11 +32,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
         
-      - name: Lint
-        run: yarn test:lint
-        
-      - name: Unit Tests
-        run: yarn test:unit
+      - name: Tests
+        run: yarn test
         
       - name: Build
         run: yarn build
