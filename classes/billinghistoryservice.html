@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RegionService | digitalocean-js</title>
+	<title>BillingHistoryService | digitalocean-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="regionservice.html">RegionService</a>
+					<a href="billinghistoryservice.html">BillingHistoryService</a>
 				</li>
 			</ul>
-			<h1>Class RegionService</h1>
+			<h1>Class BillingHistoryService</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RegionService</span>
+						<span class="target">BillingHistoryService</span>
 					</li>
 				</ul>
 			</section>
@@ -79,13 +79,14 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="regionservice.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="billinghistoryservice.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="regionservice.html#getallregions" class="tsd-kind-icon">get<wbr>All<wbr>Regions</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="billinghistoryservice.html#getmybalance" class="tsd-kind-icon">get<wbr>MyBalance</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="billinghistoryservice.html#getmybillinghistory" class="tsd-kind-icon">get<wbr>MyBilling<wbr>History</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,16 +98,16 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Region<wbr>Service<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="regionservice.html" class="tsd-signature-type">RegionService</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Billing<wbr>History<wbr>Service<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="billinghistoryservice.html" class="tsd-signature-type">BillingHistoryService</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/region-service.ts#L5">lib/services/region-service.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/billing-history-service.ts#L5">lib/services/billing-history-service.ts:5</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="regionservice.html" class="tsd-signature-type">RegionService</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="billinghistoryservice.html" class="tsd-signature-type">BillingHistoryService</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -114,21 +115,21 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getallregions" class="tsd-anchor"></a>
-					<h3>get<wbr>All<wbr>Regions</h3>
+					<a name="getmybalance" class="tsd-anchor"></a>
+					<h3>get<wbr>MyBalance</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>All<wbr>Regions<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/region.html" class="tsd-signature-type">Region</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>MyBalance<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/balance.html" class="tsd-signature-type">Balance</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/region-service.ts#L19">lib/services/region-service.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/billing-history-service.ts#L19">lib/services/billing-history-service.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get all regions</p>
+									<p>Retrieve the balances on a customer&#39;s account</p>
 								</div>
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
@@ -136,9 +137,38 @@
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> regions = <span class="hljs-keyword">await</span> client.regions.getAllRegions();</code></pre>
+<span class="hljs-keyword">const</span> balance = <span class="hljs-keyword">await</span> client.billingHistory.getMyBalance();</code></pre>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/region.html" class="tsd-signature-type">Region</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/balance.html" class="tsd-signature-type">Balance</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getmybillinghistory" class="tsd-anchor"></a>
+					<h3>get<wbr>MyBilling<wbr>History</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>MyBilling<wbr>History<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/billinghistory.html" class="tsd-signature-type">BillingHistory</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/billing-history-service.ts#L44">lib/services/billing-history-service.ts:44</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieve a list of all billing history entries</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> billingHistory = <span class="hljs-keyword">await</span> client.billingHistory.getMyBillingHistory();</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/billinghistory.html" class="tsd-signature-type">BillingHistory</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -157,13 +187,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="regionservice.html" class="tsd-kind-icon">Region<wbr>Service</a>
+						<a href="billinghistoryservice.html" class="tsd-kind-icon">Billing<wbr>History<wbr>Service</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="regionservice.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="billinghistoryservice.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="regionservice.html#getallregions" class="tsd-kind-icon">get<wbr>All<wbr>Regions</a>
+								<a href="billinghistoryservice.html#getmybalance" class="tsd-kind-icon">get<wbr>MyBalance</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="billinghistoryservice.html#getmybillinghistory" class="tsd-kind-icon">get<wbr>MyBilling<wbr>History</a>
 							</li>
 						</ul>
 					</li>
