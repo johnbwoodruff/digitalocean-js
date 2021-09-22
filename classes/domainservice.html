@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>DomainService | digitalocean-js</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for digitalocean-js">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -106,7 +106,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/domain-service.ts#L5">lib/services/domain-service.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/domain-service.ts#L5">lib/services/domain-service.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="domainservice.html" class="tsd-signature-type">DomainService</a></h4>
@@ -126,7 +126,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/domain-service.ts#L48">lib/services/domain-service.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/domain-service.ts#L48">lib/services/domain-service.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -136,12 +136,12 @@
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">name</span>: <span class="hljs-string">'example.com'</span>,
-  <span class="hljs-attr">ip_address</span>: <span class="hljs-string">'1.2.3.4'</span>
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;example.com&#x27;</span>,
+  <span class="hljs-attr">ip_address</span>: <span class="hljs-string">&#x27;1.2.3.4&#x27;</span>
 };
 <span class="hljs-keyword">const</span> domain = <span class="hljs-keyword">await</span> client.domains.createDomain(request);</code></pre>
 							</div>
@@ -165,7 +165,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/domain-service.ts#L98">lib/services/domain-service.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/domain-service.ts#L98">lib/services/domain-service.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -175,10 +175,10 @@
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.domains.deleteDomain(<span class="hljs-string">'example.com'</span>);</code></pre>
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
+<span class="hljs-keyword">await</span> client.domains.deleteDomain(<span class="hljs-string">&#x27;example.com&#x27;</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -200,7 +200,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/domain-service.ts#L19">lib/services/domain-service.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/domain-service.ts#L19">lib/services/domain-service.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -210,9 +210,9 @@
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> domains = <span class="hljs-keyword">await</span> client.domains.getAllDomains();</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -229,7 +229,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/domain-service.ts#L73">lib/services/domain-service.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/domain-service.ts#L73">lib/services/domain-service.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -239,10 +239,10 @@
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> domain = <span class="hljs-keyword">await</span> client.domains.getExistingDomain(<span class="hljs-string">'example.com'</span>);</code></pre>
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
+<span class="hljs-keyword">const</span> domain = <span class="hljs-keyword">await</span> client.domains.getExistingDomain(<span class="hljs-string">&#x27;example.com&#x27;</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -315,7 +315,6 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

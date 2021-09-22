@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>CertificateService | digitalocean-js</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for digitalocean-js">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -106,7 +106,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/certificate-service.ts#L5">lib/services/certificate-service.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/certificate-service.ts#L5">lib/services/certificate-service.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="certificateservice.html" class="tsd-signature-type">CertificateService</a></h4>
@@ -126,7 +126,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/certificate-service.ts#L25">lib/services/certificate-service.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/certificate-service.ts#L25">lib/services/certificate-service.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -136,14 +136,14 @@
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> request = {
-  <span class="hljs-attr">name</span>: <span class="hljs-string">'web-cert-01'</span>,
-  <span class="hljs-attr">private_key</span>: <span class="hljs-string">'-----BEGIN PRIVATE KEY-----...'</span>,
-  <span class="hljs-attr">leaf_certificate</span>: <span class="hljs-string">'-----BEGIN CERTIFICATE-----...'</span>,
-  <span class="hljs-attr">certificate_chain</span>: <span class="hljs-string">'-----BEGIN CERTIFICATE-----...'</span>
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;web-cert-01&#x27;</span>,
+  <span class="hljs-attr">private_key</span>: <span class="hljs-string">&#x27;-----BEGIN PRIVATE KEY-----...&#x27;</span>,
+  <span class="hljs-attr">leaf_certificate</span>: <span class="hljs-string">&#x27;-----BEGIN CERTIFICATE-----...&#x27;</span>,
+  <span class="hljs-attr">certificate_chain</span>: <span class="hljs-string">&#x27;-----BEGIN CERTIFICATE-----...&#x27;</span>
 };
 <span class="hljs-keyword">const</span> cert = <span class="hljs-keyword">await</span> client.certificates.createCertificate(request);</code></pre>
 							</div>
@@ -167,7 +167,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/certificate-service.ts#L102">lib/services/certificate-service.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/certificate-service.ts#L102">lib/services/certificate-service.ts:102</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -177,10 +177,10 @@
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.certificates.deleteCertificate(<span class="hljs-string">'cert-id'</span>);</code></pre>
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
+<span class="hljs-keyword">await</span> client.certificates.deleteCertificate(<span class="hljs-string">&#x27;cert-id&#x27;</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -202,7 +202,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/certificate-service.ts#L77">lib/services/certificate-service.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/certificate-service.ts#L77">lib/services/certificate-service.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -212,9 +212,9 @@
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> certs = <span class="hljs-keyword">await</span> client.certificates.getAllCertificates();</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/certificate.html" class="tsd-signature-type">Certificate</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -231,7 +231,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/certificate-service.ts#L52">lib/services/certificate-service.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/certificate-service.ts#L52">lib/services/certificate-service.ts:52</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -241,10 +241,10 @@
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> cert = <span class="hljs-keyword">await</span> client.certificates.getExistingCertificate(<span class="hljs-string">'cert-id'</span>);</code></pre>
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
+<span class="hljs-keyword">const</span> cert = <span class="hljs-keyword">await</span> client.certificates.getExistingCertificate(<span class="hljs-string">&#x27;cert-id&#x27;</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -317,7 +317,6 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>FirewallService | digitalocean-js</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for digitalocean-js">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -113,7 +113,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L9">lib/services/firewall-service.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L9">lib/services/firewall-service.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="firewallservice.html" class="tsd-signature-type">FirewallService</a></h4>
@@ -133,7 +133,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L239">lib/services/firewall-service.ts:239</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L239">lib/services/firewall-service.ts:239</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -143,14 +143,14 @@
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> dropletIds = [
-   <span class="hljs-string">'droplet-id-1'</span>,
-   <span class="hljs-string">'droplet-id-2'</span>
+   <span class="hljs-string">&#x27;droplet-id-1&#x27;</span>,
+   <span class="hljs-string">&#x27;droplet-id-2&#x27;</span>
 ];
-<span class="hljs-keyword">await</span> client.firewalls.addDropletsToFirewall(<span class="hljs-string">'firewall-id'</span>, dropletIds);</code></pre>
+<span class="hljs-keyword">await</span> client.firewalls.addDropletsToFirewall(<span class="hljs-string">&#x27;firewall-id&#x27;</span>, dropletIds);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -175,7 +175,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L394">lib/services/firewall-service.ts:394</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L394">lib/services/firewall-service.ts:394</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -185,15 +185,15 @@
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> inboundRules = [
   {
-    <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"tcp"</span>,
-    <span class="hljs-string">"ports"</span>: <span class="hljs-string">"3306"</span>,
-    <span class="hljs-string">"sources"</span>: {
-      <span class="hljs-string">"droplet_ids"</span>: [
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+    <span class="hljs-string">&quot;ports&quot;</span>: <span class="hljs-string">&quot;3306&quot;</span>,
+    <span class="hljs-string">&quot;sources&quot;</span>: {
+      <span class="hljs-string">&quot;droplet_ids&quot;</span>: [
         <span class="hljs-number">49696269</span>
       ]
     }
@@ -201,16 +201,16 @@
 ];
 outboundRules = [
   {
-    <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"tcp"</span>,
-    <span class="hljs-string">"ports"</span>: <span class="hljs-string">"3306"</span>,
-    <span class="hljs-string">"destinations"</span>: {
-      <span class="hljs-string">"droplet_ids"</span>: [
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+    <span class="hljs-string">&quot;ports&quot;</span>: <span class="hljs-string">&quot;3306&quot;</span>,
+    <span class="hljs-string">&quot;destinations&quot;</span>: {
+      <span class="hljs-string">&quot;droplet_ids&quot;</span>: [
         <span class="hljs-number">49696269</span>
       ]
     }
   }
 ];
-<span class="hljs-keyword">await</span> client.firewalls.addRulesToFirewall(<span class="hljs-string">'firewall-id'</span>, inboundRules, outboundRules);</code></pre>
+<span class="hljs-keyword">await</span> client.firewalls.addRulesToFirewall(<span class="hljs-string">&#x27;firewall-id&#x27;</span>, inboundRules, outboundRules);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -238,7 +238,7 @@ outboundRules = [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L309">lib/services/firewall-service.ts:309</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L309">lib/services/firewall-service.ts:309</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -248,14 +248,14 @@ outboundRules = [
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> tags = [
-   <span class="hljs-string">'my-tag-1'</span>,
-   <span class="hljs-string">'my-tag-2'</span>
+   <span class="hljs-string">&#x27;my-tag-1&#x27;</span>,
+   <span class="hljs-string">&#x27;my-tag-2&#x27;</span>
 ];
-<span class="hljs-keyword">await</span> client.firewalls.addTagsToFirewall(<span class="hljs-string">'firewall-id'</span>, tags);</code></pre>
+<span class="hljs-keyword">await</span> client.firewalls.addTagsToFirewall(<span class="hljs-string">&#x27;firewall-id&#x27;</span>, tags);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -280,7 +280,7 @@ outboundRules = [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L65">lib/services/firewall-service.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L65">lib/services/firewall-service.ts:65</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -290,50 +290,50 @@ outboundRules = [
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> newFirewall = {
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"firewall"</span>,
-  <span class="hljs-string">"inbound_rules"</span>: [
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;firewall&quot;</span>,
+  <span class="hljs-string">&quot;inbound_rules&quot;</span>: [
     {
-      <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"tcp"</span>,
-      <span class="hljs-string">"ports"</span>: <span class="hljs-string">"80"</span>,
-      <span class="hljs-string">"sources"</span>: {
-        <span class="hljs-string">"load_balancer_uids"</span>: [
-          <span class="hljs-string">"4de7ac8b-495b-4884-9a69-1050c6793cd6"</span>
+      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+      <span class="hljs-string">&quot;ports&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+      <span class="hljs-string">&quot;sources&quot;</span>: {
+        <span class="hljs-string">&quot;load_balancer_uids&quot;</span>: [
+          <span class="hljs-string">&quot;4de7ac8b-495b-4884-9a69-1050c6793cd6&quot;</span>
         ]
       }
     },
     {
-      <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"tcp"</span>,
-      <span class="hljs-string">"ports"</span>: <span class="hljs-number">22</span>,
-      <span class="hljs-string">"sources"</span>: {
-        <span class="hljs-string">"tags"</span>: [
-          <span class="hljs-string">"gateway"</span>
+      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+      <span class="hljs-string">&quot;ports&quot;</span>: <span class="hljs-number">22</span>,
+      <span class="hljs-string">&quot;sources&quot;</span>: {
+        <span class="hljs-string">&quot;tags&quot;</span>: [
+          <span class="hljs-string">&quot;gateway&quot;</span>
         ],
-        <span class="hljs-string">"addresses"</span>: [
-          <span class="hljs-string">"18.0.0.0/8"</span>
+        <span class="hljs-string">&quot;addresses&quot;</span>: [
+          <span class="hljs-string">&quot;18.0.0.0/8&quot;</span>
         ]
       }
     }
   ],
-  <span class="hljs-string">"outbound_rules"</span>: [
+  <span class="hljs-string">&quot;outbound_rules&quot;</span>: [
     {
-      <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"tcp"</span>,
-      <span class="hljs-string">"ports"</span>: <span class="hljs-string">"80"</span>,
-      <span class="hljs-string">"destinations"</span>: {
-        <span class="hljs-string">"addresses"</span>: [
-          <span class="hljs-string">"0.0.0.0/0"</span>,
-          <span class="hljs-string">"::/0"</span>
+      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+      <span class="hljs-string">&quot;ports&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+      <span class="hljs-string">&quot;destinations&quot;</span>: {
+        <span class="hljs-string">&quot;addresses&quot;</span>: [
+          <span class="hljs-string">&quot;0.0.0.0/0&quot;</span>,
+          <span class="hljs-string">&quot;::/0&quot;</span>
         ]
       }
     }
   ],
-  <span class="hljs-string">"droplet_ids"</span>: [
+  <span class="hljs-string">&quot;droplet_ids&quot;</span>: [
     <span class="hljs-number">8043964</span>
   ],
-  <span class="hljs-string">"tags"</span>: <span class="hljs-literal">null</span>
+  <span class="hljs-string">&quot;tags&quot;</span>: <span class="hljs-literal">null</span>
 };
 <span class="hljs-keyword">const</span> firewall = <span class="hljs-keyword">await</span> client.firewalls.createFirewall(newFirewall);</code></pre>
 							</div>
@@ -357,7 +357,7 @@ outboundRules = [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L211">lib/services/firewall-service.ts:211</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L211">lib/services/firewall-service.ts:211</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -367,10 +367,10 @@ outboundRules = [
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">await</span> client.firewalls.deleteFirewall(<span class="hljs-string">'firewall-id'</span>);</code></pre>
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
+<span class="hljs-keyword">await</span> client.firewalls.deleteFirewall(<span class="hljs-string">&#x27;firewall-id&#x27;</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -392,7 +392,7 @@ outboundRules = [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L115">lib/services/firewall-service.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L115">lib/services/firewall-service.ts:115</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -402,9 +402,9 @@ outboundRules = [
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> firewall = <span class="hljs-keyword">await</span> client.firewalls.getAllFirewalls();</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/firewall.html" class="tsd-signature-type">Firewall</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -421,7 +421,7 @@ outboundRules = [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L90">lib/services/firewall-service.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L90">lib/services/firewall-service.ts:90</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -431,10 +431,10 @@ outboundRules = [
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
-<span class="hljs-keyword">const</span> firewall = <span class="hljs-keyword">await</span> client.firewalls.getExistingFirewall(<span class="hljs-string">'firewall-id'</span>);</code></pre>
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
+<span class="hljs-keyword">const</span> firewall = <span class="hljs-keyword">await</span> client.firewalls.getExistingFirewall(<span class="hljs-string">&#x27;firewall-id&#x27;</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -456,7 +456,7 @@ outboundRules = [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L273">lib/services/firewall-service.ts:273</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L273">lib/services/firewall-service.ts:273</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -466,14 +466,14 @@ outboundRules = [
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> dropletIds = [
-   <span class="hljs-string">'droplet-id-1'</span>,
-   <span class="hljs-string">'droplet-id-2'</span>
+   <span class="hljs-string">&#x27;droplet-id-1&#x27;</span>,
+   <span class="hljs-string">&#x27;droplet-id-2&#x27;</span>
 ];
-<span class="hljs-keyword">await</span> client.firewalls.removeDropletsFromFirewall(<span class="hljs-string">'firewall-id'</span>, dropletIds);</code></pre>
+<span class="hljs-keyword">await</span> client.firewalls.removeDropletsFromFirewall(<span class="hljs-string">&#x27;firewall-id&#x27;</span>, dropletIds);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -498,7 +498,7 @@ outboundRules = [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L448">lib/services/firewall-service.ts:448</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L448">lib/services/firewall-service.ts:448</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -508,15 +508,15 @@ outboundRules = [
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> inboundRules = [
   {
-    <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"tcp"</span>,
-    <span class="hljs-string">"ports"</span>: <span class="hljs-string">"3306"</span>,
-    <span class="hljs-string">"sources"</span>: {
-      <span class="hljs-string">"droplet_ids"</span>: [
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+    <span class="hljs-string">&quot;ports&quot;</span>: <span class="hljs-string">&quot;3306&quot;</span>,
+    <span class="hljs-string">&quot;sources&quot;</span>: {
+      <span class="hljs-string">&quot;droplet_ids&quot;</span>: [
         <span class="hljs-number">49696269</span>
       ]
     }
@@ -524,16 +524,16 @@ outboundRules = [
 ];
 outboundRules = [
   {
-    <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"tcp"</span>,
-    <span class="hljs-string">"ports"</span>: <span class="hljs-string">"3306"</span>,
-    <span class="hljs-string">"destinations"</span>: {
-      <span class="hljs-string">"droplet_ids"</span>: [
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+    <span class="hljs-string">&quot;ports&quot;</span>: <span class="hljs-string">&quot;3306&quot;</span>,
+    <span class="hljs-string">&quot;destinations&quot;</span>: {
+      <span class="hljs-string">&quot;droplet_ids&quot;</span>: [
         <span class="hljs-number">49696269</span>
       ]
     }
   }
 ];
-<span class="hljs-keyword">await</span> client.firewalls.removeRulesFromFirewall(<span class="hljs-string">'firewall-id'</span>, inboundRules, outboundRules);</code></pre>
+<span class="hljs-keyword">await</span> client.firewalls.removeRulesFromFirewall(<span class="hljs-string">&#x27;firewall-id&#x27;</span>, inboundRules, outboundRules);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -561,7 +561,7 @@ outboundRules = [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L340">lib/services/firewall-service.ts:340</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L340">lib/services/firewall-service.ts:340</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -571,14 +571,14 @@ outboundRules = [
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> tags = [
-   <span class="hljs-string">'my-tag-1'</span>,
-   <span class="hljs-string">'my-tag-2'</span>
+   <span class="hljs-string">&#x27;my-tag-1&#x27;</span>,
+   <span class="hljs-string">&#x27;my-tag-2&#x27;</span>
 ];
-<span class="hljs-keyword">await</span> client.firewalls.removeTagsFromFirewall(<span class="hljs-string">'firewall-id'</span>, tags);</code></pre>
+<span class="hljs-keyword">await</span> client.firewalls.removeTagsFromFirewall(<span class="hljs-string">&#x27;firewall-id&#x27;</span>, tags);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -603,7 +603,7 @@ outboundRules = [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/d29639a/src/lib/services/firewall-service.ts#L186">lib/services/firewall-service.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/firewall-service.ts#L186">lib/services/firewall-service.ts:186</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -614,51 +614,51 @@ outboundRules = [
 								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 									<h3>Example</h3>
 								</a>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">'digitalocean-js'</span>;
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">'your-api-key'</span>);
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
 <span class="hljs-keyword">const</span> updatedFirewall = {
-  <span class="hljs-string">"name"</span>: <span class="hljs-string">"firewall"</span>,
-  <span class="hljs-string">"inbound_rules"</span>: [
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;firewall&quot;</span>,
+  <span class="hljs-string">&quot;inbound_rules&quot;</span>: [
     {
-      <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"tcp"</span>,
-      <span class="hljs-string">"ports"</span>: <span class="hljs-string">"8080"</span>,
-      <span class="hljs-string">"sources"</span>: {
-        <span class="hljs-string">"load_balancer_uids"</span>: [
-          <span class="hljs-string">"4de7ac8b-495b-4884-9a69-1050c6793cd6"</span>
+      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+      <span class="hljs-string">&quot;ports&quot;</span>: <span class="hljs-string">&quot;8080&quot;</span>,
+      <span class="hljs-string">&quot;sources&quot;</span>: {
+        <span class="hljs-string">&quot;load_balancer_uids&quot;</span>: [
+          <span class="hljs-string">&quot;4de7ac8b-495b-4884-9a69-1050c6793cd6&quot;</span>
         ]
       }
     },
     {
-      <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"tcp"</span>,
-      <span class="hljs-string">"ports"</span>: <span class="hljs-number">22</span>,
-      <span class="hljs-string">"sources"</span>: {
-        <span class="hljs-string">"tags"</span>: [
-          <span class="hljs-string">"gateway"</span>
+      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+      <span class="hljs-string">&quot;ports&quot;</span>: <span class="hljs-number">22</span>,
+      <span class="hljs-string">&quot;sources&quot;</span>: {
+        <span class="hljs-string">&quot;tags&quot;</span>: [
+          <span class="hljs-string">&quot;gateway&quot;</span>
         ],
-        <span class="hljs-string">"addresses"</span>: [
-          <span class="hljs-string">"18.0.0.0/8"</span>
+        <span class="hljs-string">&quot;addresses&quot;</span>: [
+          <span class="hljs-string">&quot;18.0.0.0/8&quot;</span>
         ]
       }
     }
   ],
-  <span class="hljs-string">"outbound_rules"</span>: [
+  <span class="hljs-string">&quot;outbound_rules&quot;</span>: [
     {
-      <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"tcp"</span>,
-      <span class="hljs-string">"ports"</span>: <span class="hljs-string">"8080"</span>,
-      <span class="hljs-string">"destinations"</span>: {
-        <span class="hljs-string">"addresses"</span>: [
-          <span class="hljs-string">"0.0.0.0/0"</span>,
-          <span class="hljs-string">"::/0"</span>
+      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+      <span class="hljs-string">&quot;ports&quot;</span>: <span class="hljs-string">&quot;8080&quot;</span>,
+      <span class="hljs-string">&quot;destinations&quot;</span>: {
+        <span class="hljs-string">&quot;addresses&quot;</span>: [
+          <span class="hljs-string">&quot;0.0.0.0/0&quot;</span>,
+          <span class="hljs-string">&quot;::/0&quot;</span>
         ]
       }
     }
   ],
-  <span class="hljs-string">"droplet_ids"</span>: [
+  <span class="hljs-string">&quot;droplet_ids&quot;</span>: [
     <span class="hljs-number">8043964</span>
   ],
-  <span class="hljs-string">"tags"</span>: [
-    <span class="hljs-string">"frontend"</span>
+  <span class="hljs-string">&quot;tags&quot;</span>: [
+    <span class="hljs-string">&quot;frontend&quot;</span>
   ]
 };
 <span class="hljs-keyword">const</span> firewall = <span class="hljs-keyword">await</span> client.firewalls.updateFirewall(updatedFirewall);</code></pre>
@@ -755,7 +755,6 @@ outboundRules = [
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
