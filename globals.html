@@ -69,6 +69,8 @@
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum"><a href="enums/projectpurpose.html" class="tsd-kind-icon">Project<wbr>Purpose</a></li>
+								<li class="tsd-kind-enum"><a href="enums/resource_prefix.html" class="tsd-kind-icon">RESOURCE_<wbr>PREFIX</a></li>
+								<li class="tsd-kind-enum"><a href="enums/resource_type.html" class="tsd-kind-icon">RESOURCE_<wbr>TYPE</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -149,6 +151,7 @@
 								<li class="tsd-kind-interface"><a href="interfaces/networks.html" class="tsd-kind-icon">Networks</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/project.html" class="tsd-kind-icon">Project</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/projectresource.html" class="tsd-kind-icon">Project<wbr>Resource</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/projectresourceparsedurn.html" class="tsd-kind-icon">Project<wbr>Resource<wbr>Parsed<wbr>Urn</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/region.html" class="tsd-kind-icon">Region</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/size.html" class="tsd-kind-icon">Size</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/snapshot.html" class="tsd-kind-icon">Snapshot</a></li>
@@ -179,7 +182,7 @@
 					<div class="tsd-signature tsd-kind-icon">Action<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"attach"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"detach"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"resize"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/models/action.ts#L15">lib/models/action.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/action.ts#L15">lib/models/action.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -189,7 +192,7 @@
 					<div class="tsd-signature tsd-kind-icon">Certificate<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"custom"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"lets_encrypt"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/models/certificate.ts#L1">lib/models/certificate.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/certificate.ts#L1">lib/models/certificate.ts:1</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -199,7 +202,7 @@
 					<div class="tsd-signature tsd-kind-icon">Domain<wbr>Record<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"A"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"AAAA"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"CNAME"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"MX"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"TXT"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"NS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"SRV"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/models/domain-record.ts#L12">lib/models/domain-record.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/domain-record.ts#L12">lib/models/domain-record.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -209,7 +212,7 @@
 					<div class="tsd-signature tsd-kind-icon">Project<wbr>Environment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Development"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Staging"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Production"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/models/project.ts#L24">lib/models/project.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L24">lib/models/project.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -219,7 +222,7 @@
 					<div class="tsd-signature tsd-kind-icon">Project<wbr>Resource<wbr>Status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"ok"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"not_found"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"assigned"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"already_assigned"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"service_down"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/models/project.ts#L39">lib/models/project.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L39">lib/models/project.ts:39</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -229,7 +232,7 @@
 					<div class="tsd-signature tsd-kind-icon">Snapshot<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"all"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"droplet"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"volume"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/snapshot-service.ts#L5">lib/services/snapshot-service.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/snapshot-service.ts#L5">lib/services/snapshot-service.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -247,6 +250,12 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
 						<a href="enums/projectpurpose.html" class="tsd-kind-icon">Project<wbr>Purpose</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/resource_prefix.html" class="tsd-kind-icon">RESOURCE_<wbr>PREFIX</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/resource_type.html" class="tsd-kind-icon">RESOURCE_<wbr>TYPE</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/accountservice.html" class="tsd-kind-icon">Account<wbr>Service</a>
@@ -457,6 +466,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/projectresource.html" class="tsd-kind-icon">Project<wbr>Resource</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/projectresourceparsedurn.html" class="tsd-kind-icon">Project<wbr>Resource<wbr>Parsed<wbr>Urn</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/region.html" class="tsd-kind-icon">Region</a>

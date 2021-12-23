@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ProjectPurpose | digitalocean-js</title>
+	<title>RESOURCE_TYPE | digitalocean-js</title>
 	<meta name="description" content="Documentation for digitalocean-js">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="projectpurpose.html">ProjectPurpose</a>
+					<a href="resource_type.html">RESOURCE_TYPE</a>
 				</li>
 			</ul>
-			<h1>Enumeration ProjectPurpose</h1>
+			<h1>Enumeration RESOURCE_TYPE</h1>
 		</div>
 	</div>
 </header>
@@ -67,12 +67,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Various project purpose strings in enum form</p>
+						<p>Defines the resource type keys</p>
 					</div>
-					<p>You can use as follows:</p>
-					<pre><code class="language-js">import { ProjectPurpose } from &#x27;digitalocean-js;
-
-console.log(ProjectPurpose.Website); // Prints &quot;Website or blog&quot;</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -82,15 +78,14 @@ console.log(ProjectPurpose.Website); // Prints &quot;Website or blog&quot;</code
 						<section class="tsd-index-section ">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="projectpurpose.html#api" class="tsd-kind-icon">Api</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="projectpurpose.html#devtooling" class="tsd-kind-icon">Dev<wbr>Tooling</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="projectpurpose.html#educational" class="tsd-kind-icon">Educational</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="projectpurpose.html#iot" class="tsd-kind-icon">IoT</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="projectpurpose.html#machinelearning" class="tsd-kind-icon">Machine<wbr>Learning</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="projectpurpose.html#mobile" class="tsd-kind-icon">Mobile</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="projectpurpose.html#trying" class="tsd-kind-icon">Trying</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="projectpurpose.html#webapp" class="tsd-kind-icon">Web<wbr>App</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="projectpurpose.html#website" class="tsd-kind-icon">Website</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="resource_type.html#database" class="tsd-kind-icon">DATABASE</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="resource_type.html#domain" class="tsd-kind-icon">DOMAIN</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="resource_type.html#droplet" class="tsd-kind-icon">DROPLET</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="resource_type.html#floating_ip" class="tsd-kind-icon">FLOATING_<wbr>IP</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="resource_type.html#kubernetes_cluster" class="tsd-kind-icon">KUBERNETES_<wbr>CLUSTER</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="resource_type.html#load_balancer" class="tsd-kind-icon">LOAD_<wbr>BALANCER</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="resource_type.html#space" class="tsd-kind-icon">SPACE</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="resource_type.html#volume" class="tsd-kind-icon">VOLUME</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,92 +94,82 @@ console.log(ProjectPurpose.Website); // Prints &quot;Website or blog&quot;</code
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="api" class="tsd-anchor"></a>
-					<h3>Api</h3>
-					<div class="tsd-signature tsd-kind-icon">Api<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Service or API&quot;</span></div>
+					<a name="database" class="tsd-anchor"></a>
+					<h3>DATABASE</h3>
+					<div class="tsd-signature tsd-kind-icon">DATABASE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;dbaas&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L17">lib/models/project.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L65">lib/models/project.ts:65</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="devtooling" class="tsd-anchor"></a>
-					<h3>Dev<wbr>Tooling</h3>
-					<div class="tsd-signature tsd-kind-icon">Dev<wbr>Tooling<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Operational / Developer tooling&quot;</span></div>
+					<a name="domain" class="tsd-anchor"></a>
+					<h3>DOMAIN</h3>
+					<div class="tsd-signature tsd-kind-icon">DOMAIN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;domain&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L21">lib/models/project.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L66">lib/models/project.ts:66</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="educational" class="tsd-anchor"></a>
-					<h3>Educational</h3>
-					<div class="tsd-signature tsd-kind-icon">Educational<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Class project / Educational purposes&quot;</span></div>
+					<a name="droplet" class="tsd-anchor"></a>
+					<h3>DROPLET</h3>
+					<div class="tsd-signature tsd-kind-icon">DROPLET<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;droplet&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L14">lib/models/project.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L67">lib/models/project.ts:67</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="iot" class="tsd-anchor"></a>
-					<h3>IoT</h3>
-					<div class="tsd-signature tsd-kind-icon">IoT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;IoT&quot;</span></div>
+					<a name="floating_ip" class="tsd-anchor"></a>
+					<h3>FLOATING_<wbr>IP</h3>
+					<div class="tsd-signature tsd-kind-icon">FLOATING_<wbr>IP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;floatingip&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L20">lib/models/project.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L68">lib/models/project.ts:68</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="machinelearning" class="tsd-anchor"></a>
-					<h3>Machine<wbr>Learning</h3>
-					<div class="tsd-signature tsd-kind-icon">Machine<wbr>Learning<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Machine learning / AI / Data processing&quot;</span></div>
+					<a name="kubernetes_cluster" class="tsd-anchor"></a>
+					<h3>KUBERNETES_<wbr>CLUSTER</h3>
+					<div class="tsd-signature tsd-kind-icon">KUBERNETES_<wbr>CLUSTER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;kubernetes&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L19">lib/models/project.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L69">lib/models/project.ts:69</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="mobile" class="tsd-anchor"></a>
-					<h3>Mobile</h3>
-					<div class="tsd-signature tsd-kind-icon">Mobile<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Mobile Application&quot;</span></div>
+					<a name="load_balancer" class="tsd-anchor"></a>
+					<h3>LOAD_<wbr>BALANCER</h3>
+					<div class="tsd-signature tsd-kind-icon">LOAD_<wbr>BALANCER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;loadbalancer&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L18">lib/models/project.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L70">lib/models/project.ts:70</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="trying" class="tsd-anchor"></a>
-					<h3>Trying</h3>
-					<div class="tsd-signature tsd-kind-icon">Trying<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Just trying out DigitalOcean&quot;</span></div>
+					<a name="space" class="tsd-anchor"></a>
+					<h3>SPACE</h3>
+					<div class="tsd-signature tsd-kind-icon">SPACE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;space&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L13">lib/models/project.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L71">lib/models/project.ts:71</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="webapp" class="tsd-anchor"></a>
-					<h3>Web<wbr>App</h3>
-					<div class="tsd-signature tsd-kind-icon">Web<wbr>App<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Web Application&quot;</span></div>
+					<a name="volume" class="tsd-anchor"></a>
+					<h3>VOLUME</h3>
+					<div class="tsd-signature tsd-kind-icon">VOLUME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;volume&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L16">lib/models/project.ts:16</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="website" class="tsd-anchor"></a>
-					<h3>Website</h3>
-					<div class="tsd-signature tsd-kind-icon">Website<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Website or blog&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L15">lib/models/project.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/models/project.ts#L72">lib/models/project.ts:72</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -203,34 +188,31 @@ console.log(ProjectPurpose.Website); // Prints &quot;Website or blog&quot;</code
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-enum">
-						<a href="projectpurpose.html" class="tsd-kind-icon">Project<wbr>Purpose</a>
+						<a href="resource_type.html" class="tsd-kind-icon">RESOURCE_<wbr>TYPE</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="projectpurpose.html#api" class="tsd-kind-icon">Api</a>
+								<a href="resource_type.html#database" class="tsd-kind-icon">DATABASE</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="projectpurpose.html#devtooling" class="tsd-kind-icon">Dev<wbr>Tooling</a>
+								<a href="resource_type.html#domain" class="tsd-kind-icon">DOMAIN</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="projectpurpose.html#educational" class="tsd-kind-icon">Educational</a>
+								<a href="resource_type.html#droplet" class="tsd-kind-icon">DROPLET</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="projectpurpose.html#iot" class="tsd-kind-icon">IoT</a>
+								<a href="resource_type.html#floating_ip" class="tsd-kind-icon">FLOATING_<wbr>IP</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="projectpurpose.html#machinelearning" class="tsd-kind-icon">Machine<wbr>Learning</a>
+								<a href="resource_type.html#kubernetes_cluster" class="tsd-kind-icon">KUBERNETES_<wbr>CLUSTER</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="projectpurpose.html#mobile" class="tsd-kind-icon">Mobile</a>
+								<a href="resource_type.html#load_balancer" class="tsd-kind-icon">LOAD_<wbr>BALANCER</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="projectpurpose.html#trying" class="tsd-kind-icon">Trying</a>
+								<a href="resource_type.html#space" class="tsd-kind-icon">SPACE</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="projectpurpose.html#webapp" class="tsd-kind-icon">Web<wbr>App</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="projectpurpose.html#website" class="tsd-kind-icon">Website</a>
+								<a href="resource_type.html#volume" class="tsd-kind-icon">VOLUME</a>
 							</li>
 						</ul>
 					</li>

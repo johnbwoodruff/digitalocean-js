@@ -88,11 +88,13 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#assignresourcestodefaultproject" class="tsd-kind-icon">assign<wbr>Resources<wbr>ToDefault<wbr>Project</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#assignresourcestoproject" class="tsd-kind-icon">assign<wbr>Resources<wbr>ToProject</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#createproject" class="tsd-kind-icon">create<wbr>Project</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#deleteproject" class="tsd-kind-icon">delete<wbr>Project</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#getallprojects" class="tsd-kind-icon">get<wbr>All<wbr>Projects</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#getdefaultproject" class="tsd-kind-icon">get<wbr>Default<wbr>Project</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#getdefaultprojectresources" class="tsd-kind-icon">get<wbr>Default<wbr>Project<wbr>Resources</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#getexistingproject" class="tsd-kind-icon">get<wbr>Existing<wbr>Project</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#getprojectresources" class="tsd-kind-icon">get<wbr>Project<wbr>Resources</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#parseprojectresourceurn" class="tsd-kind-icon">parse<wbr>Project<wbr>Resource<wbr>Urn</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#updatedefaultproject" class="tsd-kind-icon">update<wbr>Default<wbr>Project</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="projectservice.html#updateproject" class="tsd-kind-icon">update<wbr>Project</a></li>
 							</ul>
@@ -112,7 +114,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L5">lib/services/project-service.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L10">lib/services/project-service.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="projectservice.html" class="tsd-signature-type">ProjectService</a></h4>
@@ -132,7 +134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L269">lib/services/project-service.ts:269</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L298">lib/services/project-service.ts:298</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -175,7 +177,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L233">lib/services/project-service.ts:233</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L262">lib/services/project-service.ts:262</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -221,7 +223,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L90">lib/services/project-service.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L95">lib/services/project-service.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -253,6 +255,41 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deleteproject" class="tsd-anchor"></a>
+					<h3>delete<wbr>Project</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Project<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L190">lib/services/project-service.ts:190</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Delete an existing project</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
+<span class="hljs-keyword">await</span> client.projects.deleteProject(<span class="hljs-string">&#x27;project-id&#x27;</span>);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getallprojects" class="tsd-anchor"></a>
 					<h3>get<wbr>All<wbr>Projects</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -262,7 +299,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L19">lib/services/project-service.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L24">lib/services/project-service.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -291,7 +328,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L69">lib/services/project-service.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L74">lib/services/project-service.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -320,7 +357,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L210">lib/services/project-service.ts:210</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L239">lib/services/project-service.ts:239</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -349,7 +386,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L44">lib/services/project-service.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L49">lib/services/project-service.ts:49</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -384,7 +421,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L185">lib/services/project-service.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L214">lib/services/project-service.ts:214</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -410,6 +447,43 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parseprojectresourceurn" class="tsd-anchor"></a>
+					<h3>parse<wbr>Project<wbr>Resource<wbr>Urn</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Project<wbr>Resource<wbr>Urn<span class="tsd-signature-symbol">(</span>urn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/projectresourceparsedurn.html" class="tsd-signature-type">ProjectResourceParsedUrn</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L317">lib/services/project-service.ts:317</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Parses a Project Resource URN into its various parts</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> { DigitalOcean } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;digitalocean-js&#x27;</span>;
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> DigitalOcean(<span class="hljs-string">&#x27;your-api-key&#x27;</span>);
+<span class="hljs-keyword">const</span> urn = <span class="hljs-string">&#x27;do:droplet:4126873&#x27;</span>;
+<span class="hljs-keyword">const</span> resource = <span class="hljs-keyword">await</span> client.projects
+   .parseProjectResourceUrn(urn);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>urn: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/projectresourceparsedurn.html" class="tsd-signature-type">ProjectResourceParsedUrn</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="updatedefaultproject" class="tsd-anchor"></a>
 					<h3>update<wbr>Default<wbr>Project</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -419,7 +493,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L170">lib/services/project-service.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L175">lib/services/project-service.ts:175</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -461,7 +535,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/f08b5e1/src/lib/services/project-service.ts#L130">lib/services/project-service.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/johnbwoodruff/digitalocean-js/blob/cc4f671/src/lib/services/project-service.ts#L135">lib/services/project-service.ts:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -526,6 +600,9 @@
 								<a href="projectservice.html#createproject" class="tsd-kind-icon">create<wbr>Project</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="projectservice.html#deleteproject" class="tsd-kind-icon">delete<wbr>Project</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="projectservice.html#getallprojects" class="tsd-kind-icon">get<wbr>All<wbr>Projects</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -539,6 +616,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="projectservice.html#getprojectresources" class="tsd-kind-icon">get<wbr>Project<wbr>Resources</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="projectservice.html#parseprojectresourceurn" class="tsd-kind-icon">parse<wbr>Project<wbr>Resource<wbr>Urn</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="projectservice.html#updatedefaultproject" class="tsd-kind-icon">update<wbr>Default<wbr>Project</a>
