@@ -51,15 +51,37 @@ export interface ProjectResource {
 }
 
 /**
- * Defines the prefixes for various resource types
- *
- * @ignore
+ * The structure of a parsed Project Resource URN
  */
-export const RESOURCE_PREFIX = {
-  DOMAIN: 'do:domain:',
-  DROPLET: 'do:droplet:',
-  FLOATING_IP: 'do:floatingip:',
-  LOAD_BALANCER: 'do:loadbalancer:',
-  SPACE: 'do:space:',
-  VOLUME: 'do:volume:'
-};
+export interface ProjectResourceParsedUrn {
+  id: string;
+  type: string;
+}
+
+/**
+ * Defines the resource type keys
+ */
+export enum RESOURCE_TYPE {
+  DATABASE = 'dbaas',
+  DOMAIN = 'domain',
+  DROPLET = 'droplet',
+  FLOATING_IP = 'floatingip',
+  KUBERNETES_CLUSTER = 'kubernetes',
+  LOAD_BALANCER = 'loadbalancer',
+  SPACE = 'space',
+  VOLUME = 'volume'
+}
+
+/**
+ * Defines the resource prefixes for various resource types
+ */
+export enum RESOURCE_PREFIX {
+  DATABASE = 'do:dbaas:',
+  DOMAIN = 'do:domain:',
+  DROPLET = 'do:droplet:',
+  FLOATING_IP = 'do:floatingip:',
+  KUBERNETES_CLUSTER = 'do:kubernetes:',
+  LOAD_BALANCER = 'do:loadbalancer:',
+  SPACE = 'do:space:',
+  VOLUME = 'do:volume:'
+}

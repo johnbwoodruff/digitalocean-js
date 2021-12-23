@@ -1,6 +1,11 @@
 import { axios } from '../axios-instance';
 
-import { Project, ProjectPurpose, ProjectResource } from '../models/project';
+import {
+  Project,
+  ProjectPurpose,
+  ProjectResource,
+  ProjectResourceParsedUrn
+} from '../models/project';
 
 export class ProjectService {
   constructor() {}
@@ -172,6 +177,30 @@ export class ProjectService {
   }
 
   /**
+   * Delete an existing project
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * await client.projects.deleteProject('project-id');
+   * ```
+   */
+  public async deleteProject(id: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      axios
+        .delete(`/projects/${id}`)
+        .then(() => {
+          resolve();
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+
+  /**
    * Get all resources attached to a specific project
    *
    * ### Example
@@ -270,6 +299,32 @@ export class ProjectService {
     resources: string[]
   ): Promise<ProjectResource[]> {
     return this.assignResourcesToProject('default', resources);
+  }
+
+  /**
+   * Parses a Project Resource URN into its various parts
+   *
+   * ### Example
+   * ```js
+   * import { DigitalOcean } from 'digitalocean-js';
+   *
+   * const client = new DigitalOcean('your-api-key');
+   * const urn = 'do:droplet:4126873';
+   * const resource = await client.projects
+   *    .parseProjectResourceUrn(urn);
+   * ```
+   */
+  public parseProjectResourceUrn(urn: string): ProjectResourceParsedUrn {
+    const parts = urn.split(':');
+    if (parts[0] !== 'do' || parts.length !== 3) {
+      throw new Error(
+        `URN expected in the format of 'do:resource_type:resource_id'`
+      );
+    }
+    return {
+      id: parts[2],
+      type: parts[1]
+    };
   }
 
   ////////// Validation Methods //////////
