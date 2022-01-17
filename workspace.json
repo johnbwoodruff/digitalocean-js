@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "projects": {
+    "digitalocean-js": "packages/digitalocean-js"
+  }
+}

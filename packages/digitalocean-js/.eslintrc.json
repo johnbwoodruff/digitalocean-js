@@ -1,0 +1,21 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*", "node_modules/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "excludedFiles": ["node_modules/**/*"],
+      "rules": {}
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "excludedFiles": ["node_modules/**/*"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "excludedFiles": ["node_modules/**/*"],
+      "rules": {}
+    }
+  ]
+}

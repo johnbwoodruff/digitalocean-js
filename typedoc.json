@@ -1,6 +1,6 @@
 {
   "inputFiles": [
-    "src/"
+    "packages/digitalocean-js/src/"
   ],
   "exclude": [
     "**/*.spec.ts"
@@ -9,6 +9,6 @@
   "excludeNotExported": true,
   "target": "ES6",
   "mode": "file",
-  "out": "build/docs",
+  "out": "dist/docs/digitalocean-js",
   "gaID": "UA-46243905-17"
 }

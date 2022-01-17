@@ -23,17 +23,17 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v1
-      
+
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-          
+
       - name: Install dependencies
         run: yarn install
-        
+
       - name: Tests
-        run: yarn test
-        
+        run: yarn nx test digitalocean-js
+
       - name: Build
-        run: yarn build
+        run: yarn nx build digitalocean-js
