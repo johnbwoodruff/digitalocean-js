@@ -1,14 +1,13 @@
 {
-  "inputFiles": [
-    "packages/digitalocean-js/src/"
+  "entryPoints": [
+    "packages/digitalocean-js/src/index.ts"
   ],
+  "tsconfig": "packages/digitalocean-js/tsconfig.json",
   "exclude": [
     "**/*.spec.ts"
   ],
+  "readme": "./README.md",
   "excludePrivate": true,
-  "excludeNotExported": true,
-  "target": "ES6",
-  "mode": "file",
   "out": "dist/docs/digitalocean-js",
   "gaID": "UA-46243905-17"
 }
