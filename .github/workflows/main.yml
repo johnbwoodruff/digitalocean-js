@@ -32,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Lint
+        run: yarn nx lint digitalocean-js
+
       - name: Tests
         run: yarn nx test digitalocean-js
 
