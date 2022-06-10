@@ -6,7 +6,7 @@ export interface KubernetesCluster {
   version: string;
   auto_upgrade: boolean;
   ipv4: string;
-  custer_subnet: string;
+  cluster_subnet: string;
   service_subnet: string;
   tags: string[];
   maintenance_policy: KubernetesClusterMaintenancePolicy;
