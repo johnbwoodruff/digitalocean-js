@@ -1,9 +1,8 @@
-import { axios } from '../axios-instance';
+import { axios } from '../../axios-instance';
 
-import { Account } from '../models/account';
+import { Account } from '../../models/account';
 
 export class AccountService {
-
   /**
    * Get the account information associated with the provided credentials
    *

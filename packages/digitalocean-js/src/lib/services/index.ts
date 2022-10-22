@@ -1,4 +1,4 @@
-export type { AccountService } from './account-service';
+export type { AccountService } from './account/account.service';
 export type { ActionService } from './actions-service';
 export type { BillingHistoryService } from './billing-history-service';
 export type { BlockStorageActionService } from './block-storage-actions-service';

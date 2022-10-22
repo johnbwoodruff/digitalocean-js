@@ -1,6 +1,6 @@
 import { axios } from './axios-instance';
 import { API_BASE_URL } from './conf/environment';
-import { AccountService } from './services/account-service';
+import { AccountService } from './services/account/account.service';
 import { ActionService } from './services/actions-service';
 import { BillingHistoryService } from './services/billing-history-service';
 import { BlockStorageActionService } from './services/block-storage-actions-service';
