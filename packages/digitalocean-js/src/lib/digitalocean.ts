@@ -1,29 +1,29 @@
-import { axios } from './axios-instance';
+import { instance } from './axios-instance';
 import { API_BASE_URL } from './conf/environment';
 import { AccountService } from './services/account/account.service';
-import { ActionService } from './services/actions-service';
-import { BillingHistoryService } from './services/billing-history-service';
-import { BlockStorageActionService } from './services/block-storage-actions-service';
-import { BlockStorageService } from './services/block-storage-service';
-import { CdnService } from './services/cdn-service';
-import { CertificateService } from './services/certificate-service';
-import { DomainRecordService } from './services/domain-record-service';
-import { DomainService } from './services/domain-service';
-import { DropletActionService } from './services/droplet-actions-service';
-import { DropletService } from './services/droplet-service';
-import { FirewallService } from './services/firewall-service';
-import { FloatingIPActionService } from './services/floating-ip-actions-service';
-import { FloatingIPService } from './services/floating-ip-service';
-import { ImageActionService } from './services/image-actions-service';
-import { ImageService } from './services/image-service';
-import { KubernetesService } from './services/kubernetes-service';
-import { LoadBalancerService } from './services/load-balancer-service';
-import { ProjectService } from './services/project-service';
-import { RegionService } from './services/region-service';
-import { SizeService } from './services/size-service';
-import { SnapshotService } from './services/snapshot-service';
-import { SshService } from './services/ssh-service';
-import { TagService } from './services/tag-service';
+import { ActionService } from './services/actions/actions.service';
+import { BillingHistoryService } from './services/billing-history/billing-history.service';
+import { BlockStorageActionService } from './services/block-storage/block-storage-actions.service';
+import { BlockStorageService } from './services/block-storage/block-storage.service';
+import { CdnService } from './services/cdn/cdn.service';
+import { CertificateService } from './services/certificate/certificate.service';
+import { DomainRecordService } from './services/domain/domain-record.service';
+import { DomainService } from './services/domain/domain.service';
+import { DropletActionService } from './services/droplet/droplet-actions.service';
+import { DropletService } from './services/droplet/droplet.service';
+import { FirewallService } from './services/firewall/firewall.service';
+import { FloatingIPActionService } from './services/floating-ip/floating-ip-actions.service';
+import { FloatingIPService } from './services/floating-ip/floating-ip.service';
+import { ImageActionService } from './services/image/image-actions.service';
+import { ImageService } from './services/image/image.service';
+import { KubernetesService } from './services/kubernetes/kubernetes.service';
+import { LoadBalancerService } from './services/load-balancer/load-balancer.service';
+import { ProjectService } from './services/project/project.service';
+import { RegionService } from './services/region/region.service';
+import { SizeService } from './services/size/size.service';
+import { SnapshotService } from './services/snapshot/snapshot.service';
+import { SshService } from './services/ssh/ssh.service';
+import { TagService } from './services/tag/tag.service';
 
 export class DigitalOcean {
   public account: AccountService;
@@ -52,9 +52,13 @@ export class DigitalOcean {
   public tags: TagService;
 
   constructor(private token: string, url = API_BASE_URL) {
-    axios.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;
-    axios.defaults.headers.common['Content-Type'] = `application/json`;
-    axios.defaults.baseURL = url;
+    instance.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;
+    instance.defaults.headers.common['Content-Type'] = `application/json`;
+    instance.defaults.baseURL = url;
+    // instance.interceptors.request.use(request => {
+    //   console.log('Starting Request', JSON.stringify(request, null, 2));
+    //   return request;
+    // });
 
     this.account = new AccountService();
     this.actions = new ActionService();

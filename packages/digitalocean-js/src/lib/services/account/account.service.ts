@@ -1,4 +1,4 @@
-import { axios } from '../../axios-instance';
+import { instance } from '../../axios-instance';
 
 import { Account } from '../../models/account';
 
@@ -14,17 +14,7 @@ export class AccountService {
    * const account = await client.account.getUserInformation();
    * ```
    */
-  public getUserInformation(): Promise<Account> {
-    return new Promise((resolve, reject) => {
-      axios
-        .get(`/account`)
-        .then(response => {
-          // Return actual account instead of wrapped account
-          resolve(response.data.account);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+  public async getUserInformation(): Promise<Account> {
+    return instance.get('/account').then(response => response.data.account);
   }
 }

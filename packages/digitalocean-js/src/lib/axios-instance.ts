@@ -1,8 +1,8 @@
-import Axios from 'axios';
+import axios from 'axios';
 
 /**
  * Internal axios instance for configs local to library
  *
  * @ignore
  */
-export const axios = Axios.create();
+export const instance = axios.create();

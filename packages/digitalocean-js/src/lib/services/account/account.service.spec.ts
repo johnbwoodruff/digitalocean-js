@@ -1,8 +1,10 @@
 import MockAdapter from 'axios-mock-adapter';
-import { axios } from '../../axios-instance';
+import { AxiosError } from 'axios';
 
+import { instance } from '../../axios-instance';
 import { DigitalOcean } from '../../digitalocean';
 import { Account } from '../../models/account';
+import { MOCK_ERROR } from '../../../test/shared';
 
 const DUMMY_ACCOUNT: Account = {
   droplet_limit: 1,
@@ -14,25 +16,30 @@ const DUMMY_ACCOUNT: Account = {
   status_message: 'some-status message'
 };
 
+const mock = new MockAdapter(instance, { onNoMatch: 'throwException' });
+const client = new DigitalOcean('abc123');
+
 describe('Account Service', () => {
-  let mock: MockAdapter;
-  let client: DigitalOcean;
-
-  beforeEach(() => {
-    mock = new MockAdapter(axios);
-    client = new DigitalOcean('abc123');
-  });
-
   it('should exist', () => {
     expect(client.account).toBeDefined();
   });
 
   describe('getUserInformation', () => {
     it('should resolve correctly', async () => {
-      mock.onGet('/account').reply(200, DUMMY_ACCOUNT);
+      mock.onGet('/account').reply(200, { account: DUMMY_ACCOUNT });
 
       const user = await client.account.getUserInformation();
       expect(user).toEqual(DUMMY_ACCOUNT);
+    });
+
+    it('should reject on failure', async () => {
+      mock.onGet('/account').reply(400, MOCK_ERROR);
+
+      try {
+        await client.account.getUserInformation();
+      } catch (e) {
+        expect((e as AxiosError).response?.data).toEqual(MOCK_ERROR);
+      }
     });
   });
 });
