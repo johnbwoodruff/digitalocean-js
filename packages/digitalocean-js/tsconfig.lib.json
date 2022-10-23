@@ -5,6 +5,12 @@
     "declaration": true,
     "types": []
   },
-  "include": ["**/*.ts"],
-  "exclude": ["**/*.spec.ts", "jest.config.ts"]
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "jest.config.ts",
+    "./src/test/**/*"
+  ]
 }

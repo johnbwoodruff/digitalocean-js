@@ -1,8 +1,7 @@
 {
   "name": "digitalocean-js",
-  "version": "1.5.12-beta.0",
+  "version": "2.0.0",
   "license": "MIT",
-  "type": "commonjs",
   "private": false,
   "repository": "https://github.com/johnbwoodruff/digitalocean-js",
   "author": {
@@ -18,7 +17,6 @@
     "typescript"
   ],
   "dependencies": {
-    "axios": "^0.24.0",
-    "sha.js": "^2.4.11"
+    "axios": "^0.24.0"
   }
 }
