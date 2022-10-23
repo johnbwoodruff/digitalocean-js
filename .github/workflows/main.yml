@@ -24,8 +24,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Use workspace node version with nvm
-        run: nvm install
+      - run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
+        id: nvm
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
 
       - name: Install dependencies
         run: yarn install
