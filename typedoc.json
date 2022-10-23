@@ -4,7 +4,8 @@
   ],
   "tsconfig": "packages/digitalocean-js/tsconfig.json",
   "exclude": [
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/test/**/*"
   ],
   "readme": "./README.md",
   "excludePrivate": true,

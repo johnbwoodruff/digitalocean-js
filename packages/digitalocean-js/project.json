@@ -42,21 +42,27 @@
       "executor": "nx:run-commands",
       "outputs": [],
       "options": {
-        "command": "npm publish --tag=latest --access public"
+        "command": "npm publish --tag=latest --access public",
+        "cwd": "dist/packages/digitalocean-js"
       }
     },
     "publish:beta": {
       "executor": "nx:run-commands",
       "outputs": [],
       "options": {
-        "command": "npm publish --tag=beta --access public"
+        "command": "npm publish --tag=beta --access public",
+        "cwd": "dist/packages/digitalocean-js"
       }
     },
     "docs": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "typedoc --options typedoc.json && gh-pages -d dist/docs/digitalocean-js"
+        "commands": [
+          "typedoc --options typedoc.json",
+          "gh-pages -d dist/docs/digitalocean-js"
+        ],
+        "parallel": false
       }
     }
   },
