@@ -1,9 +1,10 @@
 {
   "name": "digitalocean-js",
-  "version": "2.0.0",
-  "license": "MIT",
+  "version": "2.0.1",
+  "description": "JavaScript library for the DigitalOcean API",
   "private": false,
   "repository": "https://github.com/johnbwoodruff/digitalocean-js",
+  "license": "MIT",
   "author": {
     "name": "John Woodruff",
     "email": "johnwoodruff91@gmail.com"
