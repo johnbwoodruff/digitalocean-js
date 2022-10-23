@@ -1,7 +1,9 @@
 {
   "version": 2,
   "projects": {
-    "digitalocean-js": "packages/digitalocean-js"
+    "data-access": "libs/data-access",
+    "digitalocean-js": "packages/digitalocean-js",
+    "testing": "libs/testing"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

@@ -12,21 +12,17 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@digitalocean-js/data-access": ["libs/data-access/src/index.ts"],
       "@digitalocean-js/digitalocean-js": [
         "packages/digitalocean-js/src/index.ts"
-      ]
+      ],
+      "@digitalocean-js/testing": ["libs/testing/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
