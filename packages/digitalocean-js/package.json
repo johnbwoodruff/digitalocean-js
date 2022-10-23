@@ -1,0 +1,22 @@
+{
+  "name": "digitalocean-js",
+  "version": "2.0.0",
+  "license": "MIT",
+  "private": false,
+  "repository": "https://github.com/johnbwoodruff/digitalocean-js",
+  "author": {
+    "name": "John Woodruff",
+    "email": "johnwoodruff91@gmail.com"
+  },
+  "keywords": [
+    "digitalocean",
+    "api",
+    "droplet",
+    "droplets",
+    "client",
+    "typescript"
+  ],
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}

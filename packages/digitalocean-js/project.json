@@ -1,0 +1,64 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/digitalocean-js/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/digitalocean-js",
+        "main": "packages/digitalocean-js/src/index.ts",
+        "tsConfig": "packages/digitalocean-js/tsconfig.lib.json",
+        "assets": [
+          "packages/digitalocean-js/*.md"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/digitalocean-js/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/packages/digitalocean-js"
+      ],
+      "options": {
+        "jestConfig": "packages/digitalocean-js/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "npm publish --tag=latest --access public"
+      }
+    },
+    "publish:beta": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "npm publish --tag=beta --access public"
+      }
+    },
+    "docs": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "typedoc --options typedoc.json && gh-pages -d dist/docs/digitalocean-js"
+      }
+    }
+  },
+  "tags": []
+}

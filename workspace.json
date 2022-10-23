@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "digitalocean-js": "packages/digitalocean-js"
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
+}
