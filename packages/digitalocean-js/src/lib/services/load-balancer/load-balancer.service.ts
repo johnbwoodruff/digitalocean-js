@@ -58,32 +58,22 @@ export class LoadBalancerService {
    * ```
    */
   public createLoadBalancer(loadBalancer: LoadBalancer): Promise<LoadBalancer> {
-    return new Promise((resolve, reject) => {
-      if (!this.loadBalancerIsValid(loadBalancer)) {
-        throw new Error('Required fields missing from Load Balancer Object');
+    if (!this.loadBalancerIsValid(loadBalancer)) {
+      throw new Error('Required fields missing from Load Balancer Object');
+    }
+    loadBalancer.forwarding_rules.forEach(rule => {
+      if (!this.forwardingRuleIsValid(rule)) {
+        throw new Error('Required fields missing from Forwarding Rule Object');
       }
-      loadBalancer.forwarding_rules.forEach(rule => {
-        if (!this.forwardingRuleIsValid(rule)) {
-          throw new Error(
-            'Required fields missing from Forwarding Rule Object'
-          );
-        }
-      });
-      if (loadBalancer.health_check) {
-        if (!this.healthCheckIsValid(loadBalancer.health_check)) {
-          throw new Error('Required fields missing from Health Check Object');
-        }
-      }
-      instance
-        .post(`/load_balancers`, loadBalancer)
-        .then(response => {
-          // Return actual load_balancer instead of wrapped load_balancer
-          resolve(response.data.load_balancer);
-        })
-        .catch(error => {
-          reject(error);
-        });
     });
+    if (loadBalancer.health_check) {
+      if (!this.healthCheckIsValid(loadBalancer.health_check)) {
+        throw new Error('Required fields missing from Health Check Object');
+      }
+    }
+    return instance
+      .post(`/load_balancers`, loadBalancer)
+      .then(response => response.data.load_balancer);
   }
 
   /**
@@ -98,17 +88,9 @@ export class LoadBalancerService {
    * ```
    */
   public getExistingLoadBalancer(id: string): Promise<LoadBalancer> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/load_balancers/${id}`)
-        .then(response => {
-          // Return actual load_balancer instead of wrapped load_balancer
-          resolve(response.data.load_balancer);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/load_balancers/${id}`)
+      .then(response => response.data.load_balancer);
   }
 
   /**
@@ -123,17 +105,9 @@ export class LoadBalancerService {
    * ```
    */
   public getAllLoadBalancers(): Promise<LoadBalancer[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/load_balancers`)
-        .then(response => {
-          // Return actual load_balancers instead of wrapped load_balancers
-          resolve(response.data.load_balancers);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/load_balancers`)
+      .then(response => response.data.load_balancers);
   }
 
   /**
@@ -188,32 +162,22 @@ export class LoadBalancerService {
    * ```
    */
   public updateLoadBalancer(loadBalancer: LoadBalancer): Promise<LoadBalancer> {
-    return new Promise((resolve, reject) => {
-      if (!this.loadBalancerIsValid(loadBalancer)) {
-        throw new Error('Required fields missing from Load Balancer Object');
+    if (!this.loadBalancerIsValid(loadBalancer)) {
+      throw new Error('Required fields missing from Load Balancer Object');
+    }
+    loadBalancer.forwarding_rules.forEach(rule => {
+      if (!this.forwardingRuleIsValid(rule)) {
+        throw new Error('Required fields missing from Forwarding Rule Object');
       }
-      loadBalancer.forwarding_rules.forEach(rule => {
-        if (!this.forwardingRuleIsValid(rule)) {
-          throw new Error(
-            'Required fields missing from Forwarding Rule Object'
-          );
-        }
-      });
-      if (loadBalancer.health_check) {
-        if (!this.healthCheckIsValid(loadBalancer.health_check)) {
-          throw new Error('Required fields missing from Health Check Object');
-        }
-      }
-      instance
-        .put(`/load_balancers/${loadBalancer.id}`, loadBalancer)
-        .then(response => {
-          // Return actual load_balancer instead of wrapped load_balancer
-          resolve(response.data.load_balancer);
-        })
-        .catch(error => {
-          reject(error);
-        });
     });
+    if (loadBalancer.health_check) {
+      if (!this.healthCheckIsValid(loadBalancer.health_check)) {
+        throw new Error('Required fields missing from Health Check Object');
+      }
+    }
+    return instance
+      .put(`/load_balancers/${loadBalancer.id}`, loadBalancer)
+      .then(response => response.data.load_balancer);
   }
 
   /**
@@ -228,16 +192,7 @@ export class LoadBalancerService {
    * ```
    */
   public deleteLoadBalancer(id: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/load_balancers/${id}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/load_balancers/${id}`);
   }
 
   /**
@@ -260,17 +215,8 @@ export class LoadBalancerService {
     id: string,
     dropletIds: number[]
   ): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/load_balancers/${id}`, {
-          droplet_ids: dropletIds
-        })
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
+    return instance.post(`/load_balancers/${id}`, {
+      droplet_ids: dropletIds
     });
   }
 
@@ -294,17 +240,8 @@ export class LoadBalancerService {
     id: string,
     dropletIds: number[]
   ): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/load_balancers/${id}`, {
-          data: { droplet_ids: dropletIds }
-        })
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
+    return instance.delete(`/load_balancers/${id}`, {
+      data: { droplet_ids: dropletIds }
     });
   }
 
@@ -332,24 +269,13 @@ export class LoadBalancerService {
     id: string,
     rules: ForwardingRule[]
   ): Promise<void> {
-    return new Promise((resolve, reject) => {
-      rules.forEach(rule => {
-        if (!this.forwardingRuleIsValid(rule)) {
-          throw new Error(
-            'Required fields missing from Forwarding Rule Object'
-          );
-        }
-      });
-      instance
-        .post(`/load_balancers/${id}/forwarding_rules`, {
-          forwarding_rules: rules
-        })
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
+    rules.forEach(rule => {
+      if (!this.forwardingRuleIsValid(rule)) {
+        throw new Error('Required fields missing from Forwarding Rule Object');
+      }
+    });
+    return instance.post(`/load_balancers/${id}/forwarding_rules`, {
+      forwarding_rules: rules
     });
   }
 
@@ -377,24 +303,13 @@ export class LoadBalancerService {
     id: string,
     rules: ForwardingRule[]
   ): Promise<void> {
-    return new Promise((resolve, reject) => {
-      rules.forEach(rule => {
-        if (!this.forwardingRuleIsValid(rule)) {
-          throw new Error(
-            'Required fields missing from Forwarding Rule Object'
-          );
-        }
-      });
-      instance
-        .delete(`/load_balancers/${id}/forwarding_rules`, {
-          data: { forwarding_rules: rules }
-        })
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
+    rules.forEach(rule => {
+      if (!this.forwardingRuleIsValid(rule)) {
+        throw new Error('Required fields missing from Forwarding Rule Object');
+      }
+    });
+    return instance.delete(`/load_balancers/${id}/forwarding_rules`, {
+      data: { forwarding_rules: rules }
     });
   }
 

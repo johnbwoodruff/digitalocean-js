@@ -34,17 +34,9 @@ export class DropletService {
    * ```
    */
   public createNewDroplet(dropletRequest: DropletRequest): Promise<Droplet> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/droplets`, dropletRequest)
-        .then(response => {
-          // Return actual droplet instead of wrapped droplet
-          resolve(response.data.droplet);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .post(`/droplets`, dropletRequest)
+      .then(response => response.data.droplet);
   }
 
   /**
@@ -78,17 +70,9 @@ export class DropletService {
   public createMultipleDroplets(
     dropletsRequest: DropletRequest
   ): Promise<Droplet[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/droplets`, dropletsRequest)
-        .then(response => {
-          // Return actual droplets instead of wrapped droplets
-          resolve(response.data.droplets);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .post(`/droplets`, dropletsRequest)
+      .then(response => response.data.droplets);
   }
 
   /**
@@ -103,17 +87,9 @@ export class DropletService {
    * ```
    */
   public getExistingDroplet(dropletId: number): Promise<Droplet> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/droplets/${dropletId}`)
-        .then(response => {
-          // Return actual droplet instead of wrapped droplet
-          resolve(response.data.droplet);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/droplets/${dropletId}`)
+      .then(response => response.data.droplet);
   }
 
   /**
@@ -128,17 +104,7 @@ export class DropletService {
    * ```
    */
   public getAllDroplets(): Promise<Droplet[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/droplets`)
-        .then(response => {
-          // Return actual droplets instead of wrapped droplets
-          resolve(response.data.droplets);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.get(`/droplets`).then(response => response.data.droplets);
   }
 
   /**
@@ -153,17 +119,9 @@ export class DropletService {
    * ```
    */
   public getDropletsByTag(tag: string): Promise<Droplet[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/droplets?tag_name=${tag}`)
-        .then(response => {
-          // Return actual droplets instead of wrapped droplets
-          resolve(response.data.droplets);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/droplets`, { params: { tag_name: tag } })
+      .then(response => response.data.droplets);
   }
 
   /**
@@ -178,17 +136,9 @@ export class DropletService {
    * ```
    */
   public getAvailableKernelsForDroplet(dropletId: number): Promise<Kernel[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/droplets/${dropletId}/kernels`)
-        .then(response => {
-          // Return actual kernels instead of wrapped kernels
-          resolve(response.data.kernels);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/droplets/${dropletId}/kernels`)
+      .then(response => response.data.kernels);
   }
 
   /**
@@ -203,17 +153,9 @@ export class DropletService {
    * ```
    */
   public getSnapshotsForDroplet(dropletId: number): Promise<Snapshot[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/droplets/${dropletId}/snapshots`)
-        .then(response => {
-          // Return actual snapshots instead of wrapped snapshots
-          resolve(response.data.snapshots);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/droplets/${dropletId}/snapshots`)
+      .then(response => response.data.snapshots);
   }
 
   /**
@@ -228,17 +170,9 @@ export class DropletService {
    * ```
    */
   public getBackupsForDroplet(dropletId: number): Promise<Backup[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/droplets/${dropletId}/backups`)
-        .then(response => {
-          // Return actual backups instead of wrapped backups
-          resolve(response.data.backups);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/droplets/${dropletId}/backups`)
+      .then(response => response.data.backups);
   }
 
   /**
@@ -253,17 +187,9 @@ export class DropletService {
    * ```
    */
   public getDropletActions(dropletId: number): Promise<Action[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/droplets/${dropletId}/actions`)
-        .then(response => {
-          // Return actual actions instead of wrapped actions
-          resolve(response.data.actions);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/droplets/${dropletId}/actions`)
+      .then(response => response.data.actions);
   }
 
   /**
@@ -278,16 +204,7 @@ export class DropletService {
    * ```
    */
   public deleteDroplet(dropletId: number): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/droplets/${dropletId}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/droplets/${dropletId}`);
   }
 
   /**
@@ -302,16 +219,7 @@ export class DropletService {
    * ```
    */
   public deleteDropletsByTag(tag: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/droplets?tag_name=${tag}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/droplets`, { params: { tag_name: tag } });
   }
 
   /**
@@ -326,17 +234,9 @@ export class DropletService {
    * ```
    */
   public getNeighborsForDroplet(dropletId: number): Promise<Droplet[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/droplets/${dropletId}/neighbors`)
-        .then(response => {
-          // Return actual droplets instead of wrapped droplets
-          resolve(response.data.droplets);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .delete(`/droplets/${dropletId}/neighbors`)
+      .then(response => response.data.droplets);
   }
 
   /**
@@ -351,16 +251,8 @@ export class DropletService {
    * ```
    */
   public getDropletNeighbors(): Promise<Droplet[][]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/reports/droplet_neighbors`)
-        .then(response => {
-          // Return actual neighbors instead of wrapped neighbors
-          resolve(response.data.neighbors);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .delete(`/reports/droplet_neighbors`)
+      .then(response => response.data.neighbors);
   }
 }

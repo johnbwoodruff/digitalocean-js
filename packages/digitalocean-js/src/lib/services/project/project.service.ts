@@ -20,17 +20,7 @@ export class ProjectService {
    * ```
    */
   public getAllProjects(): Promise<Project[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/projects`)
-        .then(response => {
-          // Return actual projects instead of wrapped projects
-          resolve(response.data.projects);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.get(`/projects`).then(response => response.data.projects);
   }
 
   /**
@@ -45,17 +35,9 @@ export class ProjectService {
    * ```
    */
   public getExistingProject(id: string): Promise<Project> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/projects/${id}`)
-        .then(response => {
-          // Return actual project instead of wrapped project
-          resolve(response.data.project);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/projects/${id}`)
+      .then(response => response.data.project);
   }
 
   /**
@@ -91,25 +73,17 @@ export class ProjectService {
    * ```
    */
   public createProject(project: Project): Promise<Project> {
-    return new Promise((resolve, reject) => {
-      if (!this.createProjectIsValid(project)) {
-        throw new Error('Required fields missing from the Project Object');
-      }
-      if (!this.purposeIsValid(project.purpose)) {
-        throw new Error(
-          'Project purpose is not one of the allowed values. Use a proper purpose value.'
-        );
-      }
-      instance
-        .post(`/projects`, project)
-        .then(response => {
-          // Return actual project instead of wrapped project
-          resolve(response.data.project);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    if (!this.createProjectIsValid(project)) {
+      throw new Error('Required fields missing from the Project Object');
+    }
+    if (!this.purposeIsValid(project.purpose)) {
+      throw new Error(
+        'Project purpose is not one of the allowed values. Use a proper purpose value.'
+      );
+    }
+    return instance
+      .post(`/projects`, project)
+      .then(response => response.data.project);
   }
 
   /**
@@ -131,25 +105,17 @@ export class ProjectService {
    * ```
    */
   public updateProject(id: string, project: Project): Promise<Project> {
-    return new Promise((resolve, reject) => {
-      if (!this.projectIsValid(project)) {
-        throw new Error('Required fields missing from the Project Object');
-      }
-      if (!this.purposeIsValid(project.purpose)) {
-        throw new Error(
-          'Project purpose is not one of the allowed values. Use a proper purpose value.'
-        );
-      }
-      instance
-        .put(`/projects/${id}`, project)
-        .then(response => {
-          // Return actual project instead of wrapped project
-          resolve(response.data.project);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    if (!this.projectIsValid(project)) {
+      throw new Error('Required fields missing from the Project Object');
+    }
+    if (!this.purposeIsValid(project.purpose)) {
+      throw new Error(
+        'Project purpose is not one of the allowed values. Use a proper purpose value.'
+      );
+    }
+    return instance
+      .put(`/projects/${id}`, project)
+      .then(response => response.data.project);
   }
 
   /**
@@ -186,16 +152,7 @@ export class ProjectService {
    * ```
    */
   public async deleteProject(id: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/projects/${id}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(err => {
-          reject(err);
-        });
-    });
+    return instance.delete(`/projects/${id}`);
   }
 
   /**
@@ -210,17 +167,9 @@ export class ProjectService {
    * ```
    */
   public getProjectResources(id: string): Promise<ProjectResource[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/projects/${id}/resources`)
-        .then(response => {
-          // Return actual resources instead of wrapped resources
-          resolve(response.data.resources);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/projects/${id}/resources`)
+      .then(response => response.data.resources);
   }
 
   /**
@@ -261,17 +210,9 @@ export class ProjectService {
     id: string,
     resources: string[]
   ): Promise<ProjectResource[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/projects/${id}/resources`, { resources })
-        .then(response => {
-          // Return actual resources instead of wrapped resources
-          resolve(response.data.resources);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .post(`/projects/${id}/resources`, { resources })
+      .then(response => response.data.resources);
   }
 
   /**

@@ -55,10 +55,6 @@ export class DigitalOcean {
     instance.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;
     instance.defaults.headers.common['Content-Type'] = `application/json`;
     instance.defaults.baseURL = url;
-    // instance.interceptors.request.use(request => {
-    //   console.log('Starting Request', JSON.stringify(request, null, 2));
-    //   return request;
-    // });
 
     this.account = new AccountService();
     this.actions = new ActionService();

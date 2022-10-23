@@ -15,17 +15,7 @@ export class TagService {
    * ```
    */
   public createTag(name: string): Promise<Tag> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/tags`, { name })
-        .then(response => {
-          // Return actual tag instead of wrapped tag
-          resolve(response.data.tag);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.post(`/tags`, { name }).then(response => response.data.tag);
   }
 
   /**
@@ -40,17 +30,7 @@ export class TagService {
    * ```
    */
   public getTags(): Promise<Tag> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/tags`)
-        .then(response => {
-          // Return actual tags instead of wrapped tags
-          resolve(response.data.tags);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.get(`/tags`).then(response => response.data.tags);
   }
 
   /**
@@ -65,17 +45,7 @@ export class TagService {
    * ```
    */
   public getTagByName(tagName: string): Promise<Tag> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/tags/${tagName}`)
-        .then(response => {
-          // Return actual tag instead of wrapped tag
-          resolve(response.data.tag);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.get(`/tags/${tagName}`).then(response => response.data.tag);
   }
 
   /**
@@ -95,22 +65,13 @@ export class TagService {
    * ```
    */
   public tagResources(tagName: string, resourceIds: string[]): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const resources = resourceIds.map(id => {
-        return {
-          resource_id: id,
-          resource_type: 'droplet'
-        };
-      });
-      instance
-        .post(`/tags/${tagName}/resources`, { resources })
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
+    const resources = resourceIds.map(id => {
+      return {
+        resource_id: id,
+        resource_type: 'droplet'
+      };
     });
+    return instance.post(`/tags/${tagName}/resources`, { resources });
   }
 
   /**
@@ -133,23 +94,14 @@ export class TagService {
     tagName: string,
     resourceIds: string[]
   ): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const resources = resourceIds.map(id => {
-        return {
-          resource_id: id,
-          resource_type: 'droplet'
-        };
-      });
-      instance
-        .delete(`/tags/${tagName}/resources`, {
-          data: { resources }
-        })
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
+    const resources = resourceIds.map(id => {
+      return {
+        resource_id: id,
+        resource_type: 'droplet'
+      };
+    });
+    return instance.delete(`/tags/${tagName}/resources`, {
+      data: { resources }
     });
   }
 
@@ -165,15 +117,6 @@ export class TagService {
    * ```
    */
   public deleteTag(tagName: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/tags/${tagName}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/tags/${tagName}`);
   }
 }

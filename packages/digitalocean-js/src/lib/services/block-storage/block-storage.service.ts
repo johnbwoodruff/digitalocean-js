@@ -16,17 +16,7 @@ export class BlockStorageService {
    * ```
    */
   public getAllBlockStorage(): Promise<BlockStorage[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/volumes`)
-        .then(response => {
-          // Return actual volumes instead of wrapped volumes
-          resolve(response.data.volumes);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.get(`/volumes`).then(response => response.data.volumes);
   }
 
   /**
@@ -49,20 +39,12 @@ export class BlockStorageService {
   public createBlockStorage(
     volume: BlockStorageRequest
   ): Promise<BlockStorage> {
-    return new Promise((resolve, reject) => {
-      if (!this.volumeIsValid(volume)) {
-        throw new Error('Required fields missing from Block Storage Object');
-      }
-      instance
-        .post(`/volumes`, volume)
-        .then(response => {
-          // Return actual volume instead of wrapped volume
-          resolve(response.data.volume);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    if (!this.volumeIsValid(volume)) {
+      throw new Error('Required fields missing from Block Storage Object');
+    }
+    return instance
+      .post(`/volumes`, volume)
+      .then(response => response.data.volume);
   }
 
   /**
@@ -77,17 +59,9 @@ export class BlockStorageService {
    * ```
    */
   public getBlockStorageById(id: string): Promise<BlockStorage> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/volumes/${id}`)
-        .then(response => {
-          // Return actual volume instead of wrapped volume
-          resolve(response.data.volume);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/volumes/${id}`)
+      .then(response => response.data.volume);
   }
 
   /**
@@ -106,17 +80,9 @@ export class BlockStorageService {
     name: string,
     regionSlug: string
   ): Promise<BlockStorage[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/volumes?name=${name}&region=${regionSlug}`)
-        .then(response => {
-          // Return actual volumes instead of wrapped volumes
-          resolve(response.data.volumes);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/volumes`, { params: { name, region: regionSlug } })
+      .then(response => response.data.volumes);
   }
 
   /**
@@ -132,17 +98,9 @@ export class BlockStorageService {
    * ```
    */
   public getSnapshotsForVolume(id: string): Promise<Snapshot[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/volumes/${id}/snapshots`)
-        .then(response => {
-          // Return actual snapshots instead of wrapped snapshots
-          resolve(response.data.snapshots);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/volumes/${id}/snapshots`)
+      .then(response => response.data.snapshots);
   }
 
   /**
@@ -158,17 +116,9 @@ export class BlockStorageService {
    * ```
    */
   public createSnapshotFromVolume(id: string, name: string): Promise<Snapshot> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/volumes/${id}/snapshots`, { name })
-        .then(response => {
-          // Return actual snapshot instead of wrapped snapshot
-          resolve(response.data.snapshot);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .post(`/volumes/${id}/snapshots`, { name })
+      .then(response => response.data.snapshot);
   }
 
   /**
@@ -183,16 +133,7 @@ export class BlockStorageService {
    * ```
    */
   public deleteBlockStorageById(id: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/volumes/${id}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/volumes/${id}`);
   }
 
   /**
@@ -210,15 +151,8 @@ export class BlockStorageService {
     name: string,
     regionSlug: string
   ): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/volumes?name=${name}&region=${regionSlug}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
+    return instance.delete(`/volumes`, {
+      params: { name, region: regionSlug }
     });
   }
 

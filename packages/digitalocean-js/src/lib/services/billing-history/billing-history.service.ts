@@ -15,17 +15,9 @@ export class BillingHistoryService {
    * ```
    */
   public getMyBalance(): Promise<Balance> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get('/customers/my/balance')
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get('/customers/my/balance')
+      .then(response => response.data);
   }
 
   /**
@@ -40,16 +32,8 @@ export class BillingHistoryService {
    * ```
    */
   public getMyBillingHistory(): Promise<BillingHistory[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get('/customers/my/billing_history')
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.billing_history);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get('/customers/my/billing_history')
+      .then(response => response.data.billing_history);
   }
 }

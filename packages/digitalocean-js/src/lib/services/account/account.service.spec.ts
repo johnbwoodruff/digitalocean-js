@@ -1,10 +1,10 @@
-import MockAdapter from 'axios-mock-adapter';
 import { AxiosError } from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 
+import { MOCK_ERROR } from '../../../test/shared';
 import { instance } from '../../axios-instance';
 import { DigitalOcean } from '../../digitalocean';
 import { Account } from '../../models/account';
-import { MOCK_ERROR } from '../../../test/shared';
 
 const DUMMY_ACCOUNT: Account = {
   droplet_limit: 1,

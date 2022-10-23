@@ -16,20 +16,12 @@ export class DropletActionService {
    * ```
    */
   public enableBackupsForDroplet(dropletId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        type: 'enable_backups'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      type: 'enable_backups'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -44,20 +36,12 @@ export class DropletActionService {
    * ```
    */
   public disableBackupsForDroplet(dropletId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        type: 'disable_backups'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      type: 'disable_backups'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -72,20 +56,12 @@ export class DropletActionService {
    * ```
    */
   public rebootDroplet(dropletId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        type: 'reboot'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      type: 'reboot'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -100,20 +76,12 @@ export class DropletActionService {
    * ```
    */
   public powerCycleDroplet(dropletId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        type: 'power_cycle'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      type: 'power_cycle'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -128,20 +96,12 @@ export class DropletActionService {
    * ```
    */
   public shutdownDroplet(dropletId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        type: 'shutdown'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      type: 'shutdown'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -156,20 +116,12 @@ export class DropletActionService {
    * ```
    */
   public powerOffDroplet(dropletId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        type: 'power_off'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      type: 'power_off'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -184,20 +136,12 @@ export class DropletActionService {
    * ```
    */
   public powerOnDroplet(dropletId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        type: 'power_on'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      type: 'power_on'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -215,21 +159,13 @@ export class DropletActionService {
     dropletId: number,
     image: string | number
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        image,
-        type: 'restore'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      image,
+      type: 'restore'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -244,20 +180,12 @@ export class DropletActionService {
    * ```
    */
   public passwordResetDroplet(dropletId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        type: 'password_reset'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      type: 'password_reset'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -277,22 +205,14 @@ export class DropletActionService {
     resizeDisk: boolean,
     size: string
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        disk: resizeDisk,
-        size,
-        type: 'password_reset'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      disk: resizeDisk,
+      size,
+      type: 'password_reset'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -311,21 +231,13 @@ export class DropletActionService {
     dropletId: number,
     image: string | number
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        image,
-        type: 'rebuild'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      image,
+      type: 'rebuild'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -341,21 +253,13 @@ export class DropletActionService {
    * ```
    */
   public renameDroplet(dropletId: number, name: string): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        name,
-        type: 'rename'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      name,
+      type: 'rename'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -374,21 +278,13 @@ export class DropletActionService {
     dropletId: number,
     kernelId: number
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        kernel: kernelId,
-        type: 'change_kernel'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      kernel: kernelId,
+      type: 'change_kernel'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -403,20 +299,12 @@ export class DropletActionService {
    * ```
    */
   public enableIPv6(dropletId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        type: 'enable_ipv6'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      type: 'enable_ipv6'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -431,20 +319,12 @@ export class DropletActionService {
    * ```
    */
   public enablePrivateNetworking(dropletId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        type: 'enable_private_networking'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      type: 'enable_private_networking'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -460,21 +340,13 @@ export class DropletActionService {
    * ```
    */
   public snapshotDroplet(dropletId: number, name: string): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const actionRequest: DropletActionRequest = {
-        name,
-        type: 'snapshot'
-      };
-      instance
-        .post(`/droplets/${dropletId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const actionRequest: DropletActionRequest = {
+      name,
+      type: 'snapshot'
+    };
+    return instance
+      .post(`/droplets/${dropletId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   // TODO: Implement the bulk action method, Acting on Tagged Droplets
@@ -495,16 +367,8 @@ export class DropletActionService {
     dropletId: number,
     actionId: number
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/droplets/${dropletId}/actions/${actionId}`)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/droplets/${dropletId}/actions/${actionId}`)
+      .then(response => response.data.action);
   }
 }

@@ -24,20 +24,12 @@ export class BlockStorageActionService {
     volumeId: string,
     actionRequest: ActionRequest
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      if (!this.attachActionIsValid(actionRequest)) {
-        throw new Error('Required fields missing from Action Object');
-      }
-      instance
-        .post(`/volumes/${volumeId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    if (!this.attachActionIsValid(actionRequest)) {
+      throw new Error('Required fields missing from Action Object');
+    }
+    return instance
+      .post(`/volumes/${volumeId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -61,20 +53,12 @@ export class BlockStorageActionService {
   public attachVolumeToDropletByName(
     actionRequest: ActionRequest
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      if (!this.attachActionByNameIsValid(actionRequest)) {
-        throw new Error('Required fields missing from Action Object');
-      }
-      instance
-        .post(`/volumes/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    if (!this.attachActionByNameIsValid(actionRequest)) {
+      throw new Error('Required fields missing from Action Object');
+    }
+    return instance
+      .post(`/volumes/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -98,20 +82,12 @@ export class BlockStorageActionService {
     volumeId: string,
     actionRequest: ActionRequest
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      if (!this.attachActionIsValid(actionRequest)) {
-        throw new Error('Required fields missing from Action Object');
-      }
-      instance
-        .post(`/volumes/${volumeId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    if (!this.attachActionIsValid(actionRequest)) {
+      throw new Error('Required fields missing from Action Object');
+    }
+    return instance
+      .post(`/volumes/${volumeId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -135,20 +111,12 @@ export class BlockStorageActionService {
   public detachVolumeFromDropletByName(
     actionRequest: ActionRequest
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      if (!this.attachActionByNameIsValid(actionRequest)) {
-        throw new Error('Required fields missing from Action Object');
-      }
-      instance
-        .post(`/volumes/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    if (!this.attachActionByNameIsValid(actionRequest)) {
+      throw new Error('Required fields missing from Action Object');
+    }
+    return instance
+      .post(`/volumes/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -172,20 +140,12 @@ export class BlockStorageActionService {
     volumeId: string,
     actionRequest: ActionRequest
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      if (!this.resizeActionIsValid(actionRequest)) {
-        throw new Error('Required fields missing from Action Object');
-      }
-      instance
-        .post(`/volumes/${volumeId}/actions`, actionRequest)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    if (!this.resizeActionIsValid(actionRequest)) {
+      throw new Error('Required fields missing from Action Object');
+    }
+    return instance
+      .post(`/volumes/${volumeId}/actions`, actionRequest)
+      .then(response => response.data.action);
   }
 
   /**
@@ -210,20 +170,14 @@ export class BlockStorageActionService {
   ): Promise<Action[]> {
     page = page ? page : 1;
     perPage = perPage ? perPage : 25;
-    return new Promise((resolve, reject) => {
-      let url = `/volumes/${volumeId}/actions`;
-      url += `?page=${page}`;
-      url += `&per_page=${perPage}`;
-      instance
-        .get(url)
-        .then(response => {
-          // Return actual actions instead of wrapped actions
-          resolve(response.data.actions);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/volumes/${volumeId}/actions`, {
+        params: {
+          page,
+          per_page: perPage
+        }
+      })
+      .then(response => response.data.actions);
   }
 
   /**
@@ -242,17 +196,9 @@ export class BlockStorageActionService {
     volumeId: string,
     actionId: number
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/volumes/${volumeId}/actions/${actionId}`)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/volumes/${volumeId}/actions/${actionId}`)
+      .then(response => response.data.action);
   }
 
   ////////// Validation Methods //////////

@@ -15,16 +15,6 @@ export class SizeService {
    * ```
    */
   public getAllSizes(): Promise<Size[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/sizes`)
-        .then(response => {
-          // Return actual sizes instead of wrapped sizes
-          resolve(response.data.sizes);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.get(`/sizes`).then(response => response.data.sizes);
   }
 }

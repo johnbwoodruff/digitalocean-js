@@ -23,17 +23,9 @@ export class CertificateService {
   public createCertificate(
     certificateRequest: CertificateRequest
   ): Promise<Certificate> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/certificates`, certificateRequest)
-        .then(response => {
-          // Return actual certificate instead of wrapped certificate
-          resolve(response.data.certificate);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .post(`/certificates`, certificateRequest)
+      .then(response => response.data.certificate);
   }
 
   /**
@@ -48,17 +40,9 @@ export class CertificateService {
    * ```
    */
   public getExistingCertificate(certificateId: string): Promise<Certificate> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/certificates/${certificateId}`)
-        .then(response => {
-          // Return actual certificate instead of wrapped certificate
-          resolve(response.data.certificate);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/certificates/${certificateId}`)
+      .then(response => response.data.certificate);
   }
 
   /**
@@ -73,17 +57,9 @@ export class CertificateService {
    * ```
    */
   public getAllCertificates(): Promise<Certificate[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/certificates`)
-        .then(response => {
-          // Return actual certificates instead of wrapped certificates
-          resolve(response.data.certificates);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/certificates`)
+      .then(response => response.data.certificates);
   }
 
   /**
@@ -98,15 +74,6 @@ export class CertificateService {
    * ```
    */
   public deleteCertificate(certificateId: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/certificates/${certificateId}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/certificates/${certificateId}`);
   }
 }

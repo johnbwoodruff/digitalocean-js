@@ -23,21 +23,13 @@ export class SnapshotService {
    * ```
    */
   public getSnapshots(resourceType?: SnapshotType): Promise<Snapshot[]> {
-    return new Promise((resolve, reject) => {
-      let url = `/snapshots`;
-      if (resourceType && resourceType !== 'all') {
-        url += `?resource_type=${resourceType}`;
-      }
-      instance
-        .get(url)
-        .then(response => {
-          // Return actual snapshots instead of wrapped snapshots
-          resolve(response.data.snapshots);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const params: any = {};
+    if (resourceType && resourceType !== 'all') {
+      params['resource_type'] = resourceType;
+    }
+    return instance
+      .get(`/snapshots`, { params })
+      .then(response => response.data.snapshots);
   }
 
   /**
@@ -52,17 +44,9 @@ export class SnapshotService {
    * ```
    */
   public getSnapshotById(snapshotId: string): Promise<Snapshot> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/snapshots/${snapshotId}`)
-        .then(response => {
-          // Return actual snapshot instead of wrapped snapshot
-          resolve(response.data.snapshot);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/snapshots/${snapshotId}`)
+      .then(response => response.data.snapshot);
   }
 
   /**
@@ -77,16 +61,6 @@ export class SnapshotService {
    * ```
    */
   public deleteSnapshot(snapshotId: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/snapshots/${snapshotId}`)
-        .then(() => {
-          // Return actual snapshot instead of wrapped snapshot
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/snapshots/${snapshotId}`);
   }
 }

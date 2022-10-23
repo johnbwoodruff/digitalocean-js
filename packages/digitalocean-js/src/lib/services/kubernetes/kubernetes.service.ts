@@ -47,17 +47,9 @@ export class KubernetesService {
   public createCluster(
     cluster: KubernetesClusterRequest
   ): Promise<KubernetesCluster> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/kubernetes/clusters`, cluster)
-        .then(response => {
-          // Return actual cluster instead of wrapped cluster
-          resolve(response.data.kubernetes_cluster);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .post(`/kubernetes/clusters`, cluster)
+      .then(response => response.data.kubernetes_cluster);
   }
 
   /**
@@ -72,17 +64,9 @@ export class KubernetesService {
    * ```
    */
   public getCluster(clusterId: string): Promise<KubernetesCluster> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/kubernetes/clusters/${clusterId}`)
-        .then(response => {
-          // Return actual cluster instead of wrapped cluster
-          resolve(response.data.kubernetes_cluster);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/kubernetes/clusters/${clusterId}`)
+      .then(response => response.data.kubernetes_cluster);
   }
 
   /**
@@ -97,17 +81,9 @@ export class KubernetesService {
    * ```
    */
   public getAllClusters(): Promise<KubernetesCluster[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/kubernetes/clusters`)
-        .then(response => {
-          // Return actual cluster instead of wrapped cluster
-          resolve(response.data.kubernetes_clusters);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/kubernetes/clusters`)
+      .then(response => response.data.kubernetes_clusters);
   }
 
   /**
@@ -132,17 +108,9 @@ export class KubernetesService {
     clusterId: string,
     cluster: KubernetesCluster
   ): Promise<KubernetesCluster> {
-    return new Promise((resolve, reject) => {
-      instance
-        .put(`/kubernetes/clusters/${clusterId}`, cluster)
-        .then(response => {
-          // Return actual cluster instead of wrapped cluster
-          resolve(response.data.kubernetes_cluster);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .put(`/kubernetes/clusters/${clusterId}`, cluster)
+      .then(response => response.data.kubernetes_cluster);
   }
 
   /**
@@ -159,17 +127,9 @@ export class KubernetesService {
   public getAvailableUpgradesForCluster(
     clusterId: string
   ): Promise<KubernetesVersion[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/kubernetes/clusters/${clusterId}/upgrades`)
-        .then(response => {
-          // Return actual versions instead of wrapped versions
-          resolve(response.data.available_upgrade_versions);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/kubernetes/clusters/${clusterId}/upgrades`)
+      .then(response => response.data.available_upgrade_versions);
   }
 
   /**
@@ -187,17 +147,8 @@ export class KubernetesService {
     clusterId: string,
     version: string
   ): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/kubernetes/clusters/${clusterId}/upgrade`, {
-          version
-        })
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
+    return instance.post(`/kubernetes/clusters/${clusterId}/upgrade`, {
+      version
     });
   }
 
@@ -213,16 +164,7 @@ export class KubernetesService {
    * ```
    */
   public deleteCluster(clusterId: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/kubernetes/clusters/${clusterId}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/kubernetes/clusters/${clusterId}`);
   }
 
   /**
@@ -237,16 +179,9 @@ export class KubernetesService {
    * ```
    */
   public getClusterKubeconfig(clusterId: string): Promise<string> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/kubernetes/clusters/${clusterId}/kubeconfig`)
-        .then(response => {
-          resolve(response.data);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/kubernetes/clusters/${clusterId}/kubeconfig`)
+      .then(response => response.data);
   }
 
   /**
@@ -264,16 +199,9 @@ export class KubernetesService {
     clusterId: string,
     poolId: string
   ): Promise<KubernetesWorkerNodePool> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/kubernetes/clusters/${clusterId}/node_pools/${poolId}`)
-        .then(response => {
-          resolve(response.data.node_pool);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/kubernetes/clusters/${clusterId}/node_pools/${poolId}`)
+      .then(response => response.data.node_pool);
   }
 
   /**
@@ -290,16 +218,9 @@ export class KubernetesService {
   public getAllNodePoolsForCluster(
     clusterId: string
   ): Promise<KubernetesWorkerNodePool[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/kubernetes/clusters/${clusterId}/node_pools`)
-        .then(response => {
-          resolve(response.data.node_pools);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/kubernetes/clusters/${clusterId}/node_pools`)
+      .then(response => response.data.node_pools);
   }
 
   /**
@@ -325,16 +246,9 @@ export class KubernetesService {
     clusterId: string,
     nodePool: KubernetesWorkerNodePool
   ): Promise<KubernetesWorkerNodePool> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/kubernetes/clusters/${clusterId}/node_pools`, nodePool)
-        .then(response => {
-          resolve(response.data.node_pool);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .post(`/kubernetes/clusters/${clusterId}/node_pools`, nodePool)
+      .then(response => response.data.node_pool);
   }
 
   /**
@@ -360,19 +274,12 @@ export class KubernetesService {
     nodePoolId: string,
     nodePool: KubernetesWorkerNodePool
   ): Promise<KubernetesWorkerNodePool> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(
-          `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}`,
-          nodePool
-        )
-        .then(response => {
-          resolve(response.data.node_pool);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .post(
+        `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}`,
+        nodePool
+      )
+      .then(response => response.data.node_pool);
   }
 
   /**
@@ -390,16 +297,9 @@ export class KubernetesService {
     clusterId: string,
     nodePoolId: string
   ): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(
+      `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}`
+    );
   }
 
   /**
@@ -421,19 +321,12 @@ export class KubernetesService {
     skipDrain?: boolean,
     replace?: boolean
   ): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const url = `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}/nodes/${nodeId}?skip_drain=${
-        skipDrain ? 1 : 0
-      }&replace=${replace ? 1 : 0}`;
-      instance
-        .delete(url)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const skipParam = skipDrain ? 1 : 0;
+    const replaceParam = replace ? 1 : 0;
+    return instance.delete(
+      `/kubernetes/clusters/${clusterId}/node_pools/${nodePoolId}/nodes/${nodeId}`,
+      { params: { skip_drain: skipParam, replace: replaceParam } }
+    );
   }
 
   /**
@@ -448,15 +341,8 @@ export class KubernetesService {
    * ```
    */
   public getKubernetesOptions(): Promise<KubernetesOptions> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/kubernetes/options`)
-        .then(response => {
-          resolve(response.data.options);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/kubernetes/options`)
+      .then(response => response.data.options);
   }
 }

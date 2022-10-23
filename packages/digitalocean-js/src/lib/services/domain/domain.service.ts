@@ -15,17 +15,7 @@ export class DomainService {
    * ```
    */
   public getAllDomains(): Promise<Domain[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/domains`)
-        .then(response => {
-          // Return actual domains instead of wrapped domains
-          resolve(response.data.domains);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.get(`/domains`).then(response => response.data.domains);
   }
 
   /**
@@ -44,17 +34,9 @@ export class DomainService {
    * ```
    */
   public createDomain(domainRequest: DomainRequest): Promise<Domain> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/domains`, domainRequest)
-        .then(response => {
-          // Return actual domain instead of wrapped domain
-          resolve(response.data.domain);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .post(`/domains`, domainRequest)
+      .then(response => response.data.domain);
   }
 
   /**
@@ -69,17 +51,9 @@ export class DomainService {
    * ```
    */
   public getExistingDomain(domainName: string): Promise<Domain> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/domains/${domainName}`)
-        .then(response => {
-          // Return actual domain instead of wrapped domain
-          resolve(response.data.domain);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/domains/${domainName}`)
+      .then(response => response.data.domain);
   }
 
   /**
@@ -94,15 +68,6 @@ export class DomainService {
    * ```
    */
   public deleteDomain(domainName: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/domains/${domainName}`)
-        .then(() => {
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/domains/${domainName}`);
   }
 }

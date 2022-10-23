@@ -15,17 +15,9 @@ export class SshService {
    * ```
    */
   public getAllKeys(): Promise<SshKey[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/account/keys`)
-        .then(response => {
-          // Return actual ssh keys instead of wrapped ssh keys
-          resolve(response.data.ssh_keys);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/account/keys`)
+      .then(response => response.data.ssh_keys);
   }
 
   /**
@@ -44,17 +36,9 @@ export class SshService {
    * ```
    */
   public createNewKey(key: SshKey): Promise<SshKey> {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(`/account/keys`, key)
-        .then(response => {
-          // Return actual ssh key instead of wrapped ssh key
-          resolve(response.data.ssh_key);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .post(`/account/keys`, key)
+      .then(response => response.data.ssh_key);
   }
 
   /**
@@ -69,17 +53,9 @@ export class SshService {
    * ```
    */
   public getExistingKey(idOrFingerprint: string): Promise<SshKey> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/account/keys/${idOrFingerprint}`)
-        .then(response => {
-          // Return actual ssh key instead of wrapped ssh key
-          resolve(response.data.ssh_key);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/account/keys/${idOrFingerprint}`)
+      .then(response => response.data.ssh_key);
   }
 
   /**
@@ -97,17 +73,9 @@ export class SshService {
    * ```
    */
   public updateKey(idOrFingerprint: string, key: SshKey): Promise<SshKey> {
-    return new Promise((resolve, reject) => {
-      instance
-        .put(`/account/keys/${idOrFingerprint}`, key)
-        .then(response => {
-          // Return actual ssh key instead of wrapped ssh key
-          resolve(response.data.ssh_key);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .put(`/account/keys/${idOrFingerprint}`, key)
+      .then(response => response.data.ssh_key);
   }
 
   /**
@@ -122,16 +90,6 @@ export class SshService {
    * ```
    */
   public deleteKey(idOrFingerprint: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/account/keys/${idOrFingerprint}`)
-        .then(() => {
-          // Return actual ssh key instead of wrapped ssh key
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/account/keys/${idOrFingerprint}`);
   }
 }

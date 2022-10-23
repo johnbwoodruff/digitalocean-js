@@ -42,17 +42,8 @@ export class ActionService {
    * ```
    */
   public getExistingAction(id: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const url = `/actions/${id}`;
-      instance
-        .get(url)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/actions/${id}`)
+      .then(response => response.data.action);
   }
 }

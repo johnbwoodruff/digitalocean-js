@@ -15,21 +15,13 @@ export class ImageActionService {
    * ```
    */
   public transferImage(imageId: number, region: string): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const request = {
-        region,
-        type: 'transfer'
-      };
-      instance
-        .post(`/images/${imageId}/actions`, request)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const request = {
+      region,
+      type: 'transfer'
+    };
+    return instance
+      .post(`/images/${imageId}/actions`, request)
+      .then(response => response.data.action);
   }
 
   /**
@@ -44,20 +36,12 @@ export class ImageActionService {
    * ```
    */
   public convertImageToSnapshot(imageId: number): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      const request = {
-        type: 'convert'
-      };
-      instance
-        .post(`/images/${imageId}/actions`, request)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    const request = {
+      type: 'convert'
+    };
+    return instance
+      .post(`/images/${imageId}/actions`, request)
+      .then(response => response.data.action);
   }
 
   /**
@@ -75,16 +59,8 @@ export class ImageActionService {
     imageId: number,
     actionId: number
   ): Promise<Action> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/images/${imageId}/actions/${actionId}`)
-        .then(response => {
-          // Return actual action instead of wrapped action
-          resolve(response.data.action);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/images/${imageId}/actions/${actionId}`)
+      .then(response => response.data.action);
   }
 }

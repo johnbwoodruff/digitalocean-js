@@ -15,16 +15,6 @@ export class RegionService {
    * ```
    */
   public getAllRegions(): Promise<Region[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/regions`)
-        .then(response => {
-          // Return actual regions instead of wrapped regions
-          resolve(response.data.regions);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.get(`/regions`).then(response => response.data.regions);
   }
 }

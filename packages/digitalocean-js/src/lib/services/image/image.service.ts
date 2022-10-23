@@ -16,17 +16,7 @@ export class ImageService {
    * ```
    */
   public getAllImages(): Promise<Image[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/images`)
-        .then(response => {
-          // Return actual images instead of wrapped images
-          resolve(response.data.images);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.get(`/images`).then(response => response.data.images);
   }
 
   /**
@@ -46,19 +36,13 @@ export class ImageService {
     perPage?: number,
     page?: number
   ): Promise<Image[]> {
-    return new Promise((resolve, reject) => {
-      page = page ? page : 1;
-      perPage = perPage ? perPage : 25;
-      instance
-        .get(`/images?type=distribution&page=${page}&per_page=${perPage}`)
-        .then(response => {
-          // Return actual images instead of wrapped images
-          resolve(response.data.images);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    page = page ? page : 1;
+    perPage = perPage ? perPage : 25;
+    return instance
+      .get(`/images`, {
+        params: { type: 'distribution', page, per_page: perPage }
+      })
+      .then(response => response.data.images);
   }
 
   /**
@@ -78,19 +62,13 @@ export class ImageService {
     perPage?: number,
     page?: number
   ): Promise<Image[]> {
-    return new Promise((resolve, reject) => {
-      page = page ? page : 1;
-      perPage = perPage ? perPage : 25;
-      instance
-        .get(`/images?type=application&page=${page}&per_page=${perPage}`)
-        .then(response => {
-          // Return actual images instead of wrapped images
-          resolve(response.data.images);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    page = page ? page : 1;
+    perPage = perPage ? perPage : 25;
+    return instance
+      .get(`/images`, {
+        params: { type: 'application', page, per_page: perPage }
+      })
+      .then(response => response.data.images);
   }
 
   /**
@@ -107,19 +85,13 @@ export class ImageService {
    * ```
    */
   public getUserImages(perPage?: number, page?: number): Promise<Image[]> {
-    return new Promise((resolve, reject) => {
-      page = page ? page : 1;
-      perPage = perPage ? perPage : 25;
-      instance
-        .get(`/images?private=true&page=${page}&per_page=${perPage}`)
-        .then(response => {
-          // Return actual images instead of wrapped images
-          resolve(response.data.images);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    page = page ? page : 1;
+    perPage = perPage ? perPage : 25;
+    return instance
+      .get(`/images`, {
+        params: { private: true, page, per_page: perPage }
+      })
+      .then(response => response.data.images);
   }
 
   /**
@@ -134,17 +106,9 @@ export class ImageService {
    * ```
    */
   public getImageActions(imageId: number): Promise<Action[]> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/images/${imageId}/actions`)
-        .then(response => {
-          // Return actual actions instead of wrapped actions
-          resolve(response.data.actions);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/images/${imageId}/actions`)
+      .then(response => response.data.actions);
   }
 
   /**
@@ -159,17 +123,9 @@ export class ImageService {
    * ```
    */
   public getExistingImage(imageId: number): Promise<Image> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/images/${imageId}`)
-        .then(response => {
-          // Return actual image instead of wrapped image
-          resolve(response.data.image);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/images/${imageId}`)
+      .then(response => response.data.image);
   }
 
   /**
@@ -184,17 +140,9 @@ export class ImageService {
    * ```
    */
   public getExistingImageBySlug(imageSlug: string): Promise<Image> {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(`/images/${imageSlug}`)
-        .then(response => {
-          // Return actual image instead of wrapped image
-          resolve(response.data.image);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .get(`/images/${imageSlug}`)
+      .then(response => response.data.image);
   }
 
   /**
@@ -209,17 +157,9 @@ export class ImageService {
    * ```
    */
   public updateImageName(imageId: number, name: string): Promise<Image> {
-    return new Promise((resolve, reject) => {
-      instance
-        .put(`/images/${imageId}`, { name })
-        .then(response => {
-          // Return actual image instead of wrapped image
-          resolve(response.data.image);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance
+      .put(`/images/${imageId}`, { name })
+      .then(response => response.data.image);
   }
 
   /**
@@ -234,16 +174,6 @@ export class ImageService {
    * ```
    */
   public deleteImage(imageId: number): Promise<void> {
-    return new Promise((resolve, reject) => {
-      instance
-        .delete(`/images/${imageId}`)
-        .then(() => {
-          // Return actual image instead of wrapped image
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
+    return instance.delete(`/images/${imageId}`);
   }
 }

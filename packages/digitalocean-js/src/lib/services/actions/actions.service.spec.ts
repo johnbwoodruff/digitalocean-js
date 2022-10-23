@@ -1,12 +1,13 @@
-import { instance } from '../../axios-instance';
+import { AxiosError } from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
+import { MOCK_ERROR } from '../../../test/shared';
+import { instance } from '../../axios-instance';
 import { DigitalOcean } from '../../digitalocean';
-import { AxiosError } from 'axios';
 import { Action } from '../../models/action';
 
-const DUMMY_ACTIONS: Action[] = [{ id: 1 } as Action];
-const MOCK_ERROR = { message: 'Some error' };
+const DUMMY_ACTION = { id: 1 } as Action;
+const DUMMY_ACTIONS: Action[] = [DUMMY_ACTION];
 
 const mock = new MockAdapter(instance, { onNoMatch: 'throwException' });
 const client = new DigitalOcean('abc123');
@@ -40,6 +41,27 @@ describe('Actions Service', () => {
 
       try {
         await client.actions.getAllActions();
+      } catch (e) {
+        expect((e as AxiosError).response?.data).toEqual(MOCK_ERROR);
+      }
+    });
+  });
+
+  describe('getExistingAction', () => {
+    it('should resolve correctly', async () => {
+      mock
+        .onGet(`/actions/${DUMMY_ACTION.id}`)
+        .reply(200, { action: DUMMY_ACTION });
+
+      const action = await client.actions.getExistingAction(DUMMY_ACTION.id);
+      expect(action).toEqual(DUMMY_ACTION);
+    });
+
+    it('should reject on failure', async () => {
+      mock.onGet(`/actions/${DUMMY_ACTION.id}`).reply(400, MOCK_ERROR);
+
+      try {
+        await client.actions.getExistingAction(DUMMY_ACTION.id);
       } catch (e) {
         expect((e as AxiosError).response?.data).toEqual(MOCK_ERROR);
       }
