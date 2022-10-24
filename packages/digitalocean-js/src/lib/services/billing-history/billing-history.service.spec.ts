@@ -8,9 +8,9 @@ import { DigitalOcean } from '../../digitalocean';
 const mock = new MockAdapter(instance, { onNoMatch: 'throwException' });
 const client = new DigitalOcean('abc123');
 
-describe('Actions Service', () => {
+describe('Billing History Service', () => {
   it('should exist', () => {
-    expect(client.actions).toBeDefined();
+    expect(client.billingHistory).toBeDefined();
   });
 
   describe('getAllActions', () => {

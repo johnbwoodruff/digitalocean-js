@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { CdnEndpoint, CdnEndpointRequest } from '../../models';
 
-import { CdnEndpoint, CdnEndpointRequest } from '../../models/cdn';
+import { instance } from '../../axios-instance';
 
 export class CdnService {
   /**

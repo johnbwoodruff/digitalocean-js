@@ -1,12 +1,12 @@
-import { instance } from '../../axios-instance';
-
 import {
   KubernetesCluster,
   KubernetesClusterRequest,
   KubernetesOptions,
   KubernetesVersion,
   KubernetesWorkerNodePool
-} from '../../models/kubernetes-cluster';
+} from '../../models';
+
+import { instance } from '../../axios-instance';
 
 export class KubernetesService {
   /**

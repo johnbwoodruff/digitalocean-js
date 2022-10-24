@@ -1,6 +1,6 @@
 import { instance } from '../../axios-instance';
 
-import { Account } from '../../models/account';
+import { Account } from '../../models';
 
 export class AccountService {
   /**

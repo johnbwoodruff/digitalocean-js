@@ -1,15 +1,10 @@
 import { AxiosError } from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { MOCK_ERROR } from '../../../test/shared';
+
+import { getErrorResponse, getProjects, getSingleProject } from '../../../test';
 import { instance } from '../../axios-instance';
-
 import { DigitalOcean } from '../../digitalocean';
-import { Project, RESOURCE_TYPE } from '../../models/project';
-
-const DUMMY_PROJECT: Project = {
-  id: 'abc123'
-};
-const DUMMY_PROJECTS: Project[] = [DUMMY_PROJECT];
+import { RESOURCE_TYPE } from '../../models';
 
 const mock = new MockAdapter(instance, { onNoMatch: 'throwException' });
 const client = new DigitalOcean('abc123');
@@ -17,42 +12,44 @@ const client = new DigitalOcean('abc123');
 describe('Project Service', () => {
   describe('getAllProjects', () => {
     it('should resolve correctly', async () => {
-      mock.onGet('/projects').reply(200, { projects: DUMMY_PROJECTS });
+      const projects = getProjects();
+      mock.onGet('/projects').reply(200, { projects });
 
-      const projects = await client.projects.getAllProjects();
-      expect(projects).toEqual(DUMMY_PROJECTS);
+      const allProjects = await client.projects.getAllProjects();
+      expect(allProjects).toEqual(projects);
     });
 
     it('should reject on failure', async () => {
-      mock.onGet('/projects').reply(400, MOCK_ERROR);
+      const error = getErrorResponse();
+      mock.onGet('/projects').reply(400, error);
 
       try {
         await client.projects.getAllProjects();
       } catch (e) {
-        expect((e as AxiosError).response?.data).toEqual(MOCK_ERROR);
+        expect((e as AxiosError).response?.data).toEqual(error);
       }
     });
   });
 
   describe('getExistingProject', () => {
     it('should resolve correctly', async () => {
-      mock
-        .onGet(`/projects/${DUMMY_PROJECT.id}`)
-        .reply(200, { project: DUMMY_PROJECT });
+      const project = getSingleProject();
+      mock.onGet(`/projects/${project.id}`).reply(200, { project });
 
-      const project = await client.projects.getExistingProject(
-        DUMMY_PROJECT.id!
+      const singleProject = await client.projects.getExistingProject(
+        project.id!
       );
-      expect(project).toEqual(DUMMY_PROJECT);
+      expect(singleProject).toEqual(project);
     });
 
     it('should reject on failure', async () => {
-      mock.onGet('/projects/bad-id').reply(400, MOCK_ERROR);
+      const error = getErrorResponse();
+      mock.onGet('/projects/bad-id').reply(400, error);
 
       try {
         await client.projects.getExistingProject('bad-id');
       } catch (e) {
-        expect((e as AxiosError).response?.data).toEqual(MOCK_ERROR);
+        expect((e as AxiosError).response?.data).toEqual(error);
       }
     });
   });

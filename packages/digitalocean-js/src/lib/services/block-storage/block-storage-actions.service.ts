@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { Action, ActionRequest } from '../../models';
 
-import { Action, ActionRequest } from '../../models/action';
+import { instance } from '../../axios-instance';
 
 export class BlockStorageActionService {
   /**

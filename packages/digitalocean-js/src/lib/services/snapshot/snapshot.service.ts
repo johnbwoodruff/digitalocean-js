@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { Snapshot } from '../../models';
 
-import { Snapshot } from '../../models/snapshot';
+import { instance } from '../../axios-instance';
 
 export type SnapshotType = 'all' | 'droplet' | 'volume';
 

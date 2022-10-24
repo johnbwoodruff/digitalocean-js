@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { DomainRecord, DomainRecordRequest } from '../../models';
 
-import { DomainRecord, DomainRecordRequest } from '../../models/domain-record';
+import { instance } from '../../axios-instance';
 
 export class DomainRecordService {
   /**

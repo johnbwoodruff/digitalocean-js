@@ -1,7 +1,6 @@
-import { instance } from '../../axios-instance';
+import { Action, DropletActionRequest } from '../../models';
 
-import { Action } from '../../models/action';
-import { DropletActionRequest } from '../../models/droplet';
+import { instance } from '../../axios-instance';
 
 export class DropletActionService {
   /**

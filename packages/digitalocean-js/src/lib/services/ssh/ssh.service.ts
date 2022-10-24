@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { SshKey } from '../../models';
 
-import { SshKey } from '../../models/ssh-key';
+import { instance } from '../../axios-instance';
 
 export class SshService {
   /**

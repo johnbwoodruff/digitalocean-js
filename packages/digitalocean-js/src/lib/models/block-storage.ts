@@ -7,7 +7,10 @@ export interface BlockStorage {
   name: string;
   description: string;
   size_gigabytes: number;
+  filesystem_type: string;
+  filesystem_label: string;
   created_at: string;
+  tags: string[];
 }
 
 export interface BlockStorageRequest {

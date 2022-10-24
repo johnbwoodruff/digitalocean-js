@@ -1,7 +1,6 @@
-import { instance } from '../../axios-instance';
+import { BlockStorage, BlockStorageRequest, Snapshot } from '../../models';
 
-import { BlockStorage, BlockStorageRequest } from '../../models/block-storage';
-import { Snapshot } from '../../models/snapshot';
+import { instance } from '../../axios-instance';
 
 export class BlockStorageService {
   /**
