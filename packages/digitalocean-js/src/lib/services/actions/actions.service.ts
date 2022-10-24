@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { Action } from '../../models';
 
-import { Action } from '../../models/action';
+import { instance } from '../../axios-instance';
 
 export class ActionService {
   /**

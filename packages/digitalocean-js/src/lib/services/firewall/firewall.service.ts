@@ -1,10 +1,10 @@
-import { instance } from '../../axios-instance';
-
 import {
   Firewall,
   FirewallInboundRule,
   FirewallOutboundRule
-} from '../../models/firewall';
+} from '../../models';
+
+import { instance } from '../../axios-instance';
 
 export class FirewallService {
   /**

@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { Region } from '../../models';
 
-import { Region } from '../../models/region';
+import { instance } from '../../axios-instance';
 
 export class RegionService {
   /**

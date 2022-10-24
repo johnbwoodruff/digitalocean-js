@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { Size } from '../../models';
 
-import { Size } from '../../models/size';
+import { instance } from '../../axios-instance';
 
 export class SizeService {
   /**

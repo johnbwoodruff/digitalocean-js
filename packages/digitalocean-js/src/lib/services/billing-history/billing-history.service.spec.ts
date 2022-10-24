@@ -1,69 +1,69 @@
 import { AxiosError } from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
-import { MOCK_ERROR } from '../../../test/shared';
+import { getActions, getErrorResponse, getSingleAction } from '../../../test';
 import { instance } from '../../axios-instance';
 import { DigitalOcean } from '../../digitalocean';
-import { Action } from '../../models/action';
-
-const DUMMY_ACTION = { id: 1 } as Action;
-const DUMMY_ACTIONS: Action[] = [DUMMY_ACTION];
 
 const mock = new MockAdapter(instance, { onNoMatch: 'throwException' });
 const client = new DigitalOcean('abc123');
 
-describe('Actions Service', () => {
+describe('Billing History Service', () => {
   it('should exist', () => {
-    expect(client.account).toBeDefined();
+    expect(client.billingHistory).toBeDefined();
   });
 
   describe('getAllActions', () => {
     it('should resolve correctly', async () => {
+      const actions = getActions();
       mock
         .onGet('/actions', { params: { page: 1, per_page: 25 } })
-        .reply(200, { actions: DUMMY_ACTIONS });
+        .reply(200, { actions });
 
-      const actions = await client.actions.getAllActions();
-      expect(actions.length).toEqual(1);
+      const allActions = await client.actions.getAllActions();
+      expect(allActions.length).toEqual(2);
     });
 
     it('should resolve correctly with passed pagination', async () => {
+      const actions = getActions();
       mock
         .onGet('/actions', { params: { page: 2, per_page: 50 } })
-        .reply(200, { actions: DUMMY_ACTIONS });
+        .reply(200, { actions });
 
-      const actions = await client.actions.getAllActions(50, 2);
-      expect(actions.length).toEqual(1);
+      const allActions = await client.actions.getAllActions(50, 2);
+      expect(allActions.length).toEqual(2);
     });
 
     it('should reject on failure', async () => {
-      mock.onGet('/actions').reply(400, MOCK_ERROR);
+      const error = getErrorResponse();
+      mock.onGet('/actions').reply(400, error);
 
       try {
         await client.actions.getAllActions();
       } catch (e) {
-        expect((e as AxiosError).response?.data).toEqual(MOCK_ERROR);
+        expect((e as AxiosError).response?.data).toEqual(error);
       }
     });
   });
 
   describe('getExistingAction', () => {
     it('should resolve correctly', async () => {
-      mock
-        .onGet(`/actions/${DUMMY_ACTION.id}`)
-        .reply(200, { action: DUMMY_ACTION });
+      const action = getSingleAction();
+      mock.onGet(`/actions/${action.id}`).reply(200, { action });
 
-      const action = await client.actions.getExistingAction(DUMMY_ACTION.id);
-      expect(action).toEqual(DUMMY_ACTION);
+      const singleAction = await client.actions.getExistingAction(action.id);
+      expect(singleAction).toEqual(action);
     });
 
     it('should reject on failure', async () => {
-      mock.onGet(`/actions/${DUMMY_ACTION.id}`).reply(400, MOCK_ERROR);
+      const action = getSingleAction();
+      const error = getErrorResponse();
+      mock.onGet(`/actions/${action.id}`).reply(400, error);
 
       try {
-        await client.actions.getExistingAction(DUMMY_ACTION.id);
+        await client.actions.getExistingAction(action.id);
       } catch (e) {
-        expect((e as AxiosError).response?.data).toEqual(MOCK_ERROR);
+        expect((e as AxiosError).response?.data).toEqual(error);
       }
     });
   });

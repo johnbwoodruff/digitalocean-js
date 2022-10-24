@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { Tag } from '../../models';
 
-import { Tag } from '../../models/tag';
+import { instance } from '../../axios-instance';
 
 export class TagService {
   /**

@@ -1,10 +1,6 @@
-import { instance } from '../../axios-instance';
+import { ForwardingRule, HealthCheck, LoadBalancer } from '../../models';
 
-import {
-  ForwardingRule,
-  HealthCheck,
-  LoadBalancer
-} from '../../models/load-balancer';
+import { instance } from '../../axios-instance';
 
 export class LoadBalancerService {
   /**

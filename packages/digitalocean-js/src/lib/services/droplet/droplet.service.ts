@@ -1,10 +1,13 @@
-import { instance } from '../../axios-instance';
+import {
+  Action,
+  Backup,
+  Droplet,
+  DropletRequest,
+  Kernel,
+  Snapshot
+} from '../../models';
 
-import { Action } from '../../models/action';
-import { Backup } from '../../models/backup';
-import { Droplet, DropletRequest } from '../../models/droplet';
-import { Kernel } from '../../models/kernel';
-import { Snapshot } from '../../models/snapshot';
+import { instance } from '../../axios-instance';
 
 export class DropletService {
   /**

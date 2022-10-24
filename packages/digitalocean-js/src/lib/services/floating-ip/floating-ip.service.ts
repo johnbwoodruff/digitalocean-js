@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { FloatingIP } from '../../models';
 
-import { FloatingIP } from '../../models/floating-ip';
+import { instance } from '../../axios-instance';
 
 export class FloatingIPService {
   /**

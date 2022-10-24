@@ -1,6 +1,6 @@
-import { instance } from '../../axios-instance';
+import { Certificate, CertificateRequest } from '../../models';
 
-import { Certificate, CertificateRequest } from '../../models/certificate';
+import { instance } from '../../axios-instance';
 
 export class CertificateService {
   /**

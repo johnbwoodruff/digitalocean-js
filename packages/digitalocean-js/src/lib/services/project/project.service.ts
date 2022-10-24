@@ -1,11 +1,11 @@
-import { instance } from '../../axios-instance';
-
 import {
   Project,
   ProjectPurpose,
   ProjectResource,
   ProjectResourceParsedUrn
-} from '../../models/project';
+} from '../../models';
+
+import { instance } from '../../axios-instance';
 
 export class ProjectService {
   /**

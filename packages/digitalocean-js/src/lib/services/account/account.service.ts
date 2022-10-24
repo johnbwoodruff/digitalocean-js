@@ -1,6 +1,6 @@
 import { instance } from '../../axios-instance';
 
-import { Account } from '@digitalocean-js/data-access';
+import { Account } from '../../models';
 
 export class AccountService {
   /**

@@ -1,6 +1,6 @@
+import { Balance, BillingHistory } from '../../models';
+
 import { instance } from '../../axios-instance';
-import { Balance } from '../../models/balance';
-import { BillingHistory } from '../../models/billing-history';
 
 export class BillingHistoryService {
   /**
