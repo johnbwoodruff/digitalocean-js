@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
-import { getActions, getErrorResponse, getSingleAction } from '../../../test';
+import { getBalance, getBillingHistory, getErrorResponse } from '../../../test';
 import { instance } from '../../axios-instance';
 import { DigitalOcean } from '../../digitalocean';
 
@@ -13,55 +13,45 @@ describe('Billing History Service', () => {
     expect(client.billingHistory).toBeDefined();
   });
 
-  describe('getAllActions', () => {
+  describe('getMyBalance', () => {
     it('should resolve correctly', async () => {
-      const actions = getActions();
-      mock
-        .onGet('/actions', { params: { page: 1, per_page: 25 } })
-        .reply(200, { actions });
+      const balance = getBalance();
+      mock.onGet('/customers/my/balance').reply(200, balance);
 
-      const allActions = await client.actions.getAllActions();
-      expect(allActions.length).toEqual(2);
-    });
-
-    it('should resolve correctly with passed pagination', async () => {
-      const actions = getActions();
-      mock
-        .onGet('/actions', { params: { page: 2, per_page: 50 } })
-        .reply(200, { actions });
-
-      const allActions = await client.actions.getAllActions(50, 2);
-      expect(allActions.length).toEqual(2);
+      const myBalance = await client.billingHistory.getMyBalance();
+      expect(myBalance).toEqual(balance);
     });
 
     it('should reject on failure', async () => {
       const error = getErrorResponse();
-      mock.onGet('/actions').reply(400, error);
+      mock.onGet('/customers/my/balance').reply(400, error);
 
       try {
-        await client.actions.getAllActions();
+        await client.billingHistory.getMyBalance();
       } catch (e) {
         expect((e as AxiosError).response?.data).toEqual(error);
       }
     });
   });
 
-  describe('getExistingAction', () => {
+  describe('getMyBillingHistory', () => {
     it('should resolve correctly', async () => {
-      const action = getSingleAction();
-      mock.onGet(`/actions/${action.id}`).reply(200, { action });
+      const billingHistory = getBillingHistory();
+      mock
+        .onGet('/customers/my/billing_history')
+        .reply(200, { billing_history: billingHistory });
 
-      const singleAction = await client.actions.getExistingAction(action.id);
-      expect(singleAction).toEqual(action);
+      const myBillingHistory =
+        await client.billingHistory.getMyBillingHistory();
+      expect(myBillingHistory).toEqual(billingHistory);
     });
 
     it('should reject on failure', async () => {
-      const action = getSingleAction();
       const error = getErrorResponse();
-      mock.onGet(`/actions/${action.id}`).reply(400, error);
+      mock.onGet('/customers/my/billing_history').reply(400, error);
 
       try {
-        await client.actions.getExistingAction(action.id);
+        await client.billingHistory.getMyBillingHistory();
       } catch (e) {
         expect((e as AxiosError).response?.data).toEqual(error);
       }

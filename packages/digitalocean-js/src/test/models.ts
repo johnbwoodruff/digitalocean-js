@@ -1,5 +1,6 @@
 import { ACCOUNTS } from './fixtures/accounts.fixture';
 import { ACTIONS } from './fixtures/actions.fixture';
+import { BALANCE } from './fixtures/balance.fixture';
 import { BILLING_HISTORY } from './fixtures/billing-history.fixture';
 import { BLOCK_STORAGE_VOLUMES } from './fixtures/block-storage.fixture';
 import { PROJECTS } from './fixtures/projects.fixture';
@@ -15,6 +16,7 @@ export const getSingleAction = () => ACTIONS[0];
 // Billing History
 export const getBillingHistory = () => BILLING_HISTORY;
 export const getSingleBillingHistoryItem = () => BILLING_HISTORY[0];
+export const getBalance = () => BALANCE;
 
 // Block Storage
 export const getBlockStorageVolumes = () => BLOCK_STORAGE_VOLUMES;
