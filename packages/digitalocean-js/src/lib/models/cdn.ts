@@ -4,6 +4,8 @@ export interface CdnEndpoint {
   endpoint: string;
   created_at: string;
   ttl: number;
+  certificate_id?: string;
+  custom_domain?: string;
 }
 
 export interface CdnEndpointRequest {
