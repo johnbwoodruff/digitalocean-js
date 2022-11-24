@@ -207,7 +207,7 @@ export class DropletActionService {
     const actionRequest: DropletActionRequest = {
       disk: resizeDisk,
       size,
-      type: 'password_reset'
+      type: 'resize'
     };
     return instance
       .post(`/droplets/${dropletId}/actions`, actionRequest)
