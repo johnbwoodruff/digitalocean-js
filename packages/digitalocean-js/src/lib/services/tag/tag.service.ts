@@ -29,7 +29,7 @@ export class TagService {
    * const tags = await client.tags.getTags();
    * ```
    */
-  public getTags(): Promise<Tag> {
+  public getTags(): Promise<Tag[]> {
     return instance.get(`/tags`).then(response => response.data.tags);
   }
 
