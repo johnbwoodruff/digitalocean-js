@@ -1,6 +1,6 @@
 {
   "name": "digitalocean-js",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "JavaScript library for the DigitalOcean API",
   "private": false,
   "repository": "https://github.com/johnbwoodruff/digitalocean-js",
