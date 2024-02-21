@@ -16,7 +16,7 @@ export class ImageService {
    */
   public getAllImages(): Promise<Image[]> {
     return instance
-      .get(`/images`, { params: { per_page: 200 } })
+      .get(`/images`, { params: { per_page: 500 } })
       .then((response) => response.data.images);
   }
 
