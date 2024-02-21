@@ -1,6 +1,6 @@
-import { Size } from '../../models';
+import { Size } from "../../models";
 
-import { instance } from '../../axios-instance';
+import { instance } from "../../axios-instance";
 
 export class SizeService {
   /**
@@ -15,6 +15,8 @@ export class SizeService {
    * ```
    */
   public getAllSizes(): Promise<Size[]> {
-    return instance.get(`/sizes`).then(response => response.data.sizes);
+    return instance
+      .get(`/sizes`, { params: { per_page: 500 } })
+      .then((response) => response.data.sizes);
   }
 }
