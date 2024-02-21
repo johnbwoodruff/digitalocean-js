@@ -1,6 +1,6 @@
-import { Action, Image } from '../../models';
+import { Action, Image } from "../../models";
 
-import { instance } from '../../axios-instance';
+import { instance } from "../../axios-instance";
 
 export class ImageService {
   /**
@@ -15,7 +15,9 @@ export class ImageService {
    * ```
    */
   public getAllImages(): Promise<Image[]> {
-    return instance.get(`/images`).then(response => response.data.images);
+    return instance
+      .get(`/images`, { params: { per_page: 200 } })
+      .then((response) => response.data.images);
   }
 
   /**
@@ -39,9 +41,9 @@ export class ImageService {
     perPage = perPage ? perPage : 25;
     return instance
       .get(`/images`, {
-        params: { type: 'distribution', page, per_page: perPage }
+        params: { type: "distribution", page, per_page: perPage },
       })
-      .then(response => response.data.images);
+      .then((response) => response.data.images);
   }
 
   /**
@@ -65,9 +67,9 @@ export class ImageService {
     perPage = perPage ? perPage : 25;
     return instance
       .get(`/images`, {
-        params: { type: 'application', page, per_page: perPage }
+        params: { type: "application", page, per_page: perPage },
       })
-      .then(response => response.data.images);
+      .then((response) => response.data.images);
   }
 
   /**
@@ -88,9 +90,9 @@ export class ImageService {
     perPage = perPage ? perPage : 25;
     return instance
       .get(`/images`, {
-        params: { private: true, page, per_page: perPage }
+        params: { private: true, page, per_page: perPage },
       })
-      .then(response => response.data.images);
+      .then((response) => response.data.images);
   }
 
   /**
@@ -107,7 +109,7 @@ export class ImageService {
   public getImageActions(imageId: number): Promise<Action[]> {
     return instance
       .get(`/images/${imageId}/actions`)
-      .then(response => response.data.actions);
+      .then((response) => response.data.actions);
   }
 
   /**
@@ -124,7 +126,7 @@ export class ImageService {
   public getExistingImage(imageId: number): Promise<Image> {
     return instance
       .get(`/images/${imageId}`)
-      .then(response => response.data.image);
+      .then((response) => response.data.image);
   }
 
   /**
@@ -141,7 +143,7 @@ export class ImageService {
   public getExistingImageBySlug(imageSlug: string): Promise<Image> {
     return instance
       .get(`/images/${imageSlug}`)
-      .then(response => response.data.image);
+      .then((response) => response.data.image);
   }
 
   /**
@@ -158,7 +160,7 @@ export class ImageService {
   public updateImageName(imageId: number, name: string): Promise<Image> {
     return instance
       .put(`/images/${imageId}`, { name })
-      .then(response => response.data.image);
+      .then((response) => response.data.image);
   }
 
   /**
