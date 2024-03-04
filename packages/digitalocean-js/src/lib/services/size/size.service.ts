@@ -1,6 +1,6 @@
-import { Size } from "../../models";
+import { Size } from '../../models';
 
-import { instance } from "../../axios-instance";
+import { instance } from '../../axios-instance';
 
 export class SizeService {
   /**
@@ -14,9 +14,11 @@ export class SizeService {
    * const sizes = await client.sizes.getAllSizes();
    * ```
    */
-  public getAllSizes(): Promise<Size[]> {
+  public getAllSizes(perPage?: number, page?: number): Promise<Size[]> {
+    page = page ? page : 1;
+    perPage = perPage ? perPage : 25;
     return instance
-      .get(`/sizes`, { params: { per_page: 500 } })
-      .then((response) => response.data.sizes);
+      .get(`/sizes`, { params: { page, per_page: perPage } })
+      .then(response => response.data.sizes);
   }
 }
