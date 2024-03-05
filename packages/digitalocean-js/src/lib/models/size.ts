@@ -8,4 +8,5 @@ export interface Size {
   vcpus: number;
   disk: number;
   regions: string[];
+  description: string;
 }

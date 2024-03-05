@@ -14,7 +14,11 @@ export class SizeService {
    * const sizes = await client.sizes.getAllSizes();
    * ```
    */
-  public getAllSizes(): Promise<Size[]> {
-    return instance.get(`/sizes`).then(response => response.data.sizes);
+  public getAllSizes(perPage?: number, page?: number): Promise<Size[]> {
+    page = page ? page : 1;
+    perPage = perPage ? perPage : 25;
+    return instance
+      .get(`/sizes`, { params: { page, per_page: perPage } })
+      .then(response => response.data.sizes);
   }
 }

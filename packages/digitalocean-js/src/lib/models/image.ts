@@ -9,6 +9,7 @@ export interface Image {
   min_disk_size: number;
   size_gigabytes: number;
   created_at: string;
+  description: string;
 }
 
 export interface ImageActionRequest {

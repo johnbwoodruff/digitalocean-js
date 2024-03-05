@@ -14,8 +14,12 @@ export class ImageService {
    * const images = await client.images.getAllImages();
    * ```
    */
-  public getAllImages(): Promise<Image[]> {
-    return instance.get(`/images`).then(response => response.data.images);
+  public getAllImages(perPage?: number, page?: number): Promise<Image[]> {
+    page = page ? page : 1;
+    perPage = perPage ? perPage : 25;
+    return instance
+      .get(`/images`, { params: { page, per_page: perPage } })
+      .then(response => response.data.images);
   }
 
   /**
