@@ -1,25 +1,13 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "**/*",
-    "**/node_modules/**/*"
-  ],
-  "plugins": [
-    "@nrwl/nx"
-  ],
+  "ignorePatterns": ["**/*", "**/node_modules/**/*"],
+  "plugins": ["@nx"],
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
-      ],
-      "excludedFiles": [
-        "**/node_modules/**/*"
-      ],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "excludedFiles": ["**/node_modules/**/*"],
       "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
+        "@nx/enforce-module-boundaries": [
           "error",
           {
             "enforceBuildableLibDependency": true,
@@ -27,9 +15,7 @@
             "depConstraints": [
               {
                 "sourceTag": "*",
-                "onlyDependOnLibsWithTags": [
-                  "*"
-                ]
+                "onlyDependOnLibsWithTags": ["*"]
               }
             ]
           }
@@ -38,30 +24,22 @@
       }
     },
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "excludedFiles": [
-        "**/node_modules/**/*"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/typescript"
-      ],
-      "rules": {}
+      "files": ["*.ts", "*.tsx"],
+      "excludedFiles": ["**/node_modules/**/*"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
+      }
     },
     {
-      "files": [
-        "*.js",
-        "*.jsx"
-      ],
-      "excludedFiles": [
-        "**/node_modules/**/*"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/javascript"
-      ],
-      "rules": {}
+      "files": ["*.js", "*.jsx"],
+      "excludedFiles": ["**/node_modules/**/*"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
+      }
     }
   ]
 }
