@@ -27,13 +27,19 @@
       "files": ["*.ts", "*.tsx"],
       "excludedFiles": ["**/node_modules/**/*"],
       "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
       "excludedFiles": ["**/node_modules/**/*"],
       "extends": ["plugin:@nx/javascript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
+      }
     }
   ]
 }

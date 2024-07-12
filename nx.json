@@ -1,8 +1,5 @@
 {
   "extends": "nx/presets/core.json",
-  "affected": {
-    "defaultBase": "main"
-  },
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
@@ -44,5 +41,7 @@
     "@nx/js": {
       "analyzeSourceFiles": true
     }
-  }
+  },
+  "useInferencePlugins": false,
+  "defaultBase": "main"
 }
