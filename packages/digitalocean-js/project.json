@@ -11,23 +11,18 @@
         "outputPath": "dist/packages/digitalocean-js",
         "main": "packages/digitalocean-js/src/index.ts",
         "tsConfig": "packages/digitalocean-js/tsconfig.lib.json",
-        "assets": ["packages/digitalocean-js/*.md"],
-        "updateBuildableProjectDepsInPackageJson": true
+        "assets": ["packages/digitalocean-js/*.md"]
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["packages/digitalocean-js/**/*.ts"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/digitalocean-js"],
       "options": {
-        "jestConfig": "packages/digitalocean-js/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "packages/digitalocean-js/jest.config.ts"
       }
     },
     "publish": {
